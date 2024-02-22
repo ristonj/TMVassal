@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<tokens>
+    <tokenDimensions>
+        <dimension type="land" height="64" width="75" />
+    </tokenDimensions>
+    <tokenGroupParent name="VASSAL.build.module.map.SetupStack" />
+    <tokenGroupChild name="VASSAL.build.widget.PieceSlot" />
+    <powerInfantry dimension="land" prototype="Land Unit" frontCommand="Regular" backCommand="Militia" xStart="75" yStart="200" xInc="125" yInc="175">
+        <layers>
+            <layer name="Regular" />
+            <layer name="Militia" />
+        </layers>
+        <tokenText>+/null/sendto;Eliminate;69,130;Land\/Naval Units;Forces;${x};${y};;;0;0;1;1;;L;;;;	prototype;${prototype}\	emb2;Activate;128;A;${backCommand};128;;${frontCommand};128;;;;1;false;0;0;${frontImage},${backImage};${layerNames},;true;Type;;;false;;1;1;true;65,130;77,130;82,130;;1.0;;true\\	piece;;;{frontImage};{name}/;;	\	1\\	null;0;0;2;0</tokenText>
+        <powers>
+            <power name="Nasrid">
+                <token strength="1" numTokens="6" />
+                <token strength="2" numTokens="4" />
+                <token strength="4" numTokens="2" />
+                <token strength="6" numTokens="1" />
+            </power>
+        </powers>
+    </powerInfantry>
+</tokens>
