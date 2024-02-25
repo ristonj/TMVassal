@@ -44,12 +44,14 @@ def buildInfantryNodes(xml_file: str, gpid: int) -> tuple[int, list[ET.Element]]
                             frontCommand="Regular",
                             frontImage=infantryPowerTokens.attrib["name"].replace(" ", "").lower() + token.attrib["strength"] + "reg.png",
                             backImage=infantryPowerTokens.attrib["name"].replace(" ", "").lower() + token.attrib["strength"] + "mil.png",
-                            layerNames="1 Nasrid regular,1 Nasrid militia"
+                            layerNames="1 Nasrid regular,1 Nasrid militia",
+                            name=tokenName
                     )
                 )
-                infantryGroups.append(node)
+                infantryGroup.append(node)
                 gpid += 1
                 xCurrent += xInc
+            infantryGroups.append(infantryGroup)
         yCurrent += yInc
         xCurrent = xStart
     return gpid, infantryGroups
@@ -57,8 +59,10 @@ def buildInfantryNodes(xml_file: str, gpid: int) -> tuple[int, list[ET.Element]]
 tree = ET.parse("BaseTantoMonta.xml")
 root = tree.getroot()
 nextID, infantryNodes = buildInfantryNodes("tokens.xml", 0)
-infantryTree = ET.Element("top")
-map(lambda x: infantryTree.append(x), infantryNodes)
+
+infantryRoot = ET.Element("top")
+map(lambda x: infantryRoot.append(x), infantryNodes)
 # element = root.find("./VASSAL.build.module.Map[@mapName='Land/Naval Units']")
 # print(element.attrib["mapName"])
-infantryTree.write("build.xml")
+outputTree = ET.ElementTree(infantryRoot)
+outputTree.write("build.xml")
