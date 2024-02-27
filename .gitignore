@@ -1,4 +1,6 @@
 TantoMontaRaw/
 *.bak
 *.zip
-build.xml
+*.vmod
+buildFile.xml
+imagesorig/

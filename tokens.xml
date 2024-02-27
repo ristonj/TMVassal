@@ -6,12 +6,12 @@
     </tokenDimensions>
     <tokenGroupParent name="VASSAL.build.module.map.SetupStack" />
     <tokenGroupChild name="VASSAL.build.widget.PieceSlot" />
-    <powerInfantry dimension="land" prototype="Land Unit" frontCommand="Regular" backCommand="Militia" xStart="75" yStart="200" xInc="125" yInc="175">
+    <powerInfantry dimension="land" prototype="Land Unit" frontCommand="Regular" backCommand="Militia" xStart="125" yStart="250" xInc="200" yInc="200">
         <layers>
             <layer name="Regular" />
             <layer name="Militia" />
         </layers>
-        <tokenText>+/null/sendto;Eliminate;69,130;Land\/Naval Units;Forces;${x};${y};;;0;0;1;1;;L;;;;	prototype;${prototype}\	emb2;Activate;128;A;${backCommand};128;;${frontCommand};128;;;;1;false;0;0;${frontImage},${backImage};${layerNames},;true;Type;;;false;;1;1;true;65,130;77,130;82,130;;1.0;;true\\	piece;;;{frontImage};{name}/;;	\	1\\	null;0;0;2;0</tokenText>
+        <tokenText>+/null/sendto;Eliminate;69,130;Land\/Naval Units;Forces;{x};{y};;;0;0;0;0;;L;;;;	prototype;{prototype}\	emb2;Activate;128;A;{backCommand};128;;{frontCommand};128;;;;1;false;0;0;{frontImage},{backImage};{layerNames},;true;Type;;;false;;1;1;true;65,130;77,130;82,130;;1.0;;true\\	piece;;;{frontImage};{name}/;;	\	1\\	null;0;0;2;0</tokenText>
         <powers>
             <power name="Nasrid">
                 <token strength="1" numTokens="6" />
@@ -19,6 +19,113 @@
                 <token strength="4" numTokens="2" />
                 <token strength="6" numTokens="1" />
             </power>
+            <power name="N Africa">
+                <token strength="1" numTokens="12" />
+                <token strength="2" numTokens="6" />
+                <token strength="4" numTokens="2" />
+                <token strength="6" numTokens="6" />
+            </power>
+            <power name="Portugal">
+                <token strength="1" numTokens="10" />
+                <token strength="2" numTokens="4" />
+                <token strength="4" numTokens="3" />
+                <token strength="6" numTokens="1" />
+            </power>
+            <power name="Beltranejos">
+                <token strength="1" numTokens="9" />
+                <token strength="2" numTokens="6" />
+                <token strength="4" numTokens="1" />
+            </power>
+            <power name="Castille">
+                <token strength="1" numTokens="14" />
+                <token strength="2" numTokens="6" />
+                <token strength="4" numTokens="3" />
+                <token strength="6" numTokens="2" />
+            </power>
+            <power name="Aragon">
+                <token strength="1" numTokens="8" />
+                <token strength="2" numTokens="4" />
+                <token strength="4" numTokens="3" />
+                <token strength="6" numTokens="1" />
+            </power>
+            <power name="France">
+                <token strength="1" numTokens="12" />
+                <token strength="2" numTokens="6" />
+                <token strength="4" numTokens="3" />
+                <token strength="6" numTokens="2" />
+            </power>
+            <power name="Catalonia">
+                <token strength="1" numTokens="6" />
+                <token strength="2" numTokens="4" />
+                <token strength="4" numTokens="1" />
+                <token strength="6" numTokens="1" />
+            </power>
         </powers>
     </powerInfantry>
+    <powerCavalry12 dimension="land" prototype="Land Unit" frontCommand="1 Cavalry" backCommand="2 Cavalry" xStart="925" yStart="250" xInc="200" yInc="200">
+        <layers>
+            <layer name="1 Cavalry" />
+            <layer name="2 Cavalry" />
+        </layers>
+        <tokenText>+/null/sendto;Eliminate;69,130;Land\/Naval Units;Forces;{x};{y};;;0;0;0;0;;L;;;;	prototype;{prototype}\	emb2;Activate;128;A;{backCommand};128;;{frontCommand};128;;;;1;false;0;0;{frontImage},{backImage};{layerNames},;true;Type;;;false;;1;1;true;65,130;77,130;82,130;;1.0;;true\\	piece;;;{frontImage};{name}/;;	\	1\\	null;0;0;2;0</tokenText>
+        <powers>
+            <power name="Nasrid">
+                <token numTokens="3" />
+            </power>
+            <power name="N Africa">
+                <token numTokens="4" />
+            </power>
+            <power name="Portugal">
+                <token numTokens="2" />
+            </power>
+            <power name="Beltranejos">
+                <token numTokens="3" />
+            </power>
+            <power name="Castille">
+                <token numTokens="4" />
+            </power>
+            <power name="Aragon">
+                <token numTokens="3" />
+            </power>
+            <power name="France">
+                <token numTokens="4" />
+            </power>
+            <power name="Catalonia">
+                <token numTokens="2" />
+            </power>
+        </powers>
+    </powerCavalry>
+    <powerCavalry14 dimension="land" prototype="Land Unit" frontCommand="1 Cavalry" backCommand="4 Cavalry" xStart="925" yStart="250" xInc="200" yInc="200">
+        <layers>
+            <layer name="1 Cavalry" />
+            <layer name="4 Cavalry" />
+        </layers>
+        <tokenText>+/null/sendto;Eliminate;69,130;Land\/Naval Units;Forces;{x};{y};;;0;0;0;0;;L;;;;	prototype;{prototype}\	emb2;Activate;128;A;{backCommand};128;;{frontCommand};128;;;;1;false;0;0;{frontImage},{backImage};{layerNames},;true;Type;;;false;;1;1;true;65,130;77,130;82,130;;1.0;;true\\	piece;;;{frontImage};{name}/;;	\	1\\	null;0;0;2;0</tokenText>
+        <powers>
+            <power name="Nasrid">
+                <token numTokens="1" />
+            </power>
+            <power name="N Africa">
+                <token numTokens="1" />
+            </power>
+            <power name="Portugal">
+                <token numTokens="1" />
+            </power>
+            <power name="Beltranejos">
+                <token numTokens="1" />
+            </power>
+            <power name="Castille">
+                <token numTokens="1" />
+            </power>
+            <power name="Aragon">
+                <token numTokens="1" />
+            </power>
+            <power name="France">
+                <token numTokens="1" />
+            </power>
+            <power name="Catalonia">
+                <token numTokens="1" />
+            </power>
+        </powers>
+    </powerCavalry>
 </tokens>
