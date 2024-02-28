@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<VASSAL.build.GameModule ModuleOther1="" ModuleOther2="" VassalVersion="3.7.7" description="Carlos Diaz / Ivan Caceres / Ed Beach" name="Tanto Monta (WIP)" nextPieceSlotId="139" version="0.0">
+<VASSAL.build.GameModule ModuleOther1="" ModuleOther2="" VassalVersion="3.7.8" description="Carlos Diaz / Ivan Caceres / Ed Beach" name="Tanto Monta (WIP)" nextPieceSlotId="139" version="0.0">
     <VASSAL.build.module.BasicCommandEncoder/>
     <VASSAL.build.module.Documentation>
         <VASSAL.build.module.documentation.AboutScreen fileName="/images/Splash.png" title="About Module"/>
