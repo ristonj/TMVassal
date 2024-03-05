@@ -14,6 +14,9 @@ def buildTokens(xml_file: str, gpid: int) -> tuple[int, list[ET.Element]]:
     for tokens in powers.findall("./power"):
         xCurrent = tokenCommonData.xStart
         for token in tokens.findall("./token"):
+            if token.attrib["numTokens"] == "0":
+                xCurrent = str(int(xCurrent) + int(tokenType.attrib["xInc"]))
+                continue
             tokenType = root.find("./tokenTypes/tokenType[@name='{0}']".format(token.attrib["type"]))
             powerName = tokens.attrib["name"]
             strength = ""
@@ -41,18 +44,17 @@ def buildTokens(xml_file: str, gpid: int) -> tuple[int, list[ET.Element]]:
                         "width": root.find("./tokenDimensions/dimension[@type='{0}']".format(tokenType.attrib["dimension"])).attrib["width"]
                     }
                 )
-                node.text=root.find("./tokenText").text.format(
-                            x=xCurrent,
-                            y=yCurrent,
-                            prototype="Land\\/Naval Units",
-                            backCommand=tokenType.attrib["backCommand"],
-                            frontCommand=tokenType.attrib["frontCommand"],
-                            frontImage=tokenType.attrib["frontImage"].format(power=powerName.replace(" ", "").lower(), strength=strength),
-                            backImage=tokenType.attrib["backImage"].format(power=powerName.replace(" ", "").lower(), strength=strength),
-                            layerNames=tokenType.attrib["layers"].format(power=powerName, strength=strength),
-                            name=tokenName
+                node.text=root.find(f"./tokenTextEntries/tokenText[@name='{tokenType.attrib['tokenText']}']").text.format(
+                    x=xCurrent,
+                    y=yCurrent,
+                    prototype="Land\\/Naval Units",
+                    backCommand=tokenType.attrib["backCommand"] if "backCommand" in tokenType.attrib.keys() else "",
+                    frontCommand=tokenType.attrib["frontCommand"] if "frontCommand" in tokenType.attrib.keys() else "",
+                    frontImage=tokenType.attrib["frontImage"].format(power=powerName.replace(" ", "").lower(), strength=strength),
+                    backImage=tokenType.attrib["backImage"].format(power=powerName.replace(" ", "").lower(), strength=strength) if "backImage" in tokenType.attrib.keys() else "",
+                    layerNames=tokenType.attrib["layers"].format(power=powerName, strength=strength) if "layers" in tokenType.attrib.keys() else "",
+                    name=tokenName
                 )
-                print(node.text)
                 gpid += 1
             groups.append(group)
             xCurrent = str(int(xCurrent) + int(tokenType.attrib["xInc"]))
@@ -76,7 +78,6 @@ def getTokenCommonData(root):
     return TokenCommonData(
         parent=root.find("./tokenGroupParent").attrib["name"],
         child=root.find("./tokenGroupChild").attrib["name"],
-        tokenText=root.find("./tokenText").text,
         xStart=powers.attrib["xStart"],
         yStart=powers.attrib["yStart"]
     )

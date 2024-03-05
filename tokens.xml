@@ -3,18 +3,25 @@
     <owningBoard name="Forces" />
     <tokenDimensions>
         <dimension type="land" height="64" width="75" />
+        <dimension type="naval" height="90" width="183" />
     </tokenDimensions>
     <tokenGroupParent name="VASSAL.build.module.map.SetupStack" />
     <tokenGroupChild name="VASSAL.build.widget.PieceSlot" />
-    <tokenText>+/null/sendto;Eliminate;69,130;Land\/Naval Units;Forces;{x};{y};;;0;0;0;0;;L;;;;	prototype;{prototype}\	emb2;Activate;128;A;{backCommand};128;;{frontCommand};128;;;;1;false;0;0;{frontImage},{backImage};{layerNames},;true;Type;;;false;;1;1;true;65,130;77,130;82,130;;1.0;;true\\	piece;;;{frontImage};{name}/;;	\	1\\	null;0;0;2;0</tokenText>
+    <tokenTextEntries>
+        <tokenText name="land">+/null/sendto;Eliminate;69,130;Land\/Naval Units;Forces;{x};{y};;;0;0;0;0;;L;;;;	prototype;{prototype}\	emb2;Activate;128;A;{backCommand};128;;{frontCommand};128;;;;1;false;0;0;{frontImage},{backImage};{layerNames},;true;Type;;;false;;1;1;true;65,130;77,130;82,130;;1.0;;true\\	piece;;;{frontImage};{name}/;;	\	1\\	null;0;0;2;0</tokenText>
+        <tokenText name="galley-corsair">+/null/emb2;Activate;128;A;{backCommand};128;;{frontCommand};128;;;;1;false;0;0;{frontImage},{backImage};{layerNames};true;;;;false;;1;1;true;65,130;67,130;71,130;;1.0;;true	prototype;{prototype}\	piece;;;{frontImage};{name}/1	\	null;0;0;;0</tokenText>
+        <tokenText name="galley">+/null/prototype;{prototype}	piece;;;{frontImage};Portugal Galley/	null;0;0;;0</tokenText>
+    </tokenTextEntries>
     <tokenTypes>
-        <tokenType name="infantry" nameTemplate="{strength} {power} infantry" dimension="land" prototype="Land Unit" frontCommand="Regular" backCommand="Militia" frontImage="{power}{strength}reg.png" backImage="{power}{strength}mil.png" xInc="200" layers="{strength} {power} Regular(s),{strength} {power} Militia" />
-        <tokenType name="cavalry12" nameTemplate="1-2 {power} cavalry" dimension="land" prototype="Land Unit" frontCommand="1 Cavalry" backCommand="2 Cavalry" frontImage="{power}1cav.png" backImage="{power}2cav.png" xInc="200" layers="1 {power} Cavalry,2 {power} Cavalry" />
-        <tokenType name="cavalry14" nameTemplate="1-4 {power} cavalry" dimension="land" prototype="Land Unit" frontCommand="1 Cavalry" backCommand="4 Cavalry" frontImage="{power}1cav.png" backImage="{power}4cav.png" xInc="200" layers="1 {power} Cavalry,4 {power} Cavalry" />
-        <tokenType name="artillery12" nameTemplate="1-2 {power} artillery" dimension="land" prototype="Land Unit" frontCommand="1 Artillery" backCommand="2 Artillery" frontImage="{power}1art.png" backImage="{power}2art.png" xInc="200" layers="1 {power} Artillery,2 {power} Artillery" />
-        <tokenType name="regular12" nameTemplate="1-2 {power} regular(s)" dimension="land" prototype="Land Unit" frontCommand="1 Regular" backCommand="2 Regulars" frontImage="{power}1reg.png" backImage="{power}2reg.png" xInc="200" layers="1 {power} Regular,2 {power} Regulars" />
-        <tokenType name="regular15" nameTemplate="1-5 {power} regular(s)" dimension="land" prototype="Land Unit" frontCommand="1 Regular" backCommand="5 Regulars" frontImage="{power}1reg.png" backImage="{power}5reg.png" xInc="200" layers="1 {power} Regular,5 {power} Regulars" />
-        <tokenType name="guanache" nameTemplate="1-2 Guanache" dimension="land" prototype="Land Unit" frontCommand="1 Regular" backCommand="5 Regulars" frontImage="guanache1.png" backImage="guanache2.png" xInc="200" layers="1 Guanache,2 Guanache" />
+        <tokenType name="infantry" tokenText="land" nameTemplate="{strength} {power} infantry" dimension="land" prototype="Land Unit" frontCommand="Regular" backCommand="Militia" frontImage="{power}{strength}reg.png" backImage="{power}{strength}mil.png" xInc="200" layers="{strength} {power} Regular(s),{strength} {power} Militia" />
+        <tokenType name="cavalry12" tokenText="land" nameTemplate="1-2 {power} cavalry" dimension="land" prototype="Land Unit" frontCommand="1 Cavalry" backCommand="2 Cavalry" frontImage="{power}1cav.png" backImage="{power}2cav.png" xInc="200" layers="1 {power} Cavalry,2 {power} Cavalry" />
+        <tokenType name="cavalry14" tokenText="land" nameTemplate="1-4 {power} cavalry" dimension="land" prototype="Land Unit" frontCommand="1 Cavalry" backCommand="4 Cavalry" frontImage="{power}1cav.png" backImage="{power}4cav.png" xInc="200" layers="1 {power} Cavalry,4 {power} Cavalry" />
+        <tokenType name="artillery12" tokenText="land" nameTemplate="1-2 {power} artillery" dimension="land" prototype="Land Unit" frontCommand="1 Artillery" backCommand="2 Artillery" frontImage="{power}1art.png" backImage="{power}2art.png" xInc="200" layers="1 {power} Artillery,2 {power} Artillery" />
+        <tokenType name="regular12" tokenText="land" nameTemplate="1-2 {power} regular(s)" dimension="land" prototype="Land Unit" frontCommand="1 Regular" backCommand="2 Regulars" frontImage="{power}1reg.png" backImage="{power}2reg.png" xInc="200" layers="1 {power} Regular,2 {power} Regulars" />
+        <tokenType name="regular15" tokenText="land" nameTemplate="1-5 {power} regular(s)" dimension="land" prototype="Land Unit" frontCommand="1 Regular" backCommand="5 Regulars" frontImage="{power}1reg.png" backImage="{power}5reg.png" xInc="200" layers="1 {power} Regular,5 {power} Regulars" />
+        <tokenType name="guanache" tokenText="land" nameTemplate="1-2 Guanache" dimension="land" prototype="Land Unit" frontCommand="1 Regular" backCommand="5 Regulars" frontImage="guanache1.png" backImage="guanache2.png" xInc="200" layers="1 Guanache,2 Guanache" />
+        <tokenType name="galley-corsair" tokenText="galley-corsair" nameTemplate="{power} Galley-Corsair" dimension="naval" prototype="Naval Unit" frontCommand="Galley" backCommand="Corsair" frontImage="{power}galley.png" backImage="{power}corsair.png" xInc="200" layers="{power} Galley,{power} Corsair" />
+        <tokenType name="galley" tokenText="galley" nameTemplate="{power} Galley" dimension="naval" prototype="Naval Unit" frontImage="{power}galley.png" xInc="200" />
     </tokenTypes>
     <powers xStart="125" yStart="250">
         <power name="Nasrid" yInc="200">
@@ -24,6 +31,8 @@
             <token type="infantry" strength="6" numTokens="1" />
             <token type="cavalry12" numTokens="4" />
             <token type="cavalry14" numTokens="1" />
+            <token type="artillery12" numTokens="0" />
+            <token type="galley-corsair" numTokens="1" />
         </power>
         <power name="N Africa" yInc="200">
             <token type="infantry" strength="1" numTokens="12" />
@@ -32,6 +41,8 @@
             <token type="infantry" strength="6" numTokens="6" />
             <token type="cavalry12" numTokens="3" />
             <token type="cavalry14" numTokens="1" />
+            <token type="artillery12" numTokens="0" />
+            <token type="galley-corsair" numTokens="7" />
         </power>
         <power name="Portugal" yInc="200">
             <token type="infantry" strength="1" numTokens="10" />
@@ -40,14 +51,18 @@
             <token type="infantry" strength="6" numTokens="1" />
             <token type="cavalry12" numTokens="2" />
             <token type="cavalry14" numTokens="1" />
+            <token type="artillery12" numTokens="0" />
+            <token type="galley" numTokens="6" />
         </power>
         <power name="Beltranejos" yInc="200">
             <token type="infantry" strength="1" numTokens="9" />
             <token type="infantry" strength="2" numTokens="6" />
             <token type="infantry" strength="4" numTokens="1" />
-            <token type="infantry" strength="4" numTokens="0" />
+            <token type="infantry" strength="6" numTokens="0" />
             <token type="cavalry12" numTokens="3" />
             <token type="cavalry14" numTokens="1" />
+            <token type="artillery12" numTokens="0" />
+            <token type="galley" numTokens="1" />
         </power>
         <power name="Castille" yInc="200">
             <token type="infantry" strength="1" numTokens="14" />
@@ -56,6 +71,8 @@
             <token type="infantry" strength="6" numTokens="2" />
             <token type="cavalry12" numTokens="4" />
             <token type="cavalry14" numTokens="1" />
+            <token type="artillery12" numTokens="0" />
+            <token type="galley" numTokens="6" />
         </power>
         <power name="Aragon" yInc="200">
             <token type="infantry" strength="1" numTokens="8" />
@@ -64,6 +81,8 @@
             <token type="infantry" strength="6" numTokens="1" />
             <token type="cavalry12" numTokens="4" />
             <token type="cavalry14" numTokens="3" />
+            <token type="artillery12" numTokens="1" />
+            <token type="galley" numTokens="0" />
         </power>
         <power name="France" yInc="200">
             <token type="infantry" strength="1" numTokens="12" />
@@ -72,6 +91,8 @@
             <token type="infantry" strength="6" numTokens="2" />
             <token type="cavalry12" numTokens="4" />
             <token type="cavalry14" numTokens="1" />
+            <token type="artillery12" numTokens="1" />
+            <token type="galley" numTokens="4" />
         </power>
         <power name="Catalonia" yInc="200">
             <token type="infantry" strength="1" numTokens="6" />
@@ -80,6 +101,8 @@
             <token type="infantry" strength="6" numTokens="1" />
             <token type="cavalry12" numTokens="2" />
             <token type="cavalry14" numTokens="1" />
+            <token type="artillery12" numTokens="0" />
+            <token type="galley" numTokens="1" />
         </power>
     </powers>
 </tokens>
