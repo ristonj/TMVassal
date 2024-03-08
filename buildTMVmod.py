@@ -3,64 +3,103 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 from models.tokenCommonData import TokenCommonData
+from models.unitTokenStack import UnitTokenStack
 
-def buildTokens(xml_file: str, gpid: int) -> tuple[int, list[ET.Element]]:
-    tree = ET.parse(xml_file)
-    root = tree.getroot()
-    powers = root.find("./powers")
-    groups = []
-    tokenCommonData = getTokenCommonData(root)
-    yCurrent = tokenCommonData.yStart
-    for tokens in powers.findall("./power"):
-        xCurrent = tokenCommonData.xStart
-        for token in tokens.findall("./token"):
-            if token.attrib["numTokens"] == "0":
-                xCurrent = str(int(xCurrent) + int(tokenType.attrib["xInc"]))
-                continue
-            tokenType = root.find("./tokenTypes/tokenType[@name='{0}']".format(token.attrib["type"]))
-            powerName = tokens.attrib["name"]
-            strength = ""
-            if "strength" in token.attrib.keys():
-                strength = token.attrib["strength"]
-            tokenName = tokenType.attrib["nameTemplate"].format(strength=strength, power=powerName)
-            group = ET.Element(
-                tokenCommonData.parent,
+class BuildTMVmod:
+    def __init__(self, gpid: int):
+        self.gpid = gpid
+    
+    def addAtStartStack(self, root: ET.Element, tokenCommonData: TokenCommonData, tokenType: ET.Element, unitTokenStack: UnitTokenStack):
+        tokenName = tokenType.attrib["nameTemplate"].format(strength=unitTokenStack.strength, power=unitTokenStack.powerName)
+        group = ET.Element(
+            tokenCommonData.parent,
+            attrib={
+                "name": tokenName,
+                "owningBoard": root.find("owningBoard").attrib["name"],
+                "useGridLocation": "false",
+                "x": unitTokenStack.xCurrent,
+                "y": unitTokenStack.yCurrent
+            }
+        )
+        for _ in range(int(unitTokenStack.numTokens)):
+            ET.SubElement(
+                group,
+                tokenCommonData.child,
                 attrib={
-                    "name": tokenName,
-                    "owningBoard": root.find("owningBoard").attrib["name"],
-                    "useGridLocation": "false",
-                    "x": xCurrent,
-                    "y": yCurrent
+                    "entryName": tokenName,
+                    "gpid": str(self.gpid),
+                    "height": root\
+                        .find(f"./tokenDimensions/dimension[@type='{tokenType.attrib['dimension']}']")\
+                        .attrib["height"],
+                    "width": root\
+                        .find(f"./tokenDimensions/dimension[@type='{tokenType.attrib['dimension']}']")\
+                        .attrib["width"]
                 }
-            )
-            for _ in range(int(token.attrib["numTokens"])):
-                node = ET.SubElement(
-                    group,
-                    tokenCommonData.child,
-                    attrib={
-                        "entryName": tokenName,
-                        "gpid": str(gpid),
-                        "height": root.find("./tokenDimensions/dimension[@type='{0}']".format(tokenType.attrib["dimension"])).attrib["height"],
-                        "width": root.find("./tokenDimensions/dimension[@type='{0}']".format(tokenType.attrib["dimension"])).attrib["width"]
-                    }
+            ).text=\
+                root.find(f"./tokenTextEntries/tokenText[@name='{tokenType.attrib['tokenText']}']")\
+                    .text.format(
+                        x=unitTokenStack.xCurrent,
+                        y=unitTokenStack.yCurrent,
+                        prototype="Land\\/Naval Units",
+                        backCommand=self._getOptionalAttribute(tokenType, "backCommand"),
+                        frontCommand=self._getOptionalAttribute(tokenType, "frontCommand"),
+                        frontImage=tokenType.attrib["frontImage"].format(
+                            power=unitTokenStack.powerName.replace(" ", "").lower(),
+                            strength=unitTokenStack.strength.lower()
+                        ),
+                        backImage=self._getOptionalAttribute(tokenType, "backImage").format(
+                            power=unitTokenStack.powerName.replace(" ", "").lower(),
+                            strength=unitTokenStack.strength.lower()
+                        ),
+                        layerNames=self._getOptionalAttribute(tokenType, "layers").format(
+                            power=unitTokenStack.powerName,
+                            strength=unitTokenStack.strength
+                        ),
+                        name=tokenName
+                    )
+            self.gpid += 1
+        return group
+
+    def buildTokens(self, xml_file: str, gpid: int) -> list[ET.Element]:
+        tree = ET.parse(xml_file)
+        root = tree.getroot()
+        powers = root.find("./powers")
+        groups = []
+        tokenCommonData = self.getTokenCommonData(root)
+        for tokens in powers.findall("./power"):
+            xCurrent = tokens.attrib["xStart"]
+            yCurrent = tokens.attrib["yStart"]
+            for token in tokens.findall("./token"):
+                tokenType = root.find(f"./tokenTypes/tokenType[@name='{token.attrib['type']}']")
+                if token.attrib["numTokens"] == "0":
+                    xCurrent = str(int(xCurrent) + int(tokenType.attrib["xInc"]))
+                    continue
+                groups.append(
+                    self.addAtStartStack(
+                        root=root,
+                        tokenCommonData=tokenCommonData,
+                        tokenType=tokenType,
+                        unitTokenStack=UnitTokenStack(
+                            xCurrent=xCurrent,
+                            yCurrent=yCurrent,
+                            numTokens=int(token.attrib["numTokens"]),
+                            strength=self._getOptionalAttribute(token, "strength"),
+                            powerName=tokens.attrib["name"]
+                        )
+                    )
                 )
-                node.text=root.find(f"./tokenTextEntries/tokenText[@name='{tokenType.attrib['tokenText']}']").text.format(
-                    x=xCurrent,
-                    y=yCurrent,
-                    prototype="Land\\/Naval Units",
-                    backCommand=tokenType.attrib["backCommand"] if "backCommand" in tokenType.attrib.keys() else "",
-                    frontCommand=tokenType.attrib["frontCommand"] if "frontCommand" in tokenType.attrib.keys() else "",
-                    frontImage=tokenType.attrib["frontImage"].format(power=powerName.replace(" ", "").lower(), strength=strength),
-                    backImage=tokenType.attrib["backImage"].format(power=powerName.replace(" ", "").lower(), strength=strength) if "backImage" in tokenType.attrib.keys() else "",
-                    layerNames=tokenType.attrib["layers"].format(power=powerName, strength=strength) if "layers" in tokenType.attrib.keys() else "",
-                    name=tokenName
-                )
-                gpid += 1
-            groups.append(group)
-            xCurrent = str(int(xCurrent) + int(tokenType.attrib["xInc"]))
-        yCurrent = str(int(yCurrent) + int(tokens.attrib["yInc"]))
-        xCurrent = tokenCommonData.xStart
-    return gpid, groups
+                xCurrent = str(int(xCurrent) + int(tokenType.attrib["xInc"]))
+        return groups
+
+    def getTokenCommonData(self, root: ET.Element):
+        powers=root.find("./powers")
+        return TokenCommonData(
+            parent=root.find("./tokenGroupParent").attrib["name"],
+            child=root.find("./tokenGroupChild").attrib["name"]
+        )
+    
+    def _getOptionalAttribute(self, element: ET.Element, key: str) -> str:
+        return element.attrib[key] if key in element.attrib.keys() else ""
 
 def createVmod():
     imagePath = "./images"
@@ -73,21 +112,13 @@ def createVmod():
                         os.path.relpath(os.path.join(root, file), 
                                         os.path.join(imagePath, '..')))
 
-def getTokenCommonData(root):
-    powers=root.find("./powers")
-    return TokenCommonData(
-        parent=root.find("./tokenGroupParent").attrib["name"],
-        child=root.find("./tokenGroupChild").attrib["name"],
-        xStart=powers.attrib["xStart"],
-        yStart=powers.attrib["yStart"]
-    )
-
 def main():
     tree = ET.parse("BaseTantoMonta.xml")
     root = tree.getroot()
     initGPID = int(root.attrib["nextPieceSlotId"])
-    nextID, infantryNodes = buildTokens("tokens.xml", initGPID)
-    root.attrib["nextPieceSlotId"] = str(nextID)
+    builder = BuildTMVmod(initGPID)
+    infantryNodes = builder.buildTokens("tokens.xml", initGPID)
+    root.attrib["nextPieceSlotId"] = str(builder.gpid)
     infantryRoot = root.find("./VASSAL.build.module.Map[@mapName='Land/Naval Units']")
     for node in infantryNodes:
         infantryRoot.append(node)

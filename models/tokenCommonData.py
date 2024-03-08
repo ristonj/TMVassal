@@ -1,6 +1,4 @@
 class TokenCommonData:
-    def __init__(self, parent, child, xStart, yStart):
+    def __init__(self, parent, child):
         self.parent = parent
         self.child = child
-        self.xStart = xStart
-        self.yStart = yStart

@@ -363,7 +363,7 @@
     <VASSAL.build.module.Map allowMultiple="false" backgroundcolor="255,255,255" buttonName="" changeFormat="$message$" color="0,0,0" createFormat="$pieceName$ created in $location$ *" edgeHeight="0" edgeWidth="0" hideKey="" hotkey="" icon="forces.png" launch="true" mapName="Land/Naval Units" markMoved="Always" markUnmovedHotkey="" markUnmovedIcon="/images/unmoved.gif" markUnmovedReport="" markUnmovedText="" markUnmovedTooltip="Mark all pieces on this map as not moved" moveKey="" moveToFormat="$pieceName$ moves $previousLocation$ &amp;rarr; $location$ *" moveWithinFormat="$pieceName$ moves $previousLocation$ &amp;rarr; $location$ *" onlyReportChangedLocation="false" showKey="" thickness="3" tooltip="Forces">
         <VASSAL.build.module.map.BoardPicker addColumnText="Add column" addRowText="Add row" boardPrompt="Select board" slotHeight="125" slotScale="0.2" slotWidth="350" title="Choose Boards">
             <setup>Land/Naval UnitsBoardPicker	Forces	0	0</setup>
-            <VASSAL.build.module.map.boardPicker.Board color="255,153,153" height="1500" name="Forces" reversible="false" width="1500">
+            <VASSAL.build.module.map.boardPicker.Board color="255,153,153" height="2200" name="Forces" reversible="false" width="2200">
                 <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="100.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="25" y0="50"/>
             </VASSAL.build.module.map.boardPicker.Board>
         </VASSAL.build.module.map.BoardPicker>
