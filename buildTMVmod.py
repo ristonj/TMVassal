@@ -10,7 +10,7 @@ class BuildTMVmod:
         self.gpid = gpid
     
     def addAtStartStack(self, root: ET.Element, tokenCommonData: TokenCommonData, tokenType: ET.Element, unitTokenStack: UnitTokenStack):
-        tokenName = tokenType.attrib["nameTemplate"].format(strength=unitTokenStack.strength, power=unitTokenStack.powerName)
+        tokenName = tokenType.attrib["nameTemplate"].format(strength=unitTokenStack.strength, power=unitTokenStack.powerName, name=unitTokenStack.name)
         group = ET.Element(
             tokenCommonData.parent,
             attrib={
@@ -45,7 +45,8 @@ class BuildTMVmod:
                         frontCommand=self._getOptionalAttribute(tokenType, "frontCommand"),
                         frontImage=tokenType.attrib["frontImage"].format(
                             power=unitTokenStack.powerName.replace(" ", "").lower(),
-                            strength=unitTokenStack.strength.lower()
+                            strength=unitTokenStack.strength.lower(),
+                            name=unitTokenStack.name.lower()
                         ),
                         backImage=self._getOptionalAttribute(tokenType, "backImage").format(
                             power=unitTokenStack.powerName.replace(" ", "").lower(),
@@ -84,7 +85,8 @@ class BuildTMVmod:
                             yCurrent=yCurrent,
                             numTokens=int(token.attrib["numTokens"]),
                             strength=self._getOptionalAttribute(token, "strength"),
-                            powerName=tokens.attrib["name"]
+                            powerName=tokens.attrib["name"],
+                            name=self._getOptionalAttribute(token, "name")
                         )
                     )
                 )
