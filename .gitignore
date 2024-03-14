@@ -1,0 +1,8 @@
+TantoMontaRaw/
+*.bak
+*.zip
+*.vmod
+buildFile.xml
+imagesorig/
+models/__pycache__/
+*.py[cod]
