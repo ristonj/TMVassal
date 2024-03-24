@@ -124,7 +124,6 @@ def main():
     infantryRoot = root.find("./VASSAL.build.module.Map[@mapName='Land/Naval Units']")
     for node in infantryNodes:
         infantryRoot.append(node)
-    
     ET.indent(tree, space="\t", level=0)
     tree.write("buildFile.xml", encoding="utf-8")
     createVmod("/mnt/c/Users/risto/OneDrive/Documents/Vassal")
