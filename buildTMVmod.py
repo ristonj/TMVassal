@@ -103,9 +103,9 @@ class BuildTMVmod:
     def _getOptionalAttribute(self, element: ET.Element, key: str) -> str:
         return element.attrib[key] if key in element.attrib.keys() else ""
 
-def createVmod():
+def createVmod(dir: str):
     imagePath = "./images"
-    with zipfile.ZipFile("tmwip.vmod", "w") as vmodZip:
+    with zipfile.ZipFile(os.path.join(dir, "tmwip.vmod"), "w") as vmodZip:
         vmodZip.write("buildFile.xml")
         vmodZip.write("moduledata")
         for root, dirs, files in os.walk(imagePath):
@@ -119,14 +119,15 @@ def main():
     root = tree.getroot()
     initGPID = int(root.attrib["nextPieceSlotId"])
     builder = BuildTMVmod(initGPID)
-    infantryNodes = builder.buildTokens("tokens.xml", initGPID)
+    infantryNodes = builder.buildTokens("units.xml", initGPID)
     root.attrib["nextPieceSlotId"] = str(builder.gpid)
     infantryRoot = root.find("./VASSAL.build.module.Map[@mapName='Land/Naval Units']")
     for node in infantryNodes:
         infantryRoot.append(node)
+    
     ET.indent(tree, space="\t", level=0)
     tree.write("buildFile.xml", encoding="utf-8")
-    createVmod()
+    createVmod("/mnt/c/Users/risto/OneDrive/Documents/Vassal")
 
 if __name__ == "__main__":
     main()
