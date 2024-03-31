@@ -4,13 +4,14 @@ from models.tokenCommonData import TokenCommonData
 from models.unitTokenStack import UnitTokenStack
 
 class UnitBuilder:
-    def __init__(self, gpid: int):
+    def __init__(self, gpid: int, tokenCommonData: TokenCommonData):
         self.gpid = gpid
+        self.tokenCommonData = tokenCommonData
 
-    def addAtStartStack(self, root: ET.Element, tokenCommonData: TokenCommonData, tokenType: ET.Element, unitTokenStack: UnitTokenStack):
+    def addAtStartStack(self, root: ET.Element, tokenType: ET.Element, unitTokenStack: UnitTokenStack):
         tokenName = tokenType.attrib["nameTemplate"].format(strength=unitTokenStack.strength, power=unitTokenStack.powerName, name=unitTokenStack.name)
         group = ET.Element(
-            tokenCommonData.parent,
+            self.tokenCommonData.parent,
             attrib={
                 "name": tokenName,
                 "owningBoard": root.find("owningBoard").attrib["name"],
@@ -22,7 +23,7 @@ class UnitBuilder:
         for _ in range(int(unitTokenStack.numTokens)):
             ET.SubElement(
                 group,
-                tokenCommonData.child,
+                self.tokenCommonData.child,
                 attrib={
                     "entryName": tokenName,
                     "gpid": str(self.gpid),
@@ -59,12 +60,11 @@ class UnitBuilder:
             self.gpid += 1
         return group
 
-    def buildTokens(self, xml_file: str, gpid: int) -> list[ET.Element]:
+    def buildTokens(self, xml_file: str) -> list[ET.Element]:
         tree = ET.parse(xml_file)
         root = tree.getroot()
         powers = root.find("./powers")
         groups = []
-        tokenCommonData = self.getTokenCommonData(root)
         for tokens in powers.findall("./power"):
             xCurrent = tokens.attrib["xStart"]
             yCurrent = tokens.attrib["yStart"]
@@ -76,7 +76,6 @@ class UnitBuilder:
                 groups.append(
                     self.addAtStartStack(
                         root=root,
-                        tokenCommonData=tokenCommonData,
                         tokenType=tokenType,
                         unitTokenStack=UnitTokenStack(
                             xCurrent=xCurrent,
@@ -90,12 +89,6 @@ class UnitBuilder:
                 )
                 xCurrent = str(int(xCurrent) + int(tokenType.attrib["xInc"]))
         return groups
-
-    def getTokenCommonData(self, root: ET.Element):
-        return TokenCommonData(
-            parent=root.find("./tokenGroupParent").attrib["name"],
-            child=root.find("./tokenGroupChild").attrib["name"]
-        )
     
     def _getOptionalAttribute(self, element: ET.Element, key: str) -> str:
         return element.attrib[key] if key in element.attrib.keys() else ""

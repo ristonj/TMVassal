@@ -1,23 +1,28 @@
 import os
+import xml.dom
 import xml.etree.ElementTree as ET
 import zipfile
 
 from builders.unit_builder import UnitBuilder
 from builders.map_builder import MapBuilder
+from models.tokenCommonData import TokenCommonData
 
-def build_units(root: ET.Element, gpid: int) -> int:
-    builder = UnitBuilder(gpid)
-    infantryNodes = builder.buildTokens("units.xml", gpid)
+def build_units(root: ET.Element, gpid: int, tokenCommonData: TokenCommonData) -> int:
+    builder = UnitBuilder(gpid, tokenCommonData)
+    infantryNodes = builder.buildTokens("units.xml")
     infantryRoot = root.find("./VASSAL.build.module.Map[@mapName='Land/Naval Units']")
     for node in infantryNodes:
         infantryRoot.append(node)
     return builder.gpid
 
-def build_map(root: ET.Element, gpid: int) -> int:
-    builder = MapBuilder(gpid, "blah", root)
-    mapRoot = root.find("./VASSAL.build.module.Map[@mapName='Main Map']/VASSAL.build.module.map.BoardPicker/VASSAL.build.module.map.boardPicker.Board[@name='Map']/VASSAL.build.module.map.boardPicker.board.ZonedGrid")
-    mapNodes = builder.build_map("map.xml")
+def build_map(root: ET.Element, gpid: int, tokenCommonData: TokenCommonData) -> int:
+    builder = MapBuilder(gpid, tokenCommonData)
+    mapRoot = root.find("./VASSAL.build.module.Map[@mapName='Main Map']")
+    gridRoot = root.find("./VASSAL.build.module.Map[@mapName='Main Map']/VASSAL.build.module.map.BoardPicker/VASSAL.build.module.map.boardPicker.Board[@name='Map']/VASSAL.build.module.map.boardPicker.board.ZonedGrid")
+    mapNodes, tokenNodes = builder.build_map("map.xml")
     for node in mapNodes:
+        gridRoot.append(node)
+    for node in tokenNodes:
         mapRoot.append(node)
     return builder.gpid
 
@@ -32,15 +37,19 @@ def createVmod(dir: str):
                         os.path.relpath(os.path.join(root, file), 
                                         os.path.join(imagePath, '..')))
 
+def getTokenCommonData() -> TokenCommonData:
+    return TokenCommonData("VASSAL.build.module.map.SetupStack", "VASSAL.build.widget.PieceSlot")
+
 def main():
     tree = ET.parse("BaseTantoMonta.xml")
     root = tree.getroot()
-    gpid = build_units(root, int(root.attrib["nextPieceSlotId"]))
+    tokenCommonData = getTokenCommonData()
+    gpid = build_units(root, int(root.attrib["nextPieceSlotId"]), tokenCommonData)
     root.attrib["nextPieceSlotId"] = str(gpid)
-    gpid = build_map(root, gpid)
-    ET.indent(tree, space="\t", level=0)
-    tree.write("buildFile.xml", encoding="utf-8")
-    # createVmod("/mnt/c/Users/risto/OneDrive/Documents/Vassal")
+    gpid = build_map(root, gpid, tokenCommonData)
+    ET.indent(tree, space="\t")
+    tree.write("buildFile.xml", encoding="utf-8", xml_declaration=True)
+    createVmod("/mnt/c/Users/risto/OneDrive/Documents/Vassal")
 
 if __name__ == "__main__":
     main()

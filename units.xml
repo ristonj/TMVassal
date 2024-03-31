@@ -6,8 +6,6 @@
         <dimension type="square" height="64" width="75" />
         <dimension type="naval" height="90" width="183" />
     </tokenDimensions>
-    <tokenGroupParent name="VASSAL.build.module.map.SetupStack" />
-    <tokenGroupChild name="VASSAL.build.widget.PieceSlot" />
     <tokenTextEntries>
         <tokenText name="land">+/null/sendto;Eliminate;69,130;Land\/Naval Units;Forces;{x};{y};;;0;0;0;0;;L;;;;	prototype;{prototype}\	emb2;Activate;128;A;{backCommand};128;;{frontCommand};128;;;;1;false;0;0;{frontImage},{backImage};{layerNames},;true;Type;;;false;;1;1;true;65,130;77,130;82,130;;1.0;;true\\	piece;;;{frontImage};{name}/;;	\	1\\	null;0;0;2;0</tokenText>
         <tokenText name="galley-corsair">+/null/emb2;Activate;128;A;{backCommand};128;;{frontCommand};128;;;;1;false;0;0;{frontImage},{backImage};{layerNames};true;;;;false;;1;1;true;65,130;67,130;71,130;;1.0;;true	prototype;{prototype}\	piece;;;{frontImage};{name}/1	\	null;0;0;;0</tokenText>
