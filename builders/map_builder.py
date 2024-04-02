@@ -48,7 +48,7 @@ class MapBuilder:
                             "originy": space.attrib["y"]
                         }
                     )
-                    if(space.attrib["type"] in ["fortress", "standard"]):
+                    if(space.attrib["type"] in ["fortress", "standard", "strategic"]):
                         tokenStack = ET.SubElement(
                             folder_node,
                             self.tokenCommonData.parent,
@@ -71,7 +71,7 @@ class MapBuilder:
                             }
                         )
                         space_node.text = mapTree.find(f"./spaceTypes/spaceType[@name='{space.attrib['type']}']/prototypeTokenText") \
-                            .text.format(power=folder.attrib["name"])
+                            .text.format(power=folder.attrib["name"], space=space.attrib["name"])
                         self.gpid += 1
                 token_list.append(folder_node)
             node_list.append(region_node)

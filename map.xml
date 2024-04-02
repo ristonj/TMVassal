@@ -3,9 +3,11 @@
     <regionParentTag>VASSAL.build.module.map.boardPicker.board.RegionGrid</regionParentTag>
     <spaceTypes>
         <spaceType name="standard">
-            <prototypeTokenText>+/null/prototype;{power}HexControl	piece;;;;N/	null;0;0;;0</prototypeTokenText>
+            <prototypeTokenText>+/null/prototype;{power}HexControl	piece;;;;{space}/	null;0;0;;0</prototypeTokenText>
         </spaceType>
-        <spaceType name="strategic" />
+        <spaceType name="strategic">
+            <prototypeTokenText>+/null/prototype;{power}TriangleControl	piece;;;;{space}/	null;0;0;;0</prototypeTokenText>
+        </spaceType>
         <spaceType name="fortress">
             <prototypeTokenText>+/null/prototype;{power}HexControl	piece;;;;N/	null;0;0;;0</prototypeTokenText>
         </spaceType>
@@ -161,6 +163,7 @@
                 <space name="Pavia" type="standard" x="3877" y="633" />
                 <space name="Milan" type="key" x="3775" y="457" />
                 <space name="Metz" type="key" x="3587" y="124" />
+                <space name="Nice" type="strategic" x="3504" y="964" />
                 <space name="Trento" type="standard" x="3984" y="500" />
                 <space name="Modena" type="strategic" x="4049" y="738" />
                 <space name="Ferrara" type="standard" x="4075" y="895" />
