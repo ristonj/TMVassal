@@ -171,5 +171,67 @@
                 <space name="Ragusa" type="key" x="4811" y="1143" />
             </folder>
         </region>
+        <region name="North Africa" path="166,3288;1327,3290;1331,2426;1893,2427;1894,2372;2326,2370;2329,2422;2894,2425;2895,2315;3224,2316;3225,2422;3815,2425;3815,2354;3863,2354;3827,2278;3787,2268;3779,2151;3745,2142;3678,2026;3486,2023;3263,2018;3189,2047;3143,1950;3014,1974;3002,2060;2896,2068;2888,1979;2755,1968;2742,2074;2546,2063;2438,2026;2348,2063;1943,2066;1875,2129;1532,2205;1545,2092;1337,2079;1207,2040;1206,1936;1018,1908;877,1908;872,2019;722,2058;714,2244;598,2247;595,2329;548,2420;493,2402;450,2420;420,2488;375,2519;358,2577;289,2660;291,2779;218,2820;233,2972;177,2987;134,3153;191,3174">
+            <folder name="NAfrica">
+                <space name="Agadir" type="strategic" x="196" y="3107" />
+                <space name="Marrakesh" type="key" x="634" y="3071" />
+                <space name="Safi" type="standard" x="280" y="2858" />
+                <space name="Mazagan" type="fortress" x="369" y="2663" />
+                <space name="Meknes" type="standard" x="706" y="2677" />
+                <space name="Anfa" type="fortress" x="503" y="2482" />
+                <space name="Salé" type="standard" x="655" y="2298" />
+                <space name="Tangier" type="key" x="944" y="1965" />
+                <space name="Asilah" type="fortress" x="791" y="2115" />
+                <space name="Tétouan" type="strategic" x="1037" y="2129" />
+                <space name="Alcácer Quibir" type="fortress" x="882" y="2319" />
+                <space name="Chefchaouen" type="standard" x="1150" y="2349" />
+                <space name="Fez" type="key" x="966" y="2589" />
+                <space name="Tefza" type="strategic" x="838" y="2963" />
+                <space name="Badis" type="fortress" x="1387" y="2154" />
+                <space name="Taza" type="standard" x="1466" y="2339" />
+                <space name="Majjouja" type="standard" x="1746" y="2279" />
+                <space name="Melilla" type="fortress" x="1951" y="2140" />
+            </folder>
+            <folder name="Portugal">
+                <space name="Ceuta" type="key" x="1145" y="1983" />
+            </folder>
+            <folder name="Berber">
+                <space name="Tlemcen" type="key" x="2199" y="2257" />
+                <space name="Oran" type="fortress" x="2418" y="2109" />
+                <space name="Mascara" type="standard" x="2636" y="2203" />
+                <space name="Béjaïa" type="fortress" x="3081" y="2025" />
+                <space name="Setif" type="standard" x="3168" y="2191" />
+                <space name="Constantine" type="strategic" x="3395" y="2273" />
+                <space name="Bône" type="standard" x="3538" y="2068" />
+            </folder>
+            <folder name="Independent">
+                <space name="Tunis" type="key" x="3715" y="2211" />
+                <space name="Algiers" type="key" x="2820" y="2029" />
+            </folder>
+            <folder name="Caravan">
+                <space name="Fez Caravan" type="other" x="1173" y="2734" />
+                <space name="Marrakesh Caravan" type="other" x="1012" y="3097" />
+                <space name="Tlemcen Caravan" type="other" x="2528" y="2341" />
+            </folder>
+            <folder name="Djerba Corsair">
+                <space name="Djerba" type="other" x="3679" y="2335" />
+            </folder>
+        </region>
+        <region name="Canary Islands" path="1330,3295;2345,3300;2341,2424;2329,2424;2326,2373;1896,2374;1893,2427;1330,2428">
+            <folder name="Canary">
+                <space name="Lanzarote" type="fortress" x="2131" y="2594" />
+                <space name="Fuerteventura" type="standard" x="2151" y="2782" />
+                <space name="Real de Las Palmas" type="standard" x="1965" y="2866" />
+                <space name="Telde" type="fortress" x="1910" y="3090" />
+                <space name="Gáldar" type="strategic" x="1734" y="3047" />
+                <space name="El Hierro" type="standard" x="1417" y="3095" />
+                <space name="La Gomera" type="fortress" x="1486" y="2937" />
+                <space name="Añaza" type="standard" x="1740" y="2838" />
+                <space name="La Laguna" type="standard" x="1866" y="2725" />
+                <space name="Taoro" type="strategic" x="1638" y="2679" />
+                <space name="Acentejo" type="fortress" x="1786" y="2579" />
+                <space name="Benahoare" type="fortress" x="1492" y="2577" />
+            </folder>
+        </region>
     </spaces>
 </map>
