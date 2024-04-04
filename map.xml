@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<map>
+    <regionParentTag>VASSAL.build.module.map.boardPicker.board.RegionGrid</regionParentTag>
+    <spaceTypes>
+        <spaceType name="standard">
+            <prototypeTokenText>+/null/prototype;{power}HexControl	piece;;;;{space}/	null;0;0;;0</prototypeTokenText>
+        </spaceType>
+        <spaceType name="strategic">
+            <prototypeTokenText>+/null/prototype;{power}TriangleControl	piece;;;;{space}/	null;0;0;;0</prototypeTokenText>
+        </spaceType>
+        <spaceType name="fortress">
+            <prototypeTokenText>+/null/prototype;{power}HexControl	piece;;;;N/	null;0;0;;0</prototypeTokenText>
+        </spaceType>
+        <spaceType name="key" />
+        <spaceType name="holdingBox" />
+    </spaceTypes>
+    <spaces>
+        <region name="Europe" path="1075,644;865,886;715,884;716,1009;798,1104;681,1211;614,1184;548,1218;519,1279;574,1362;629,1335;703,1339;675,1425;776,1431;859,1504;970,1551;1086,1681;1075,1742;1075,1862;1186,1859;1190,1811;1261,1815;1328,1780;1382,1780;1387,1896;1497,1894;1507,1864;1747,1864;1749,1980;1867,1980;1875,1904;1975,1792;2233,1806;2393,1618;2597,1510;2720,1506;2665,1389;2690,1246;2802,1260;2809,1173;2947,1179;3056,1029;3224,1086;3362,1083;3495,1040;3551,1189;3487,1401;3447,1683;3724,1691;3751,872;3829,1127;3899,1266;3984,1292;4016,1429;4023,1561;4179,1573;4187,1662;4311,1672;4310,1821;4423,1835;4393,1988;4091,2002;4039,1894;3985,1989;3918,2046;4271,2276;4387,2309;4413,2220;4359,2167;4398,2066;4597,2068;4716,1932;4673,1849;4716,1805;4785,1811;4888,1875;4970,1840;4958,1737;4886,1719;4853,1554;4642,1412;4486,1276;4348,1190;4298,1142;4235,1076;4167,981;4197,800;4346,845;4391,915;4538,903;4526,958;4563,1074;4736,1099;4733,1200;4864,1208;4866,1071;4812,1072;4798,1021;4718,951;4669,930;4660,377;4064,367;4063,261;3670,263;3670,3;2525,6;2549,65;2517,250;2512,374;2453,399;2403,464;2307,462;2231,530;1884,417;1730,348;1643,263;1532,291;1502,222;1456,201;1403,218;1384,277;1357,384;1288,354;1220,413;1254,473;1198,518;1085,519">
+            <folder name="Portugal">
+                <space name="Sagres" type="fortress" x="601" y="1275" />
+                <space name="Faro" type="strategic" x="733" y="1381" />
+                <space name="Beja" type="standard" x="794" y="1218" />
+                <space name="Evora" type="strategic" x="937" y="1121" />
+                <space name="Castelo Branco" type="fortress" x="1129" y="1021" />
+                <space name="Santarem" type="standard" x="958" y="928" />
+                <space name="Lisbon" type="key" x="773" y="948" />
+                <space name="Coimbra" type="key" x="1114" y="784" />
+                <space name="Oporto" type="key" x="1140" y="571" />
+                <space name="Braganza" type="fortress" x="1442" y="678" />
+                <space name="Braga" type="standard" x="1323" y="576" />
+                <space name="Guarda" type="fortress" x="1293" y="862" />
+            </folder>
+            <folder name="Beltranejos">
+                <space name="Truillo" type="strategic" x="1010" y="1323" />
+                <space name="Jerez" type="strategic" x="1029" y="1509" />
+                <space name="Plasencia" type="key" x="1138" y="1194" />
+                <space name="Tui" type="standard" x="1294" y="421" />
+                <space name="Sanabria" type="fortress" x="1517" y="484" />
+                <space name="Toro" type="key" x="1665" y="707" />
+                <space name="Arévalo" type="fortress" x="1580" y="856" />
+                <space name="Burgos" type="fortress" x="1928" y="689" />
+                <space name="Toledo" type="key" x="1552" y="1176" />
+                <space name="Villena" type="fortress" x="2111" y="1416" />
+                <space name="Atienza" type="standard" x="2026" y="920" />
+            </folder>
+            <folder name="Spain">
+                <space name="Palos" type="standard" x="898" y="1453" />
+                <space name="Seville" type="key" x="1200" y="1382" />
+                <space name="Zahara" type="strategic" x="1193" y="1589" />
+                <space name="Gibraltar" type="key" x="1129" y="1797" />
+                <space name="Corunna" type="standard" x="1446" y="259" />
+                <space name="Laredo" type="standard" x="1921" y="498" />
+                <space name="León" type="fortress" x="1740" y="534" />
+                <space name="Valladolid" type="key" x="1844" y="864" />
+                <space name="Ávila" type="fortress" x="1427" y="988" />
+                <space name="Talavera" type="standard" x="1339" y="1168" />
+                <space name="Córdoba" type="fortress" x="1450" y="1354" />
+                <space name="Calatrava" type="strategic" x="1693" y="1338" />
+                <space name="Segovia" type="key" x="1723" y="1028" />
+                <space name="Guadalajara" type="standard" x="1872" y="1240" />
+                <space name="Cartagena" type="fortress" x="2195" y="1742" />
+                <space name="Denia" type="standard" x="2342" y="1586" />
+                <space name="Valencia" type="key" x="2345" y="1362" />
+                <space name="Tarragona" type="standard" x="2513" y="1232" />
+                <space name="Teruel" type="standard" x="2214" y="1230" />
+                <space name="Calatayud" type="fortress" x="2043" y="1117" />
+                <space name="Zaragoza" type="key" x="2223" y="1029" />
+                <space name="Jaca" type="standard" x="2439" y="841" />
+                <space name="Fuenterrabiá" type="fortress" x="2318" y="534" />
+                <space name="Vizcaya" type="standard" x="2111" y="548" />
+                <space name="Gerona" type="fortress" x="2754" y="977" />
+                <space name="Palamós" type="standard" x="2914" y="1129" />
+                <space name="Mallorca" type="strategic" x="2652" y="1464" />
+                <space name="Cagliari" type="strategic" x="3524" y="1640" />
+                <space name="Sasari" type="standard" x="3550" y="1418" />
+                <space name="Messina" type="strategic" x="4427" y="2017" />
+                <space name="Etna" type="standard" x="4179" y="2089" />
+                <space name="Palermo" type="strategic" x="4035" y="1961" />
+                <space name="Syracuse" type="standard" x="4359" y="2230" />
+            </folder>
+            <folder name="Nasrid">
+                <space name="Setenil" type="fortress" x="1356" y="1522" />
+                <space name="Sohail" type="standard" x="1281" y="1734" />
+                <space name="Alhama" type="fortress" x="1489" y="1658" />
+                <space name="Málaga" type="key" x="1440" y="1834" />
+                <space name="Granada" type="key" x="1672" y="1798" />
+                <space name="Loja" type="strategic" x="1634" y="1521" />
+                <space name="Guadix" type="standard" x="1767" y="1634" />
+                <space name="Almeriá" type="key" x="1809" y="1922" />
+                <space name="Albox" type="standard" x="1909" y="1770" />
+                <space name="Baza" type="fortress" x="1943" y="1527" />
+            </folder>
+            <folder name="Catalonia">
+                <space name="Lérida" type="fortress" x="2426" y="1009" />
+                <space name="Vic" type="strategic" x="2604" y="1056" />
+                <space name="Ampurias" type="strategic" x="2952" y="961" />
+                <space name="Puigcerdà" type="standard" x="2608" y="841" />
+                <space name="Barcelona" type="key" x="2743" y="1189" />
+            </folder>
+            <folder name="France">
+                <space name="Bayonne" type="fortress" x="2502" y="459" />
+                <space name="Bordeaux" type="key" x="2574" y="299" />
+                <space name="La Rochelle" type="strategic" x="2591" y="148" />
+                <space name="Poitiers" type="fortress" x="2837" y="188" />
+                <space name="Orleans" type="key" x="3035" y="167" />
+                <space name="Albret" type="standard" x="2698" y="411" />
+                <space name="Paris" type="holdingBox" x="3291" y="75" />
+                <space name="Limoges" type="fortress" x="2964" y="401" />
+                <space name="Dijón" type="standard" x="3187" y="395" />
+                <space name="Bourges" type="fortress" x="3328" y="272" />
+                <space name="Auch" type="standard" x="2812" y="563" />
+                <space name="Toulouse" type="standard" x="2723" y="703" />
+                <space name="Rodez" type="standard" x="3053" y="591" />
+                <space name="Marseille" type="key" x="3302" y="1020" />
+                <space name="Avignon" type="strategic" x="3288" y="841" />
+                <space name="Lyon" type="key" x="3319" y="535" />
+                <space name="Nancy" type="standard" x="3526" y="400" />
+                <space name="Narbonne" type="standard" x="3135" y="1002" />
+                <space name="Grenoble" type="standard" x="3500" y="713" />
+            </folder>
+            <folder name="Navarre">
+                <space name="Tudela" type="standard" x="2254" y="876" />
+                <space name="Pamplona" type="key" x="2333" y="703" />
+                <space name="Saint-Jean-Pied-de-Port" type="strategic" x="2563" y="635" />
+            </folder>
+            <folder name="Genoa">
+                <space name="Bastia" type="fortress" x="3638" y="1191" />
+                <space name="Genoa" type="key" x="3692" y="841" />
+            </folder>
+            <folder name="Florence">
+                <space name="Pisa" type="standard" x="3877" y="1018" />
+                <space name="Florence" type="key" x="3978" y="1157" />
+            </folder>
+            <folder name="Venice">
+                <space name="Verona" type="standard" x="4168" y="545" />
+                <space name="Venice" type="key" x="4265" y="737" />
+                <space name="Trieste" type="standard" x="4425" y="854" />
+                <space name="Zara" type="fortress" x="4617" y="1008" />
+            </folder>
+            <folder name="Papacy">
+                <space name="Ravenna" type="strategic" x="4173" y="1047" />
+                <space name="Ancona" type="standard" x="4277" y="1193" />
+                <space name="Rome" type="key" x="4088" y="1509" />
+            </folder>
+            <folder name="Naples">
+                <space name="L'Aquila" type="fortress" x="4311" y="1387" />
+                <space name="Pescara" type="standard" x="4548" y="1387" />
+                <space name="Garigliano" type="strategic" x="4447" y="1551" />
+                <space name="Gaeta" type="strategic" x="4255" y="1608" />
+                <space name="Naples" type="key" x="4373" y="1758" />
+                <space name="Cerignola" type="strategic" x="4607" y="1635" />
+                <space name="Atella" type="fortress" x="4592" y="1799" />
+                <space name="Seminara" type="standard" x="4575" y="1960" />
+                <space name="Otranto" type="fortress" x="4906" y="1797" />
+                <space name="Taranto" type="standard" x="4742" y="1730" />
+                <space name="Bari" type="standard" x="4767" y="1577" />
+            </folder>
+            <folder name="Independent">
+                <space name="Ceret" type="standard" x="2872" y="785" />
+                <space name="Perpignan" type="fortress" x="3062" y="804" />
+                <space name="Lucca" type="standard" x="3889" y="830" />
+                <space name="Turin" type="standard" x="3677" y="664" />
+                <space name="Pavia" type="standard" x="3877" y="633" />
+                <space name="Milan" type="key" x="3775" y="457" />
+                <space name="Metz" type="key" x="3587" y="124" />
+                <space name="Nice" type="strategic" x="3504" y="964" />
+                <space name="Trento" type="standard" x="3984" y="500" />
+                <space name="Modena" type="strategic" x="4049" y="738" />
+                <space name="Ferrara" type="standard" x="4075" y="895" />
+                <space name="Siena" type="standard" x="4088" y="1307" />
+                <space name="Ragusa" type="key" x="4811" y="1143" />
+            </folder>
+        </region>
+    </spaces>
+</map>
