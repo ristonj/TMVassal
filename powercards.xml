@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<powerCards>
+    <owningBoard name="Power Cards" />
+    <settlementTokenText>+/null/sendto;Remove Settlement;;{owningBoard};{owningBoard};{x};{y};;;0;0;1;1;;L;;;;	piece;;;{power}settlement.png;{tokenName}/;;	null;0;0;;0</settlementTokenText>
+    <piracyTokenText>+/null/sendto;Return to Power Card;;{owningBoard};{owningBoard};{x};{y};;;0;0;1;1;;L;;;;	piece;;;{power}piracy.png;{tokenName}/;;	null;0;0;;0</piracyTokenText>
+    <powers>
+        <power name="Muslim">
+            <settlementStack x="1200" y="100" numTokens="5" />
+            <piracyStack x="1400" y="100" numTokens="3" />
+        </power>
+        <power name="Portugal">
+            <settlementStack x="1200" y="2650" numTokens="12" />
+            <piracyStack x="1400" y="2650" numTokens="3" />
+        </power>
+        <power name="Spain">
+            <settlementStack x="4500" y="200" numTokens="10" />
+            <piracyStack x="4700" y="200" numTokens="3" />
+        </power>
+        <power name="France">
+            <settlementStack x="4500" y="2650" numTokens="4" />
+            <piracyStack x="4700" y="2650" numTokens="3" />
+        </power>
+    </powers>
+</powerCards>

@@ -3,17 +3,10 @@ import xml.dom
 import xml.etree.ElementTree as ET
 import zipfile
 
-from builders.unit_builder import UnitBuilder
 from builders.map_builder import MapBuilder
+from builders.power_card_builder import PowerCardBuilder
+from builders.unit_builder import UnitBuilder
 from models.tokenCommonData import TokenCommonData
-
-def build_units(root: ET.Element, gpid: int, tokenCommonData: TokenCommonData) -> int:
-    builder = UnitBuilder(gpid, tokenCommonData)
-    infantryNodes = builder.buildTokens("units.xml")
-    infantryRoot = root.find("./VASSAL.build.module.Map[@mapName='Land/Naval Units']")
-    for node in infantryNodes:
-        infantryRoot.append(node)
-    return builder.gpid
 
 def build_map(root: ET.Element, gpid: int, tokenCommonData: TokenCommonData) -> int:
     builder = MapBuilder(gpid, tokenCommonData)
@@ -24,6 +17,22 @@ def build_map(root: ET.Element, gpid: int, tokenCommonData: TokenCommonData) -> 
         gridRoot.append(node)
     for node in tokenNodes:
         mapRoot.append(node)
+    return builder.gpid
+
+def build_powercards(root: ET.Element, gpid: int, tokenCommonData: TokenCommonData) -> int:
+    builder = PowerCardBuilder(gpid, tokenCommonData)
+    powerCardRoot = root.find("./VASSAL.build.module.Map[@mapName='Power Cards']")
+    powerCardNodes = builder.buildPowerCards("powercards.xml")
+    for node in powerCardNodes:
+        powerCardRoot.append(node)
+    return builder.gpid
+
+def build_units(root: ET.Element, gpid: int, tokenCommonData: TokenCommonData) -> int:
+    builder = UnitBuilder(gpid, tokenCommonData)
+    infantryNodes = builder.buildTokens("units.xml")
+    infantryRoot = root.find("./VASSAL.build.module.Map[@mapName='Land/Naval Units']")
+    for node in infantryNodes:
+        infantryRoot.append(node)
     return builder.gpid
 
 def createVmod(dir: str):
@@ -46,6 +55,7 @@ def main():
     tokenCommonData = getTokenCommonData()
     gpid = build_units(root, int(root.attrib["nextPieceSlotId"]), tokenCommonData)
     gpid = build_map(root, gpid, tokenCommonData)
+    gpid = build_powercards(root, gpid, tokenCommonData)
     root.attrib["nextPieceSlotId"] = str(gpid)
     ET.indent(tree, space="\t")
     tree.write("buildFile.xml", encoding="utf-8", xml_declaration=True)
