@@ -209,6 +209,8 @@
             <VASSAL.build.module.PrototypeDefinition description="" name="SpainTriangleControl">+/null/prototype;TriangleControlMarker	PROP;Status;true,1,8,false;Nasrid:57346\,0\,NasridControl:P\,1,N. Africa:57347\,0\,NAfricaControl:P\,2,Portugal:57348\,0\,PortugalControl:P\,3,Beltranejos:57349\,0\,BeltranejosControl:P\,4,Spain:57350\,0\,SpainControl:P\,5,France:57351\,0\,FranceControl:P\,7,Catalonia:57352\,0\,CataloniaControl:P\,8;\	submenu;Control;Nasrid,N. Africa,Portugal,Beltranejos,Spain,France,Catalonia;\\	emb2;Activate;128;A;;128;;;128;;;;1;false;0;0;nasridtriangle.png,nafricatriangle.png,portugaltriangle.png,beltranejostriangle.png,,spainnasridtriangle.png,francetriangle.png,cataloniatriangle.png;Nasrid,N. Africa,Portugal,Beltranejos,Spain,Spain (Nasrid home),France,Catalonia;false;Control;;;true;Status;1;1;true;65,130;;;;1.0;;true\\\	piece;;;;/	5\	\\	1\\\	null;37;50;;0</VASSAL.build.module.PrototypeDefinition>
             <VASSAL.build.module.PrototypeDefinition description="" name="VeniceHexControl">+/null/prototype;HexControlMarker	PROP;Status;true,1,9,false;N. Africa:57347\,0\,NAfricaControl:P\,2,Portugal:57348\,0\,PortugalControl:P\,3,Spain:57349\,0\,SpainControl:P\,5,France:57350\,0\,FranceControl:P\,7,Uncontrolled:57437\,0\,NoneControl:P\,9;\	submenu;Control;N. Africa,Portugal,Spain,France,Uncontrolled;\\	emb2;Activate;128;A;;128;;;128;;;;1;false;0;0;nasridhex.png,nafricahex.png,portugalhex.png,beltranejoshex.png,spainhex.png,spainnasridhex.png,francehex.png,cataloniahex.png,;Nasrid,N. Africa,Portugal,Beltranejos,Spain,Spain (Nasrid home),France,Catalonia,;false;Control;;;true;Status;1;1;true;65,130;;;;1.0;;true\\\	piece;;;;/	9\	\\	9\\\	null;17;17;;0</VASSAL.build.module.PrototypeDefinition>
             <VASSAL.build.module.PrototypeDefinition description="" name="TriangleControlMarker">+/null/PROP;Unrest;true,0,1,false;Add Unrest:57353\,0\,AddUnrest:P\,1,Remove Unrest:57354\,0\,RemoveUnrest:P\,0;	emb2;Activate;128;A;Unrest;128;;Clear Unrest;128;;;;1;false;35;-35;,Unrest.svg;N,Y;false;Unrest;;;true;Unrest;0;1;true;65,130;85,130;85,130;;1.0;;true\	immob;;V;R;\\	nonRect2;1.0;dM -0.5 -50.0 L -0.5 -49.0 L -1.5 -49.0 L -1.5 -48.0 L -1.5 -47.0 L -2.5 -47.0 L -2.5 -46.0 L -3.5 -46.0 L -3.5 -45.0 L -3.5 -44.0 L -4.5 -44.0 L -4.5 -43.0 L -4.5 -42.0 L -5.5 -42.0 L -5.5 -41.0 L -6.5 -41.0 L -6.5 -40.0 L -6.5 -39.0 L -7.5 -39.0 L -7.5 -38.0 L -7.5 -37.0 L -8.5 -37.0 L -8.5 -36.0 L -8.5 -35.0 L -9.5 -35.0 L -9.5 -34.0 L -10.5 -34.0 L -10.5 -33.0 L -10.5 -32.0 L -11.5 -32.0 L -11.5 -31.0 L -11.5 -30.0 L -12.5 -30.0 L -12.5 -29.0 L -12.5 -28.0 L -13.5 -28.0 L -13.5 -27.0 L -14.5 -27.0 L -14.5 -26.0 L -14.5 -25.0 L -15.5 -25.0 L -15.5 -24.0 L -15.5 -23.0 L -16.5 -23.0 L -16.5 -22.0 L -16.5 -21.0 L -17.5 -21.0 L -17.5 -20.0 L -18.5 -20.0 L -18.5 -19.0 L -18.5 -18.0 L -19.5 -18.0 L -19.5 -17.0 L -19.5 -16.0 L -20.5 -16.0 L -20.5 -15.0 L -21.5 -15.0 L -21.5 -14.0 L -21.5 -13.0 L -22.5 -13.0 L -22.5 -12.0 L -22.5 -11.0 L -23.5 -11.0 L -23.5 -10.0 L -23.5 -9.0 L -24.5 -9.0 L -24.5 -8.0 L -25.5 -8.0 L -25.5 -7.0 L -25.5 -6.0 L -26.5 -6.0 L -26.5 -5.0 L -26.5 -4.0 L -27.5 -4.0 L -27.5 -3.0 L -27.5 -2.0 L -28.5 -2.0 L -28.5 -1.0 L -29.5 -1.0 L -29.5 0.0 L -29.5 1.0 L -30.5 1.0 L -30.5 2.0 L -30.5 3.0 L -31.5 3.0 L -31.5 4.0 L -31.5 5.0 L -32.5 5.0 L -32.5 6.0 L -33.5 6.0 L -33.5 7.0 L -33.5 8.0 L -34.5 8.0 L -34.5 9.0 L -34.5 10.0 L -35.5 10.0 L -35.5 11.0 L -35.5 12.0 L -36.5 12.0 L -36.5 13.0 L -37.5 13.0 L -37.5 14.0 L -37.5 15.0 L -38.5 15.0 L -38.5 16.0 L -38.5 17.0 L -39.5 17.0 L -39.5 18.0 L -39.5 19.0 L -40.5 19.0 L -40.5 20.0 L -41.5 20.0 L -41.5 21.0 L -41.5 22.0 L -42.5 22.0 L -42.5 23.0 L -42.5 24.0 L -43.5 24.0 L -43.5 25.0 L -43.5 26.0 L -44.5 26.0 L -44.5 27.0 L -45.5 27.0 L -45.5 28.0 L -45.5 29.0 L -46.5 29.0 L -46.5 30.0 L -46.5 31.0 L -47.5 31.0 L -47.5 32.0 L -48.5 32.0 L -48.5 33.0 L -48.5 34.0 L -49.5 34.0 L -49.5 35.0 L -49.5 36.0 L -50.5 36.0 L -50.5 37.0 L -50.5 38.0 L -51.5 38.0 L -51.5 39.0 L -52.5 39.0 L -52.5 40.0 L -52.5 41.0 L -53.5 41.0 L -53.5 42.0 L -53.5 43.0 L -54.5 43.0 L -54.5 44.0 L -54.5 45.0 L -55.5 45.0 L -55.5 46.0 L -56.5 46.0 L -56.5 47.0 L -56.5 48.0 L -57.5 48.0 L -57.5 49.0 L -57.5 50.0 L 57.5 50.0 L 57.5 49.0 L 57.5 48.0 L 56.5 48.0 L 56.5 47.0 L 56.5 46.0 L 56.5 45.0 L 55.5 45.0 L 55.5 44.0 L 54.5 44.0 L 54.5 43.0 L 54.5 42.0 L 53.5 42.0 L 53.5 41.0 L 52.5 41.0 L 52.5 40.0 L 52.5 39.0 L 51.5 39.0 L 51.5 38.0 L 50.5 38.0 L 50.5 37.0 L 50.5 36.0 L 49.5 36.0 L 49.5 35.0 L 49.5 34.0 L 48.5 34.0 L 48.5 33.0 L 48.5 32.0 L 47.5 32.0 L 47.5 31.0 L 46.5 31.0 L 46.5 30.0 L 46.5 29.0 L 45.5 29.0 L 45.5 28.0 L 45.5 27.0 L 44.5 27.0 L 44.5 26.0 L 43.5 26.0 L 43.5 25.0 L 43.5 24.0 L 42.5 24.0 L 42.5 23.0 L 42.5 22.0 L 41.5 22.0 L 41.5 21.0 L 41.5 20.0 L 40.5 20.0 L 40.5 19.0 L 39.5 19.0 L 39.5 18.0 L 39.5 17.0 L 38.5 17.0 L 38.5 16.0 L 38.5 15.0 L 37.5 15.0 L 37.5 14.0 L 37.5 13.0 L 36.5 13.0 L 36.5 12.0 L 35.5 12.0 L 35.5 11.0 L 35.5 10.0 L 34.5 10.0 L 34.5 9.0 L 34.5 8.0 L 33.5 8.0 L 33.5 7.0 L 33.5 6.0 L 32.5 6.0 L 32.5 5.0 L 31.5 5.0 L 31.5 4.0 L 31.5 3.0 L 30.5 3.0 L 30.5 2.0 L 30.5 1.0 L 29.5 1.0 L 29.5 0.0 L 28.5 0.0 L 28.5 -1.0 L 28.5 -2.0 L 27.5 -2.0 L 27.5 -3.0 L 27.5 -4.0 L 26.5 -4.0 L 26.5 -5.0 L 26.5 -6.0 L 25.5 -6.0 L 25.5 -7.0 L 24.5 -7.0 L 24.5 -8.0 L 24.5 -9.0 L 23.5 -9.0 L 23.5 -10.0 L 23.5 -11.0 L 22.5 -11.0 L 22.5 -12.0 L 22.5 -13.0 L 21.5 -13.0 L 21.5 -14.0 L 20.5 -14.0 L 20.5 -15.0 L 20.5 -16.0 L 19.5 -16.0 L 19.5 -17.0 L 19.5 -18.0 L 18.5 -18.0 L 18.5 -19.0 L 18.5 -20.0 L 17.5 -20.0 L 17.5 -21.0 L 16.5 -21.0 L 16.5 -22.0 L 16.5 -23.0 L 15.5 -23.0 L 15.5 -24.0 L 14.5 -24.0 L 14.5 -25.0 L 14.5 -26.0 L 14.5 -27.0 L 13.5 -27.0 L 13.5 -28.0 L 12.5 -28.0 L 12.5 -29.0 L 11.5 -29.0 L 11.5 -30.0 L 11.5 -31.0 L 10.5 -31.0 L 10.5 -32.0 L 10.5 -33.0 L 9.5 -33.0 L 9.5 -34.0 L 9.5 -35.0 L 8.5 -35.0 L 8.5 -36.0 L 7.5 -36.0 L 7.5 -37.0 L 7.5 -38.0 L 6.5 -38.0 L 6.5 -39.0 L 6.5 -40.0 L 5.5 -40.0 L 5.5 -41.0 L 4.5 -41.0 L 4.5 -42.0 L 4.5 -43.0 L 3.5 -43.0 L 3.5 -44.0 L 3.5 -45.0 L 2.5 -45.0 L 2.5 -46.0 L 2.5 -47.0 L 1.5 -47.0 L 1.5 -48.0 L 0.5 -48.0 L 0.5 -49.0 L 0.5 -50.0 Z N beltranejostriangle.png\\\	report;57352\,0\,NoneControl;$location$ is now uncontrolled.;;;Report Action - Uncontrolled;false\\\\	report;57344\,0\,NasridControl,57345\,0\,NAfricaControl,57346\,0\,PortugalControl,57347\,0\,BeltranejosControl,57348\,0\,SpainControl,57355\,0\,SpainNasridHomeControl,57350\,0\,FranceControl,57351\,0\,CataloniaControl;$location$ is now controlled by $menuCommand$.;;;Major Power Control;false\\\\\	piece;;;;/0	1\	\\	\\\	-1\\\\	-1\\\\\	null;17;17;;0</VASSAL.build.module.PrototypeDefinition>
+            <VASSAL.build.module.PrototypeDefinition description="" name="SquareControlMarker">+/null/piece;;;;/null;37;32;;0</VASSAL.build.module.PrototypeDefinition>
+            <VASSAL.build.module.PrototypeDefinition description="" name="HomeSquareControlMarker">+/null/prototype;SquareControlMarker	piece;;;;/	null;37;32;;0</VASSAL.build.module.PrototypeDefinition>
         </VASSAL.build.module.folder.PrototypeFolder>
     </VASSAL.build.module.PrototypesContainer>
     <VASSAL.build.module.PieceWindow defaultWidth="0" hidden="false" hotkey="" icon="" scale="1.0" text="Pieces" tooltip="Show/Hide the Pieces window">
@@ -250,7 +252,7 @@
             </VASSAL.build.widget.PanelWidget>
             <VASSAL.build.widget.PanelWidget entryName="Exploration Control" fixed="false" nColumns="3" scale="1.0" vert="false">
                 <VASSAL.build.widget.PieceSlot entryName="France Exploration Control" gpid="666" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;francemini.png;France Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Muslim Exploration Control" gpid="667" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;muslimmini.png;Muslim Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Muslim Exploration Control" gpid="667" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;nafricamini.png;Muslim Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
                 <VASSAL.build.widget.PieceSlot entryName="Portugal Exploration Control" gpid="668" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;portugalmini.png;Portugal Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
                 <VASSAL.build.widget.PieceSlot entryName="Spain Exploration Control" gpid="669" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;spainmini.png;Spain Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
             </VASSAL.build.widget.PanelWidget>
@@ -279,6 +281,210 @@
         <VASSAL.build.module.map.CounterDetailViewer bgColor="" borderColor="0,0,0" borderInnerThickness="2" borderThickness="2" borderWidth="0" centerAll="false" centerPiecesVertically="false" centerText="false" combineCounterSummary="false" counterReportFormat="" delay="700" description="" display="from top-most layer only" emptyHexReportForma="$LocationName$" enableHTML="false" extraTextPadding="0" fgColor="0,0,0" fontSize="9" graphicsZoom="1.0" hotkey="32,130" layerList="" minDisplayPieces="2" onlyShowFirstSummary="false" propertyFilter="" showDeck="false" showDeckDepth="1" showDeckMasked="false" showMoveSelectde="false" showNoStack="false" showNonMovable="false" showOnlyTopOfStack="false" showOverlap="false" showTerrainBeneath="never" showTerrainHeight="150" showTerrainSnappy="true" showTerrainText="$LocationName$" showTerrainWidth="150" showTerrainZoom="1.0" showgraph="true" showgraphsingle="false" showtext="false" showtextsingle="false" stopAfterShowing="false" stretchWidthPieces="false" stretchWidthSummary="false" summaryReportFormat="$LocationName$" unrotatePieces="false" version="4" verticalBottomText="10" verticalOffset="0" verticalTopText="5" zoomlevel="1.0"/>
         <VASSAL.build.module.map.Flare circleColor="255,0,0" circleScale="true" circleSize="100" flareKey="keyAlt" flareName="Map Flare" flarePulses="6" flarePulsesPerSec="3" reportFormat=""/>
         <VASSAL.build.module.map.Zoomer inButtonText="" inIconName="/images/zoomIn.gif" inTooltip="Zoom in" outButtonText="" outIconName="/images/zoomOut.gif" outTooltip="Zoom out" pickButtonText="" pickIconName="/images/zoom.png" pickTooltip="Select Zoom" zoomInKey="" zoomLevels="0.2,0.25,0.333,0.4,0.5,0.555,0.625,0.75,1.0,1.25,1.6" zoomOutKey="" zoomPickKey="" zoomStart="8"/>
+        <VASSAL.build.module.properties.GlobalProperties/>
+        <VASSAL.build.module.map.SelectionHighlighters/>
+        <VASSAL.build.module.map.HighlightLastMoved color="255,0,0" enabled="true" thickness="2"/>
+    </VASSAL.build.module.Map>
+    <VASSAL.build.module.Map allowMultiple="false" backgroundcolor="255,255,255" buttonName="" changeFormat="$message$" color="0,0,0" createFormat="$pieceName$ created in $location$ *" description="" edgeHeight="0" edgeWidth="0" hideKey="" hotkey="" icon="powercardsicon.png" launch="true" mapName="Power Cards" markMoved="Always" markUnmovedHotkey="" markUnmovedIcon="/images/unmoved.gif" markUnmovedReport="" markUnmovedText="" markUnmovedTooltip="Mark all pieces on this map as not moved" moveKey="" moveToFormat="$pieceName$ moves $previousLocation$ &amp;rarr; $location$ *" moveWithinFormat="$pieceName$ moves $previousLocation$ &amp;rarr; $location$ *" onlyReportChangedLocation="false" showKey="" thickness="3">
+        <VASSAL.build.module.map.BoardPicker addColumnText="Add column" addRowText="Add row" boardPrompt="Select board" slotHeight="125" slotScale="0.2" slotWidth="350" title="Choose Boards">
+            <VASSAL.build.module.map.boardPicker.Board image="powercardssmall.jpg" name="Power Cards" reversible="false">
+                <VASSAL.build.module.map.boardPicker.board.ZonedGrid>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.ZonedGridHighlighter/>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Muslim Fortresses" path="425,122;689,122;689,249;425,249" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="131.0" dy="127.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="360" y0="58"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Muslim Dungeon" path="704,121;1140,121;1140,246;704,246" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Muslim Dungeon" originx="919" originy="183"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Muslim Ruler" path="18,199;413,199;413,755;18,755" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Muslim Ruler" originx="221" originy="452"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Muslim University" path="427,291;554,291;554,415;427,415" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Muslim University" originx="491" originy="350"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Gibraltar" path="566,290;692,290;692,419;566,419" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Gibraltar" originx="627" originy="349"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Muslim Warehouse" path="705,289;1142,289;1142,418;705,418" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Muslim Warehouse" originx="915" originy="344"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="North African Home Keys" path="442,470;944,470;944,571;442,571" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="100.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="393" y0="419"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Muslim Other Square Markers" path="434,638;1135,638;1135,737;434,737" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="100.0" edgesLegal="false" range="Metric" snapTo="true" visible="true" x0="383" y0="586"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Corsair VP" path="258,792;1560,792;1560,893;258,893" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="102.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="207" y0="740"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Muslim Bonus VP" path="1289,983;1698,983;1698,1304;1289,1304" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Muslim Bonus VP" originx="1494" originy="1152"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain Ruler" path="1750,199;2145,199;2145,753;1750,753" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Spain Ruler" originx="1943" originy="495"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain Fortresses" path="2163,264;2428,264;2428,391;2163,391" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="132.0" dy="127.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="2096" y0="200"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain Dungeon" path="2449,274;2858,274;2858,376;2449,376" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Spain Warehouse" originx="2633" originy="500"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain University" path="2174,450;2277,450;2277,552;2174,552" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Spain University" originx="2223" originy="494"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain Maritime Technology" path="2311,449;2411,449;2411,550;2311,550" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Spain Maritime Technology" originx="2357" originy="496"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain Warehouse" path="2447,450;2859,450;2859,551;2447,551" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Spain Warehouse" originx="2650" originy="495"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Nasrid Resistance" path="2174,620;2467,620;2467,721;2174,721" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="101.0" dy="100.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="2124" y0="569"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain Square Markers" path="1798,813;3299,813;3299,915;1798,915" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="99.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="1748" y0="763"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain Bonus VP" path="3021,986;3429,986;3429,1300;3021,1300" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Spain Bonus VP" originx="3230" originy="1157"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal Fortresses" path="432,1458;696,1458;696,1589;432,1589" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="132.0" dy="127.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="365" y0="1395"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal Dungeon" path="716,1469;1124,1469;1124,1571;716,1571" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Portugal Dungeon" originx="911" originy="1515"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal University" path="443,1643;543,1643;543,1746;443,1746" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Portugal University" originx="491" originy="1693"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal Maritime Technology" path="579,1645;680,1645;680,1745;579,1745" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Portugal Maritime Technology" originx="627" originy="1694"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal Warehouse" path="717,1645;1125,1645;1125,1745;717,1745" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Portugal Warehouse" originx="905" originy="1688"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal Home Keys" path="442,1813;842,1813;842,1914;442,1914" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="100.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="392" y0="1763"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal Foreign War" path="967,1815;1065,1815;1065,1917;967,1917" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Portugal Foreign War" originx="1012" originy="1861"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal Other Square Markers" path="433,1981;1135,1981;1135,2080;433,2080" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="99.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="384" y0="1930"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal Bonus VP" path="148,2135;1692,2135;1692,2235;148,2235" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Portugal Bonus VP" originx="872" originy="2185"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="France Fortresses" path="" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="119.0" dy="102.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="2114" y0="1421"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="France Dungeon" path="2449,1475;2859,1475;2859,1575;2449,1575" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="France Dungeon" originx="2648" originy="1518"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="France University" path="" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="France University" originx="2228" originy="1696"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="France Foreign Wars" path="2312,1648;2411,1648;2411,1749;2312,1749" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="France Foreign Wars" originx="2362" originy="1694"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="France Warehouse" path="2449,1649;2857,1649;2857,1747;2449,1747" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="France Warehouse" originx="2635" originy="1693"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="France North Sea Trade" path="2176,1812;2577,1812;2577,1913;2176,1913" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="France North Sea Trade" originx="2360" originy="1856"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="England Garrison" path="2619,1813;2859,1813;2859,2028;2619,2028" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="England Garrison" originx="2738" originy="1909"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="France Home Keys" path="2177,1973;2576,1973;2576,2074;2177,2074" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="100.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="2125" y0="1923"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="France Other Square Markers" path="1769,2154;2571,2154;2571,2255;1769,2255" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="102.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="1719" y0="2102"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Treaty of Etaples" path="2678,2112;2777,2112;2777,2214;2678,2214" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Treaty of Etaples" originx="2727" originy="2158"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Treaty of Barcelona" path="2959,2114;3062,2114;3062,2215;2959,2215" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Treaty of Barcelona" originx="3008" originy="2159"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Treaty of Senlins" path="3245,2111;3347,2111;3347,2213;3245,2213" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Treaty of Senlins" originx="3297" originy="2155"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="France Bonus VP" path="3021,2330;3430,2330;3430,2649;3021,2649" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="France Bonus VP" originx="3234" originy="2492"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                </VASSAL.build.module.map.boardPicker.board.ZonedGrid>
+            </VASSAL.build.module.map.boardPicker.Board>
+        </VASSAL.build.module.map.BoardPicker>
+        <VASSAL.build.module.map.StackMetrics bottom="40,0" disabled="false" down="37,0" exSepX="6" exSepY="18" top="38,0" unexSepX="2" unexSepY="4" up="39,0"/>
+        <VASSAL.build.module.map.ForwardToKeyBuffer/>
+        <VASSAL.build.module.map.Scroller/>
+        <VASSAL.build.module.map.ForwardToChatter/>
+        <VASSAL.build.module.map.MenuDisplayer/>
+        <VASSAL.build.module.map.MapCenterer/>
+        <VASSAL.build.module.map.StackExpander/>
+        <VASSAL.build.module.map.PieceMover/>
+        <VASSAL.build.module.map.KeyBufferer/>
+        <VASSAL.build.module.map.ImageSaver buttonText="" canDisable="false" hideWhenDisabled="false" hotkey="" icon="/images/camera.gif" propertyGate="" tooltip="Save map as PNG image"/>
+        <VASSAL.build.module.map.CounterDetailViewer bgColor="" borderColor="0,0,0" borderInnerThickness="2" borderThickness="2" borderWidth="0" centerAll="false" centerPiecesVertically="false" centerText="false" combineCounterSummary="false" counterReportFormat="" delay="700" description="" display="from top-most layer only" emptyHexReportForma="$LocationName$" enableHTML="false" extraTextPadding="0" fgColor="0,0,0" fontSize="9" graphicsZoom="1.0" hotkey="32,130" layerList="" minDisplayPieces="2" onlyShowFirstSummary="false" propertyFilter="" showDeck="false" showDeckDepth="1" showDeckMasked="false" showMoveSelectde="false" showNoStack="false" showNonMovable="false" showOnlyTopOfStack="false" showOverlap="false" showTerrainBeneath="never" showTerrainHeight="150" showTerrainSnappy="true" showTerrainText="$LocationName$" showTerrainWidth="150" showTerrainZoom="1.0" showgraph="true" showgraphsingle="false" showtext="false" showtextsingle="false" stopAfterShowing="false" stretchWidthPieces="false" stretchWidthSummary="false" summaryReportFormat="$LocationName$" unrotatePieces="false" version="4" verticalBottomText="10" verticalOffset="0" verticalTopText="5" zoomlevel="1.0"/>
+        <VASSAL.build.module.map.Flare circleColor="255,0,0" circleScale="true" circleSize="100" flareKey="keyAlt" flareName="Map Flare" flarePulses="6" flarePulsesPerSec="3" reportFormat=""/>
+        <VASSAL.build.module.map.Zoomer inButtonText="" inIconName="/images/zoomIn.gif" inTooltip="Zoom in" outButtonText="" outIconName="/images/zoomOut.gif" outTooltip="Zoom out" pickButtonText="" pickIconName="/images/zoom.png" pickTooltip="Select Zoom" zoomInKey="" zoomLevels="0.2,0.25,0.333,0.4,0.5,0.555,0.625,0.75,1.0,1.25,1.6" zoomOutKey="" zoomPickKey="" zoomStart="3"/>
         <VASSAL.build.module.properties.GlobalProperties/>
         <VASSAL.build.module.map.SelectionHighlighters/>
         <VASSAL.build.module.map.HighlightLastMoved color="255,0,0" enabled="true" thickness="2"/>

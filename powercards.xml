@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<powerCards>
+    <owningBoard name="Power Cards" />
+    <settlementTokenText>+/null/sendto;Remove Settlement;;{owningBoard};{owningBoard};{x};{y};;;0;0;1;1;;L;;;;	piece;;;{power}settlement.png;{tokenName}/;;	null;0;0;;0</settlementTokenText>
+    <piracyTokenText>+/null/sendto;Return to Power Card;;{owningBoard};{owningBoard};{x};{y};;;0;0;1;1;;L;;;;	piece;;;{power}piracy.png;{tokenName}/;;	null;0;0;;0</piracyTokenText>
+    <homeKeyTokenText>+/null/prototype;HomeSquareControlMarker	piece;;;{frontImage};{keyName}/	null;0;0;0;0</homeKeyTokenText>
+    <otherKeyTokenText>+/null/emb2;Activate;128;A;{backPower};128;;{power};128;;;;1;false;0;0;{frontImage},{backImage};{power} SCM,{backPower} SCM;true;;;;false;;1;1;true;65,130;66,130;77,130;;1.0;;true	prototype;SquareControlMarker\	piece;;;{frontImage};{power} SCM/1	\	null;0;0;0;0</otherKeyTokenText>
+    <spainKeyTokenText>+/null/prototype;SquareControlMarker	piece;;;spainsquare.png;Spain SCM/	null;0;0;0;0</spainKeyTokenText>
+    <powers>
+        <power name="N. Africa">
+            <settlementStack x="1030" y="520" numTokens="5" />
+            <piracyStack x="1130" y="520" numTokens="3" />
+            <homeKeys x="493" y="522" xInc="100">
+                <homeKey name="marrakesh" />
+                <homeKey name="fez" />
+                <homeKey name="tangier" />
+                <homeKey name="tlemcen" />
+                <homeKey name="algiers" />
+            </homeKeys>
+            <otherKeys x="483" y="688" xInc="100" numTokens="7" backPower="Nasrid" />
+        </power>
+        <power name="Portugal">
+            <settlementStack x="1030" y="1400" numTokens="12" />
+            <piracyStack x="1150" y="1400" numTokens="3" />
+            <homeKeys x="492" y="1864" xInc="100">
+                <homeKey name="ceuta" />
+                <homeKey name="coimbra" />
+                <homeKey name="oporto" />
+                <homeKey name="lisbon" />
+            </homeKeys>
+            <otherKeys x="483" y="2030" xInc="100" numTokens="7" backPower="Beltranejos" />
+        </power>
+        <power name="Spain">
+            <settlementStack x="2550" y="650" numTokens="10" />
+            <piracyStack x="2700" y="650" numTokens="3" />
+            <otherKeys x="1847" y="863" xInc="100" numTokens="15" />
+        </power>
+        <power name="France">
+            <settlementStack x="2650" y="1400" numTokens="4" />
+            <piracyStack x="2750" y="1400" numTokens="3" />
+            <homeKeys x="2225" y="2025" xInc="100">
+                <homeKey name="bordeaux" />
+                <homeKey name="orleans" />
+                <homeKey name="lyon" />
+                <homeKey name="marseille" />
+            </homeKeys>
+            <otherKeys x="1820" y="2209" xInc="100" numTokens="8" backPower="Catalonia" />
+        </power>
+    </powers>
+</powerCards>
