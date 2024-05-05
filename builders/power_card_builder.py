@@ -10,8 +10,6 @@ class PowerCardBuilder:
     def buildPowerCards(self, power_card_file: str):
         stack_nodes = []
         power_card_tree = ET.parse(power_card_file)
-        settlement_token_text = power_card_tree.find("./settlementTokenText").text
-        piracy_token_text = power_card_tree.find("./piracyTokenText").text
         owningBoard = power_card_tree.find("./owningBoard").attrib["name"]
         for power in power_card_tree.findall("./powers/power"):
             powerName = power.attrib["name"]
@@ -19,18 +17,111 @@ class PowerCardBuilder:
                 power.find("./settlementStack"),
                 powerName,
                 owningBoard,
-                settlement_token_text
+                power_card_tree.find("./settlementTokenText").text
             ))
             
             stack_nodes.append(self._get_piracy_stack(
                 power.find("./piracyStack"),
                 powerName,
                 owningBoard,
-                piracy_token_text
+                power_card_tree.find("./piracyTokenText").text
             ))
+
+            homeKeys = power.find("./homeKeys")
+            if(homeKeys is not None):
+                x = int(homeKeys.attrib["x"])
+                for homeKey in homeKeys.findall("./homeKey"):
+                    stack_nodes.append(self._get_home_key(
+                        homeKey.attrib["name"],
+                        powerName,
+                        owningBoard,
+                        power_card_tree.find("./homeKeyTokenText").text,
+                        str(x),
+                        homeKeys.attrib["y"]
+                    ))
+                    x += int(homeKeys.attrib["xInc"])
+
+            otherKeys = power.find("./otherKeys")
+            numOtherKeys = int(otherKeys.attrib["numTokens"])
+            x = int(otherKeys.attrib["x"])
+            xInc = int(otherKeys.attrib["xInc"])
+            for _ in range(numOtherKeys):
+                if powerName.lower() == "spain":
+                    tokenText = power_card_tree.find("./spainKeyTokenText").text
+                else:
+                    tokenText = power_card_tree.find("./otherKeyTokenText").text
+                stack_nodes.append(self._get_other_key(
+                    powerName,
+                    otherKeys.attrib["backPower"] if "backPower" in otherKeys.attrib else None,
+                    owningBoard,
+                    tokenText,
+                    str(x),
+                    otherKeys.attrib["y"]
+                ))
+                x += xInc
         return stack_nodes
     
-    def _get_piracy_stack(self, piracy_stack: ET.Element, powerName: str, owningBoard: str, piracy_token_text: str):
+    def _get_home_key(self, home_key_name: str, powerName: str, owningBoard: str, home_key_token_text: str, x: str, y: str):
+        home_key_stack_node = ET.Element(
+            self.tokenCommonData.parent,
+            attrib={
+                "name": powerName,
+                "owningBoard": owningBoard,
+                "useGrid": "false",
+                "x": x,
+                "y": y
+            }
+        )
+        
+        ET.SubElement(
+            home_key_stack_node,
+            self.tokenCommonData.child,
+            attrib={
+                "entryName": home_key_name,
+                "gpid": str(self.gpid),
+                "height": "64",
+                "width": "75"
+            }
+        ).text = \
+            home_key_token_text.format(
+                frontImage=f"{powerName.replace('. ', '').lower()}{home_key_name}.png",
+                keyName=home_key_name
+            )
+        self.gpid += 1
+        return home_key_stack_node
+    
+    def _get_other_key(self, powerName: str, backPower: str, owningBoard: str, other_key_token_text: str, x: str, y: str) -> ET.Element:
+        other_key_stack_node = ET.Element(
+            self.tokenCommonData.parent,
+            attrib={
+                "name": f"{powerName} SCM {x}",
+                "owningBoard": owningBoard,
+                "useGrid": "false",
+                "x": x,
+                "y": y
+            }
+        )
+        
+        ET.SubElement(
+            other_key_stack_node,
+            self.tokenCommonData.child,
+            attrib={
+                "entryName": f"{powerName} SCM",
+                "gpid": str(self.gpid),
+                "height": "64",
+                "width": "75"
+            }
+        ).text = \
+            other_key_token_text.format(
+                frontImage=f"{powerName.replace('. ', '').lower()}square.png",
+                backImage=f"{backPower.lower()}square.png" if backPower is not None else "",
+                power=powerName,
+                backPower=backPower
+            )
+        self.gpid += 1
+        return other_key_stack_node
+    
+    def _get_piracy_stack(self, piracy_stack: ET.Element, powerName: str, owningBoard: str, piracy_token_text: str) -> ET.Element:
         settlement_stack_node = ET.Element(
             self.tokenCommonData.parent,
             attrib={
