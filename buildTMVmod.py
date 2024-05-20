@@ -9,8 +9,8 @@ from models.tokenCommonData import TokenCommonData
 
 def build_map(root: ET.Element, gpid: int, tokenCommonData: TokenCommonData) -> int:
     builder = MapBuilder(gpid, tokenCommonData)
-    mapRoot = root.find("./VASSAL.build.module.Map[@mapName='Main Map']")
-    gridRoot = root.find("./VASSAL.build.module.Map[@mapName='Main Map']/VASSAL.build.module.map.BoardPicker/VASSAL.build.module.map.boardPicker.Board[@name='Map']/VASSAL.build.module.map.boardPicker.board.ZonedGrid")
+    mapRoot = root.find("./VASSAL.build.module.Map[@mapName='Map']")
+    gridRoot = root.find("./VASSAL.build.module.Map[@mapName='Map']/VASSAL.build.module.map.BoardPicker/VASSAL.build.module.map.boardPicker.Board[@name='Map']/VASSAL.build.module.map.boardPicker.board.ZonedGrid")
     mapNodes, tokenNodes = builder.build_map("map.xml")
     for node in mapNodes:
         gridRoot.append(node)

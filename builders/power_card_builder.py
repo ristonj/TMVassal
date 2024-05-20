@@ -67,7 +67,7 @@ class PowerCardBuilder:
             attrib={
                 "name": powerName,
                 "owningBoard": owningBoard,
-                "useGrid": "false",
+                "useGridLocation": "false",
                 "x": x,
                 "y": y
             }
@@ -84,8 +84,10 @@ class PowerCardBuilder:
             }
         ).text = \
             home_key_token_text.format(
-                frontImage=f"{powerName.replace('. ', '').lower()}{home_key_name}.png",
-                keyName=home_key_name
+                frontImage=f"{powerName.replace('. ', '').lower()}{home_key_name.lower()}.png",
+                keyName=home_key_name,
+                power=powerName,
+                gpid=""
             )
         self.gpid += 1
         return home_key_stack_node
@@ -96,7 +98,7 @@ class PowerCardBuilder:
             attrib={
                 "name": f"{powerName} SCM {x}",
                 "owningBoard": owningBoard,
-                "useGrid": "false",
+                "useGridLocation": "false",
                 "x": x,
                 "y": y
             }
@@ -116,7 +118,8 @@ class PowerCardBuilder:
                 frontImage=f"{powerName.replace('. ', '').lower()}square.png",
                 backImage=f"{backPower.lower()}square.png" if backPower is not None else "",
                 power=powerName,
-                backPower=backPower
+                backPower=backPower,
+                gpid=""
             )
         self.gpid += 1
         return other_key_stack_node
@@ -127,7 +130,7 @@ class PowerCardBuilder:
             attrib={
                 "name": f"{powerName} Piracy Tokens",
                 "owningBoard": owningBoard,
-                "useGrid": "false",
+                "useGridLocation": "false",
                 "x": piracy_stack.attrib["x"],
                 "y": piracy_stack.attrib["y"]
             }
@@ -160,7 +163,7 @@ class PowerCardBuilder:
             attrib={
                 "name": f"{powerName} Settlements",
                 "owningBoard": owningBoard,
-                "useGrid": "false",
+                "useGridLocation": "false",
                 "x": settlement_stack.attrib["x"],
                 "y": settlement_stack.attrib["y"]
             }

@@ -3,13 +3,13 @@
     <regionParentTag>VASSAL.build.module.map.boardPicker.board.RegionGrid</regionParentTag>
     <spaceTypes>
         <spaceType name="standard">
-            <prototypeTokenText>+/null/prototype;{power}HexControl	piece;;;;{space}/	null;0;0;;0</prototypeTokenText>
+            <prototypeTokenText>+/null/prototype;{power}HexControl	piece;;;;{space}/	null;0;0;{gpid};0</prototypeTokenText>
         </spaceType>
         <spaceType name="strategic">
-            <prototypeTokenText>+/null/prototype;{power}TriangleControl	piece;;;;{space}/	null;0;0;;0</prototypeTokenText>
+            <prototypeTokenText>+/null/prototype;{power}TriangleControl	piece;;;;{space}/	null;0;0;{gpid};0</prototypeTokenText>
         </spaceType>
         <spaceType name="fortress">
-            <prototypeTokenText>+/null/prototype;{power}HexControl	piece;;;;N/	null;0;0;;0</prototypeTokenText>
+            <prototypeTokenText>+/null/prototype;{power}HexControl	piece;;;;N/	null;0;0;{gpid};0</prototypeTokenText>
         </spaceType>
         <spaceType name="key" />
         <spaceType name="holdingBox" />
@@ -234,4 +234,5 @@
             </folder>
         </region>
     </spaces>
+    <vpTrack name="VP Track" path="78,83;185,86;184,201;388,200;390,1887;85,1886" zeroVPx="130" zeroVPy="130" xStart="130" yStart="250" xInc="100" yInc="105" />
 </map>
