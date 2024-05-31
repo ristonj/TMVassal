@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<VASSAL.build.GameModule ModuleOther1="" ModuleOther2="" VassalVersion="3.7.8" description="Carlos Diaz / Ivan Caceres / Ed Beach" name="Tanto Monta (WIP)" nextPieceSlotId="139" version="0.0">
+<VASSAL.build.GameModule ModuleOther1="" ModuleOther2="" VassalVersion="3.7.8" description="Carlos Diaz / Ivan Caceres / Ed Beach" name="Tanto Monta (WIP)" nextPieceSlotId="38" version="0.0">
     <VASSAL.build.module.BasicCommandEncoder/>
     <VASSAL.build.module.Documentation>
         <VASSAL.build.module.documentation.AboutScreen fileName="/images/Splash.png" title="About Module"/>
@@ -157,10 +157,10 @@
         <VASSAL.build.module.map.SelectionHighlighters/>
         <VASSAL.build.module.map.HighlightLastMoved color="255,0,0" enabled="true" thickness="2"/>
         <VASSAL.build.module.map.SetupStack location="0" name="VP" owningBoard="Map" useGridLocation="false" x="128" y="120">
-            <VASSAL.build.widget.PieceSlot entryName="Muslim VP" gpid="760" height="64" width="75">+/null/mark;Power	sendto;;57345,0,ToCurrentVP;Map;;0;0;;;0;0;1;1;Move Marker;R;;$MuslimVP$;;\	prototype;VP Marker\\	piece;;;muslimvp.png;Muslim VP/Muslim	;;\	\\	null;0;0;760;0</VASSAL.build.widget.PieceSlot>
-            <VASSAL.build.widget.PieceSlot entryName="Portugal VP" gpid="761" height="64" width="75">+/null/prototype;VP Marker	mark;Power\	sendto;;57345,0,ToCurrentVP;Map;;0;0;;;0;0;1;1;Move Marker;R;;$PortugalVP$;;\\	piece;;;portugalvp.png;Portugal VP/	Portugal\	;;\\	null;0;0;761;0</VASSAL.build.widget.PieceSlot>
-            <VASSAL.build.widget.PieceSlot entryName="Spain VP" gpid="762" height="64" width="75">+/null/prototype;VP Marker	sendto;;57345,0,ToCurrentVP;Map;;0;0;;;0;0;1;1;Move Marker;R;;$SpainVP$;;\	mark;Power\\	piece;;;spainvp.png;Spain VP/	;;\	Spain\\	null;0;0;762;0</VASSAL.build.widget.PieceSlot>
-            <VASSAL.build.widget.PieceSlot entryName="France VP" gpid="763" height="64" width="75">+/null/prototype;VP Marker	sendto;;57345,0,ToCurrentVP;Map;;0;0;;;0;0;1;1;Move Marker;R;;$FranceVP$;;\	mark;Power\\	piece;;;francevp.png;France VP/	;;\	France\\	null;0;0;763;0</VASSAL.build.widget.PieceSlot>
+            <VASSAL.build.widget.PieceSlot entryName="Muslim VP" gpid="1" height="64" width="75">+/null/mark;Power	sendto;;57345,0,ToCurrentVP;Map;;0;0;;;0;0;1;1;Move Marker;R;;$MuslimVP$;;\	prototype;VP Marker\\	piece;;;muslimvp.png;Muslim VP/Muslim	;;\	\\	null;0;0;760;0</VASSAL.build.widget.PieceSlot>
+            <VASSAL.build.widget.PieceSlot entryName="Portugal VP" gpid="2" height="64" width="75">+/null/prototype;VP Marker	mark;Power\	sendto;;57345,0,ToCurrentVP;Map;;0;0;;;0;0;1;1;Move Marker;R;;$PortugalVP$;;\\	piece;;;portugalvp.png;Portugal VP/	Portugal\	;;\\	null;0;0;761;0</VASSAL.build.widget.PieceSlot>
+            <VASSAL.build.widget.PieceSlot entryName="Spain VP" gpid="3" height="64" width="75">+/null/prototype;VP Marker	sendto;;57345,0,ToCurrentVP;Map;;0;0;;;0;0;1;1;Move Marker;R;;$SpainVP$;;\	mark;Power\\	piece;;;spainvp.png;Spain VP/	;;\	Spain\\	null;0;0;762;0</VASSAL.build.widget.PieceSlot>
+            <VASSAL.build.widget.PieceSlot entryName="France VP" gpid="4" height="64" width="75">+/null/prototype;VP Marker	sendto;;57345,0,ToCurrentVP;Map;;0;0;;;0;0;1;1;Move Marker;R;;$FranceVP$;;\	mark;Power\\	piece;;;francevp.png;France VP/	;;\	France\\	null;0;0;763;0</VASSAL.build.widget.PieceSlot>
         </VASSAL.build.module.map.SetupStack>
     </VASSAL.build.module.Map>
     <VASSAL.build.module.gamepieceimage.GamePieceImageDefinitions>
@@ -229,45 +229,45 @@
     <VASSAL.build.module.PieceWindow defaultWidth="0" hidden="false" hotkey="" icon="" scale="1.0" text="Pieces" tooltip="Show/Hide the Pieces window">
         <VASSAL.build.widget.TabWidget entryName="Pieces">
             <VASSAL.build.widget.ListWidget divider="-1" entryName="Markers" height="-85" scale="1.0" width="-5">
-                <VASSAL.build.widget.PieceSlot entryName="Admin Rating -1" gpid="634" height="81" width="80">+/null/delete;Delete;68,130;	piece;;;adminratingminus1.png;Admin Rating -1/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Admin Rating -2" gpid="635" height="79" width="81">+/null/delete;Delete;68,130;	piece;;;adminratingminus2.png;Admin Rating -2/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Beltranejos Active" gpid="636" height="80" width="80">+/null/delete;Delete;68,130;	piece;;;beltranejoresistance.png;Beltranejos Active/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="+1 Card" gpid="637" height="82" width="81">+/null/delete;Delete;68,130;	piece;;;plus1card.png;+1 Card/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="-1 Card" gpid="638" height="79" width="81">+/null/delete;Delete;68,130;	piece;;;minus1card.png;-1 Card/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Fortress" gpid="639" height="81" width="80">+/null/delete;Delete;68,130;	piece;;;fortress.png;Fortress/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Admin Rating -1" gpid="5" height="81" width="80">+/null/delete;Delete;68,130;	piece;;;adminratingminus1.png;Admin Rating -1/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Admin Rating -2" gpid="6" height="79" width="81">+/null/delete;Delete;68,130;	piece;;;adminratingminus2.png;Admin Rating -2/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Beltranejos Active" gpid="7" height="80" width="80">+/null/delete;Delete;68,130;	piece;;;beltranejoresistance.png;Beltranejos Active/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="+1 Card" gpid="8" height="82" width="81">+/null/delete;Delete;68,130;	piece;;;plus1card.png;+1 Card/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="-1 Card" gpid="9" height="79" width="81">+/null/delete;Delete;68,130;	piece;;;minus1card.png;-1 Card/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Fortress" gpid="10" height="81" width="80">+/null/delete;Delete;68,130;	piece;;;fortress.png;Fortress/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
             </VASSAL.build.widget.ListWidget>
             <VASSAL.build.widget.PanelWidget entryName="Diplomacy &amp; Treaties" fixed="false" nColumns="3" scale="1.0" vert="false">
-                <VASSAL.build.widget.PieceSlot entryName="Alcacovas in force T1" gpid="640" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;alcacovast1.png;Alcacovas in force T1/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Alcacovas in force T2" gpid="642" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;alcacovast2.png;Alcacovas in force T2/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Alcacovas Canary Islands X" gpid="646" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;alcacovasxcanaryis.png;Alcacovas Canary Islands X/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Alcacovas Settlement X" gpid="644" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;alcacovasx.png;Alcacovas Settlement X/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Tordesillas X" gpid="647" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;tordesillasx.png;Tordesillas X/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="War at Sea" gpid="648" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;waratsea.png;War at Sea/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Alcacovas in force T1" gpid="11" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;alcacovast1.png;Alcacovas in force T1/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Alcacovas in force T2" gpid="12" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;alcacovast2.png;Alcacovas in force T2/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Alcacovas Canary Islands X" gpid="13" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;alcacovasxcanaryis.png;Alcacovas Canary Islands X/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Alcacovas Settlement X" gpid="14" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;alcacovasx.png;Alcacovas Settlement X/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Tordesillas X" gpid="15" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;tordesillasx.png;Tordesillas X/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="War at Sea" gpid="16" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;waratsea.png;War at Sea/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
             </VASSAL.build.widget.PanelWidget>
             <VASSAL.build.widget.PanelWidget entryName="Events Played" fixed="false" nColumns="3" scale="1.0" vert="false">
-                <VASSAL.build.widget.PieceSlot entryName="Alhama" gpid="649" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;alhama.png;Alhama/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Boabdil Liberated" gpid="650" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;boabdilliberated.png;Boabdil Liberated/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Columbus +1" gpid="651" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;columbusplus1.png;Columbus +1/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Experienced Pilot" gpid="652" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;experiencedpilot.png;Experienced Pilot/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Maritime Technology Portugal" gpid="653" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;maritimetechportugal.png;Maritime Technology Portugal/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Maritime Technology Spain" gpid="654" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;maritimetechspain.png;Maritime Technology Spain/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Maximilian Played" gpid="655" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;maximilianplayed.png;Maximilian Played/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Morisco Uprising" gpid="656" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;moriscouprising.png;Morisco Uprising/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Overseas Voyages Played" gpid="657" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;overseasvoyagesplayed.png;Overseas Voyages Played/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Plague" gpid="658" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;plague.png;Plague/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Rise of Universities (France)" gpid="659" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;riseofuniversitiesfrance.png;Rise of Universities (France)/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Rise of Universities (Muslim)" gpid="660" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;riseofuniversitiesmuslim.png;Rise of Universities (Muslim)/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Rise of Universities (Portugal)" gpid="661" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;riseofuniversitiesportugal.png;Rise of Universities (Portugal)/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Rise of Universities (Spain)" gpid="662" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;riseofuniversitiesspain.png;Rise of Universities (Spain)/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Ruler Ill" gpid="663" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;rulerill.png;Ruler Ill/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Sagres Played" gpid="664" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;sagresplayed.png;Sagres Played/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Vasco da Gama +1" gpid="665" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;vdagamaplus1.png;Vasco da Gama +1/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Alhama" gpid="17" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;alhama.png;Alhama/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Boabdil Liberated" gpid="18" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;boabdilliberated.png;Boabdil Liberated/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Columbus +1" gpid="19" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;columbusplus1.png;Columbus +1/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Experienced Pilot" gpid="20" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;experiencedpilot.png;Experienced Pilot/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Maritime Technology Portugal" gpid="21" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;maritimetechportugal.png;Maritime Technology Portugal/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Maritime Technology Spain" gpid="22" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;maritimetechspain.png;Maritime Technology Spain/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Maximilian Played" gpid="23" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;maximilianplayed.png;Maximilian Played/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Morisco Uprising" gpid="24" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;moriscouprising.png;Morisco Uprising/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Overseas Voyages Played" gpid="25" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;overseasvoyagesplayed.png;Overseas Voyages Played/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Plague" gpid="26" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;plague.png;Plague/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Rise of Universities (France)" gpid="27" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;riseofuniversitiesfrance.png;Rise of Universities (France)/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Rise of Universities (Muslim)" gpid="28" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;riseofuniversitiesmuslim.png;Rise of Universities (Muslim)/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Rise of Universities (Portugal)" gpid="29" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;riseofuniversitiesportugal.png;Rise of Universities (Portugal)/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Rise of Universities (Spain)" gpid="30" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;riseofuniversitiesspain.png;Rise of Universities (Spain)/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Ruler Ill" gpid="31" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;rulerill.png;Ruler Ill/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Sagres Played" gpid="32" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;sagresplayed.png;Sagres Played/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Vasco da Gama +1" gpid="33" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;vdagamaplus1.png;Vasco da Gama +1/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
             </VASSAL.build.widget.PanelWidget>
             <VASSAL.build.widget.PanelWidget entryName="Exploration Control" fixed="false" nColumns="3" scale="1.0" vert="false">
-                <VASSAL.build.widget.PieceSlot entryName="France Exploration Control" gpid="666" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;francemini.png;France Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Muslim Exploration Control" gpid="667" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;nafricamini.png;Muslim Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Portugal Exploration Control" gpid="668" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;portugalmini.png;Portugal Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
-                <VASSAL.build.widget.PieceSlot entryName="Spain Exploration Control" gpid="669" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;spainmini.png;Spain Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="France Exploration Control" gpid="34" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;francemini.png;France Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Muslim Exploration Control" gpid="35" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;nafricamini.png;Muslim Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Portugal Exploration Control" gpid="36" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;portugalmini.png;Portugal Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
+                <VASSAL.build.widget.PieceSlot entryName="Spain Exploration Control" gpid="37" height="64" width="75">+/null/delete;Delete;68,130;	piece;;;spainmini.png;Spain Exploration Control/	null;0;0;;0</VASSAL.build.widget.PieceSlot>
             </VASSAL.build.widget.PanelWidget>
         </VASSAL.build.widget.TabWidget>
     </VASSAL.build.module.PieceWindow>

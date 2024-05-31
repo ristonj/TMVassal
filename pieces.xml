@@ -1,0 +1,128 @@
+<pieces>
+    <tokenTexts>
+        <tokenText name="singleSidedPiece">+/null/delete;Delete;68,130;	piece;;;{image};{name}/	null;0;0;{gpid};0</TokenText>
+    </tokenTexts>
+    <nonVP>
+        <panel name="Markers" divider="-1">
+            <singleSidedPiece name="Admin Rating -1" />
+            <singleSidedPiece name="Admin Rating -2" />
+            <singleSidedPiece name="Beltranejos Active" />
+            <singleSidedPiece name="+1 Card" />
+            <singleSidedPiece name="-1 Card" />
+            <singleSidedPiece name="Fortress" />
+        </panel>
+        <panel name="Diplomacy &amp; Treaties">
+            <singleSidedPiece name="Alcacovas in force T1" />
+            <singleSidedPiece name="Alcacovas in force T2" />
+            <singleSidedPiece name="Alcacovas Canary Islands X" />
+            <singleSidedPiece name="Alcacovas Settlement X" />
+            <singleSidedPiece name="Tordesillas X" />
+            <singleSidedPiece name="War at Sea" />
+        </panel>
+        <panel name="Events Played">
+            <singleSidedPiece name="Alhama" />
+            <singleSidedPiece name="Vasco da Gama +1" />
+            <singleSidedPiece name="Sagres Played" />
+            <singleSidedPiece name="Ruler Ill" />
+            <singleSidedPiece name="Rise of Universities (Spain)" />
+            <singleSidedPiece name="Rise of Universities (Portugal)" />
+            <singleSidedPiece name="Rise of Universities (Muslim)" />
+            <singleSidedPiece name="Rise of Universities (France)" />
+            <singleSidedPiece name="Plague" />
+            <singleSidedPiece name="Overseas Voyages Played" />
+            <singleSidedPiece name="Morisco Uprising" />
+            <singleSidedPiece name="Maximilian Played" />
+            <singleSidedPiece name="Maritime Technology Spain" />
+            <singleSidedPiece name="Maritime Technology Portugal" />
+            <singleSidedPiece name="Experienced Pilot" />
+            <singleSidedPiece name="Columbus +1" />
+            <singleSidedPiece name="Boabdil Liberated" />
+        </panel>
+        <panel name="Exploration Control">
+            <singleSidedPiece name="France Exploration Control" />
+            <singleSidedPiece name="Muslim Exploration Control" />
+            <singleSidedPiece name="Portugal Exploration Control" />
+            <singleSidedPiece name="Spain Exploration Control" />
+        </panel>
+    </nonVP>
+    <VP>
+        <mulitSidedPiece name="Alhambra" maxVP="7" />
+        <singleSidedPiece name="Allah is Great" VP="5" />
+        <singleSidedPiece name="Anfa" type="multiPower">
+            <pieceVP power="Portugal" VP="2" />
+            <pieceVP power="Muslim" VP="1" />
+        </singleSidedPiece>
+        <singleSidedPiece name="Atlantic Supremacy" VP="3" />
+        <singleSidedPiece name="Bejaia" VP="1" />
+        <singleSidedPiece name="Beltranejos Resistance" VP="1" />
+        <singleSidedPiece name="Beltranejo Support (Portugal)" VP="2" />
+        <singleSidedPiece name="Beltranejo Support (France)" VP="2" />
+        <singleSidedPiece name="Boabdil Liberated" VP="1" />
+        <mulitSidedPiece name="Borgia" maxVP="6" />
+        <mulitSidedPiece name="Brittany" maxVP="2" />
+        <mulitSidedPiece name="Burgundy" maxVP="2" />
+        <multiSidedPiece name="Consolidation of Power" maxVP="8" step="2" />
+        <singleSidedPiece name="Cremenses" VP="1" />
+        <singleSidedPiece name="Leader Captive (Muslim)" VP="1" />
+        <singleSidedPiece name="Leader Captive (France)" VP="1" />
+        <singleSidedPiece name="Leader Captive (Spain)" VP="1" />
+        <singleSidedPiece name="Leader Captive (Portugal)" VP="1" />
+        <multiSidedPiece name="Piracy VP (France)" maxVP="6" />
+        <multiSidedPiece name="Piracy VP (Muslim)" maxVP="6" />
+        <multiSidedPiece name="Piracy VP (Portugal)" maxVP="6" />
+        <multiSidedPiece name="Piracy VP (Spain)" maxVP="6" />
+        <singleSidedPiece name="Gibraltar" VP="2" />
+        <singleSidedPiece name="Granada" VP="1" />
+        <multiSidedPiece name="Headline Event" maxVP="4" />
+        <singleSidedPiece name="Jews Expelled" VP="1" />
+        <multiSidedPiece name="Joanna la Beltraneja" maxVP="7" />
+        <multiSidedPiece name="Lord of Italy" maxVP="3" />
+        <multiSidedPiece name="Lorenzo the Magnificent" maxVP="2" />
+        <multiSidedPiece name="Master of the Atlantic" maxVP="3" />
+        <singleSidedPiece name="Metz" VP="1" />
+        <singleSidedPiece name="Milan" VP="1" />
+        <singleSidedPiece name="Naples" VP="1" />
+        <multiSidedPiece name="Natural Disaster" maxVP="2" />
+        <singleSidedPiece name="Oran" VP="1" />
+        <singleSidedPiece name="Otranto" VP="2" />
+        <singleSidedPiece name="Overseas Voyages" VP="1" />
+        <singleSidedPiece name="Overseas Voyages (Spain)" VP="2" />
+        <singleSidedPiece name="Overseas Voyages (Portugal)" VP="2" />
+        <singleSidedPiece name="Peace of Alcacovas (Portugal)" VP="3" />
+        <multiSidedPiece name="Portuguese Settlements" maxVP="6" />
+        <singleSidedPiece name="Ragusa" VP="1" />
+        <mulitSidedPiece name="Renaissance" maxVP="7" />
+        <singleSidedPiece name="Rosellon" VP="1" />
+        <singleSidedPiece name="Spanish Forts" VP="1" />
+        <mulitSidedPiece name="Spice Trade" maxVP="2" />
+        <singleSidedPiece name="Torsedillas" VP="2" />
+        <mulitSidedPiece name="Tribal Insurrection" maxVP="6" />
+        <singleSidedPiece name="Tunis" VP="1" />
+        <singleSidedPiece name="Turkish Venetian War (Common)" VP="1" />
+        <singleSidedPiece name="Turkish Venetian War (Spain)" VP="1" />
+        <singleSidedPiece name="Turkish Venetian War (Muslim)" VP="2" />
+        <mulitSidedPiece name="Rise of Universities (France)" maxVP="3" step="2" />
+        <mulitSidedPiece name="Rise of Universities (Muslim)" maxVP="3" step="2" />
+        <mulitSidedPiece name="Rise of Universities (Portugal)" maxVP="3" step="2" />
+        <mulitSidedPiece name="Rise of Universities (Spain)" maxVP="3" step="2" />
+        <mulitSidedPiece name="Wako Pirates" maxVP="4" />
+        <singleSidedPiece name="Zahara" VP="1" />
+    </VP>
+</pieces>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pieces>
+
