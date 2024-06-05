@@ -3,35 +3,48 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 from builders.map_builder import MapBuilder
+from builders.piece_builder import PieceBuilder
 from builders.power_card_builder import PowerCardBuilder
 from builders.unit_builder import UnitBuilder
 from models.tokenCommonData import TokenCommonData
 
-def build_map(root: ET.Element, gpid: int, tokenCommonData: TokenCommonData) -> int:
-    builder = MapBuilder(gpid, tokenCommonData)
-    mapRoot = root.find("./VASSAL.build.module.Map[@mapName='Map']")
-    gridRoot = root.find("./VASSAL.build.module.Map[@mapName='Map']/VASSAL.build.module.map.BoardPicker/VASSAL.build.module.map.boardPicker.Board[@name='Map']/VASSAL.build.module.map.boardPicker.board.ZonedGrid")
-    mapNodes, tokenNodes = builder.build_map("map.xml")
-    for node in mapNodes:
-        gridRoot.append(node)
-    for node in tokenNodes:
-        mapRoot.append(node)
+def build_map(root: ET.Element, gpid: int) -> int:
+    builder = MapBuilder(gpid, getTokenCommonData())
+    spaceNodes, tokenNodes = builder.build_map("map.xml")
+    root \
+        .find("./VASSAL.build.module.Map[@mapName='Map']") \
+        .extend(tokenNodes)
+    root \
+        .find(
+            "./VASSAL.build.module.Map[@mapName='Map']" +
+            "/VASSAL.build.module.map.BoardPicker" +
+            "/VASSAL.build.module.map.boardPicker.Board[@name='Map']" +
+            "/VASSAL.build.module.map.boardPicker.board.ZonedGrid") \
+        .extend(spaceNodes)
     return builder.gpid
 
-def build_powercards(root: ET.Element, gpid: int, tokenCommonData: TokenCommonData) -> int:
-    builder = PowerCardBuilder(gpid, tokenCommonData)
-    powerCardRoot = root.find("./VASSAL.build.module.Map[@mapName='Power Cards']")
-    powerCardNodes = builder.buildPowerCards("powercards.xml")
-    for node in powerCardNodes:
-        powerCardRoot.append(node)
+def build_pieces(root: ET.Element, gpid: int) -> int:
+    builder = PieceBuilder(gpid)
+    pieceNodes = builder.build_pieces("pieces.xml")
+    # <VASSAL.build.module.PieceWindow defaultWidth="0" hidden="false" hotkey="" icon="" scale="1.0" text="Pieces" tooltip="Show/Hide the Pieces window">
+    #    <VASSAL.build.widget.TabWidget entryName="Pieces">
+    root \
+        .find("./VASSAL.build.module.PieceWindow/VASSAL.build.widget.TabWidget") \
+        .extend(pieceNodes)
     return builder.gpid
 
-def build_units(root: ET.Element, gpid: int, tokenCommonData: TokenCommonData) -> int:
-    builder = UnitBuilder(gpid, tokenCommonData)
-    infantryNodes = builder.buildTokens("units.xml")
-    infantryRoot = root.find("./VASSAL.build.module.Map[@mapName='Land/Naval Units']")
-    for node in infantryNodes:
-        infantryRoot.append(node)
+def build_powercards(root: ET.Element, gpid: int) -> int:
+    builder = PowerCardBuilder(gpid, getTokenCommonData())
+    root \
+        .find("./VASSAL.build.module.Map[@mapName='Power Cards']") \
+        .extend(builder.buildPowerCards("powercards.xml"))
+    return builder.gpid
+
+def build_units(root: ET.Element, gpid: int) -> int:
+    builder = UnitBuilder(gpid, getTokenCommonData())
+    root \
+        .find("./VASSAL.build.module.Map[@mapName='Land/Naval Units']") \
+        .extend(builder.buildTokens("units.xml"))
     return builder.gpid
 
 def createVmod(dir: str):
@@ -51,10 +64,10 @@ def getTokenCommonData() -> TokenCommonData:
 def main():
     tree = ET.parse("BaseTantoMonta.xml")
     root = tree.getroot()
-    tokenCommonData = getTokenCommonData()
-    gpid = build_units(root, int(root.attrib["nextPieceSlotId"]), tokenCommonData)
-    gpid = build_map(root, gpid, tokenCommonData)
-    gpid = build_powercards(root, gpid, tokenCommonData)
+    gpid = build_units(root, int(root.attrib["nextPieceSlotId"]))
+    gpid = build_map(root, gpid)
+    gpid = build_powercards(root, gpid)
+    gpid = build_pieces(root, gpid)
     root.attrib["nextPieceSlotId"] = str(gpid)
     ET.indent(tree, space="\t")
     tree.write("buildFile.xml", encoding="utf-8", xml_declaration=True)
