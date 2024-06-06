@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<VASSAL.build.GameModule ModuleOther1="" ModuleOther2="" VassalVersion="3.7.8" description="Carlos Diaz / Ivan Caceres / Ed Beach" name="Tanto Monta (WIP)" nextPieceSlotId="38" version="0.0">
+<VASSAL.build.GameModule ModuleOther1="" ModuleOther2="" VassalVersion="3.7.8" description="Carlos Diaz / Ivan Caceres / Ed Beach" name="Tanto Monta (WIP)" nextPieceSlotId="42" version="0.0">
     <VASSAL.build.module.BasicCommandEncoder/>
     <VASSAL.build.module.Documentation>
         <VASSAL.build.module.documentation.AboutScreen fileName="/images/Splash.png" title="About Module"/>
@@ -162,6 +162,18 @@
             <VASSAL.build.widget.PieceSlot entryName="Spain VP" gpid="3" height="64" width="75">+/null/prototype;VP Marker	sendto;;57345,0,ToCurrentVP;Map;;0;0;;;0;0;1;1;Move Marker;R;;$SpainVP$;;\	mark;Power\\	piece;;;spainvp.png;Spain VP/	;;\	Spain\\	null;0;0;762;0</VASSAL.build.widget.PieceSlot>
             <VASSAL.build.widget.PieceSlot entryName="France VP" gpid="4" height="64" width="75">+/null/prototype;VP Marker	sendto;;57345,0,ToCurrentVP;Map;;0;0;;;0;0;1;1;Move Marker;R;;$FranceVP$;;\	mark;Power\\	piece;;;francevp.png;France VP/	;;\	France\\	null;0;0;763;0</VASSAL.build.widget.PieceSlot>
         </VASSAL.build.module.map.SetupStack>
+        <VASSAL.build.module.map.SetupStack location="Portuguese Coast" name="Muslim Score" useGridLocation="false" x="480" y="423">
+            <VASSAL.build.widget.PieceSlot entryName=" (Muslim: 0)" gpid="38" height="64" width="75">+/null/label;;Change label;10;0,0,0;0,204,0;t;0;c;0;b;c;$pieceName$ ($label$);Dialog;0;0;TextLabel;;false	piece;;;;/Muslim: $MuslimVP$	null;0;0;797;0</VASSAL.build.widget.PieceSlot>
+        </VASSAL.build.module.map.SetupStack>
+        <VASSAL.build.module.map.SetupStack location="Portuguese Coast" name="Portugal Score" useGridLocation="false" x="480" y="472">
+            <VASSAL.build.widget.PieceSlot entryName=" (Portugal: 0)" gpid="39" height="64" width="75">+/null/label;;Change label;10;255,255,255;255,0,255;t;0;c;0;b;c;$pieceName$ ($label$);Dialog;0;0;TextLabel;;false	piece;;;;/Portugal: $PortugalVP$	null;0;0;799;0</VASSAL.build.widget.PieceSlot>
+        </VASSAL.build.module.map.SetupStack>
+        <VASSAL.build.module.map.SetupStack location="Portuguese Coast" name="Spain Score" useGridLocation="false" x="480" y="537">
+            <VASSAL.build.widget.PieceSlot entryName=" (Spain VP: 0)" gpid="40" height="64" width="75">+/null/label;;Change label;10;0,0,0;255,255,0;t;0;c;0;b;c;$pieceName$ ($label$);Dialog;0;0;TextLabel;;false	piece;;;;/Spain VP: $SpainVP$	null;0;0;800;0</VASSAL.build.widget.PieceSlot>
+        </VASSAL.build.module.map.SetupStack>
+        <VASSAL.build.module.map.SetupStack location="Portuguese Coast" name="France Score" useGridLocation="false" x="480" y="611">
+            <VASSAL.build.widget.PieceSlot entryName=" (France VP: 0)" gpid="41" height="64" width="75">+/null/label;;Change label;10;255,255,255;51,51,255;t;0;c;0;b;c;$pieceName$ ($label$);Dialog;0;0;TextLabel;;false	piece;;;;/France VP: $FranceVP$	null;0;0;801;0</VASSAL.build.widget.PieceSlot>
+        </VASSAL.build.module.map.SetupStack>
     </VASSAL.build.module.Map>
     <VASSAL.build.module.gamepieceimage.GamePieceImageDefinitions>
         <VASSAL.build.module.gamepieceimage.ColorManager/>
@@ -301,9 +313,9 @@
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Corsair VP" path="258,792;1560,792;1560,893;258,893" useHighlight="false" useParentGrid="false">
                         <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="102.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="207" y0="740"/>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
-                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Muslim Bonus VP" path="1289,983;1698,983;1698,1304;1289,1304" useHighlight="false" useParentGrid="false">
-                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
-                            <VASSAL.build.module.map.boardPicker.board.Region name="Muslim Bonus VP" originx="1494" originy="1152"/>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$gridLocation$" name="Muslim Bonus VP" path="1289,983;1698,983;1698,1304;1289,1304" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="false" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Muslim" originx="1494" originy="1152"/>
                         </VASSAL.build.module.map.boardPicker.board.RegionGrid>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain Ruler" path="1750,199;2145,199;2145,753;1750,753" useHighlight="false" useParentGrid="false">
@@ -340,9 +352,9 @@
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain Square Markers" path="1798,813;3299,813;3299,915;1798,915" useHighlight="false" useParentGrid="false">
                         <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="99.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="1748" y0="763"/>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
-                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain Bonus VP" path="3021,986;3429,986;3429,1300;3021,1300" useHighlight="false" useParentGrid="false">
-                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
-                            <VASSAL.build.module.map.boardPicker.board.Region name="Spain Bonus VP" originx="3230" originy="1157"/>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$gridLocation$" name="Spain Bonus VP" path="3021,986;3429,986;3429,1300;3021,1300" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="false" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Spain" originx="3230" originy="1157"/>
                         </VASSAL.build.module.map.boardPicker.board.RegionGrid>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal Fortresses" path="432,1458;696,1458;696,1589;432,1589" useHighlight="false" useParentGrid="false">
@@ -379,9 +391,9 @@
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal Other Square Markers" path="433,1981;1135,1981;1135,2080;433,2080" useHighlight="false" useParentGrid="false">
                         <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="99.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="384" y0="1930"/>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
-                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Portugal Bonus VP" path="148,2135;1692,2135;1692,2235;148,2235" useHighlight="false" useParentGrid="false">
-                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
-                            <VASSAL.build.module.map.boardPicker.board.Region name="Portugal Bonus VP" originx="872" originy="2185"/>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$gridLocation$" name="Portugal Bonus VP" path="148,2135;1692,2135;1692,2235;148,2235" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="false" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Portugal" originx="872" originy="2185"/>
                         </VASSAL.build.module.map.boardPicker.board.RegionGrid>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="France Fortresses" path="" useHighlight="false" useParentGrid="false">
@@ -438,9 +450,9 @@
                             <VASSAL.build.module.map.boardPicker.board.Region name="Treaty of Senlins" originx="3297" originy="2155"/>
                         </VASSAL.build.module.map.boardPicker.board.RegionGrid>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
-                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="France Bonus VP" path="3021,2330;3430,2330;3430,2649;3021,2649" useHighlight="false" useParentGrid="false">
-                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
-                            <VASSAL.build.module.map.boardPicker.board.Region name="France Bonus VP" originx="3234" originy="2492"/>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$gridLocation$" name="France Bonus VP" path="3021,2330;3430,2330;3430,2649;3021,2649" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="false" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="France" originx="3234" originy="2492"/>
                         </VASSAL.build.module.map.boardPicker.board.RegionGrid>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
                 </VASSAL.build.module.map.boardPicker.board.ZonedGrid>

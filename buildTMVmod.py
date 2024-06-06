@@ -26,8 +26,6 @@ def build_map(root: ET.Element, gpid: int) -> int:
 def build_pieces(root: ET.Element, gpid: int) -> int:
     builder = PieceBuilder(gpid)
     pieceNodes = builder.build_pieces("pieces.xml")
-    # <VASSAL.build.module.PieceWindow defaultWidth="0" hidden="false" hotkey="" icon="" scale="1.0" text="Pieces" tooltip="Show/Hide the Pieces window">
-    #    <VASSAL.build.widget.TabWidget entryName="Pieces">
     root \
         .find("./VASSAL.build.module.PieceWindow/VASSAL.build.widget.TabWidget") \
         .extend(pieceNodes)
