@@ -10,35 +10,35 @@ class MapBuilder:
     def build_map(self, map_file: str) -> tuple[list[ET.Element], list[ET.Element]]:
         mapTree = ET.parse(map_file)
         node_list, token_list = self._get_spaces(
-            mapTree.findall("./spaces/region"),
+            mapTree.findall("./spaces/zone"),
             mapTree.find("./spaceTypes")
         )
         node_list.append(self._get_vp_track(mapTree.find("./vpTrack")))
         return node_list, token_list
     
-    def _get_spaces(self, regions: list[ET.Element], spaceTypes: ET.Element) -> tuple[list[ET.Element], list[ET.Element]]:
+    def _get_spaces(self, zones: list[ET.Element], spaceTypes: ET.Element) -> tuple[list[ET.Element], list[ET.Element]]:
         node_list = []
         token_list = []
-        for region in regions:
-            region_node = ET.Element(
+        for zone in zones:
+            zone_node = ET.Element(
                     "VASSAL.build.module.map.boardPicker.board.mapgrid.Zone",
                     attrib={
                         "highlightProperty": "",
                         "locationFormat": "$gridLocation$",
-                        "name" : region.attrib["name"],
-                        "path": region.attrib["path"],
+                        "name" : zone.attrib["name"],
+                        "path": zone.attrib["path"],
                         "useHighlight": "false",
                         "useParentGrid": "false"
                     })
             region_grid_node = ET.SubElement(
-                region_node,
+                zone_node,
                 "VASSAL.build.module.map.boardPicker.board.RegionGrid",
                 attrib={
                     "fontsize": "9",
                     "snapto": "true",
                     "visible": "false"
                 })
-            for folder in region.findall("./folder"):
+            for folder in zone.findall("./folder"):
                 if(folder.attrib["name"] == "None"):
                     continue
                 folder_node = ET.Element(
@@ -63,20 +63,20 @@ class MapBuilder:
                             (f"./spaceType[@name='{space.attrib['type']}']/prototypeTokenText")) \
                             .text.format(power=folder.attrib["name"], space=space.attrib["name"], gpid=str(self.gpid))
                         )
-                    elif(space.attrib["type"] == "cartographyVP"):
+                    elif(space.attrib["type"] == "onmapVP"):
                         self._add_at_start_stack(
                             folder_node,
                             space,
                             spaceTypes.find(
-                                "./spaceType[@name='cartographyVP']/prototypeTokenText")\
+                                "./spaceType[@name='onmapVP']/prototypeTokenText")\
                                 .text.format(
                                     name=space.attrib["name"],
                                     image=TokenCommonData.get_image_name(space.attrib["name"]) + ".png",
-                                    vp="1",
+                                    vp=space.attrib["vp"],
                                     gpid=str(self.gpid)),
-                            int(space.attrib["numVP"]))
+                            int(space.attrib["num"]))
                 token_list.append(folder_node)
-            node_list.append(region_node)
+            node_list.append(zone_node)
         return node_list, token_list
     
     def _add_at_start_stack(self, folder_node: ET.Element, space: ET.Element, text: str, num_copies: int = 1) -> None:
