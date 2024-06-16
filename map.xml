@@ -322,4 +322,13 @@
         </zone>
     </spaces>
     <vpTrack name="VP Track" path="78,83;185,86;184,201;388,200;390,1887;85,1886" zeroVPx="130" zeroVPy="130" xStart="130" yStart="250" xInc="100" yInc="105" />
+    <franceInflunceTracks>
+        <track name="Bourbon" path="3686,46;4355,46;4386,146;3686,146" xStart="3736" yStart="96" xInc="100" numSpaces="7" />
+        <track name="Alencon" path="4396,46;5096,46;5096,146;4396,146" xStart="4446" yStart="96" xInc="100" numSpaces="7" />
+        <track name="Orleans" path="3686,160;4354,160;4386,260;3686,260" xStart="3736" yStart="210" xInc="100" numSpaces="7" />
+        <track name="Anjou" path="4396,160;5096,160;5096,260;4396,260" xStart="4446" yStart="210" xInc="100" numSpaces="7" />
+        <track name="Foix-Navarre" path="4086,273;4386,273;4386,373;4086,373" xStart="4136" yStart="323" xInc="100" numSpaces="3" isNavarre="true" />
+        <track name="Armagnac" path="4396,273;5096,273;5096,373;4396,373" xStart="4446" yStart="323" xInc="100" numSpaces="7" />
+    </franceInflunceTracks>
+
 </map>

@@ -14,30 +14,16 @@ class MapBuilder:
             mapTree.find("./spaceTypes")
         )
         node_list.append(self._get_vp_track(mapTree.find("./vpTrack")))
+        france_influence_list, france_influence_token_list = self._get_france_influence(mapTree.find("./franceInfluenceTracks"))
+        node_list.append(france_influence_list)
+        token_list.append(france_influence_token_list)
         return node_list, token_list
     
     def _get_spaces(self, zones: list[ET.Element], spaceTypes: ET.Element) -> tuple[list[ET.Element], list[ET.Element]]:
         node_list = []
         token_list = []
         for zone in zones:
-            zone_node = ET.Element(
-                    "VASSAL.build.module.map.boardPicker.board.mapgrid.Zone",
-                    attrib={
-                        "highlightProperty": "",
-                        "locationFormat": "$gridLocation$",
-                        "name" : zone.attrib["name"],
-                        "path": zone.attrib["path"],
-                        "useHighlight": "false",
-                        "useParentGrid": "false"
-                    })
-            region_grid_node = ET.SubElement(
-                zone_node,
-                "VASSAL.build.module.map.boardPicker.board.RegionGrid",
-                attrib={
-                    "fontsize": "9",
-                    "snapto": "true",
-                    "visible": "false"
-                })
+            zone_node, region_grid_node = self._get_region_grid(zone.attrib["name"], zone.attrib["path"])
             for folder in zone.findall("./folder"):
                 if(folder.attrib["name"] == "None"):
                     continue
@@ -106,26 +92,7 @@ class MapBuilder:
             self.gpid += 1
 
     def _get_vp_track(self, vp_area: ET.Element) -> ET.Element:
-        vp_node = ET.Element(
-            "VASSAL.build.module.map.boardPicker.board.mapgrid.Zone",
-                    attrib={
-                        "highlightProperty": "",
-                        "locationFormat": "$gridLocation$",
-                        "name" : vp_area.attrib["name"],
-                        "path": vp_area.attrib["path"],
-                        "useHighlight": "false",
-                        "useParentGrid": "false"
-                    }
-        )
-        vp_region = ET.SubElement(
-            vp_node,
-            "VASSAL.build.module.map.boardPicker.board.RegionGrid",
-            attrib={
-                "fontsize": "9",
-                "snapto": "true",
-                "visible": "false"
-            }
-        )
+        vp_node, vp_region = self._get_region_grid(vp_area.attrib["name"], vp_area.attrib["path"])
         ET.SubElement(
             vp_region,
             "VASSAL.build.module.map.boardPicker.board.Region",
@@ -155,3 +122,69 @@ class MapBuilder:
             else:
                 xCur += xInc
         return vp_node
+    
+    def _get_france_influence(self, france_influence_tracks: ET.Element) -> tuple[list[ET.Element], list[ET.Element]]:
+        node_list = []
+        token_list = []
+        for track in france_influence_tracks.findall("./track"):
+            zone_node, region_grid_node = self._get_region_grid(track.attrib["name"], track.attrib["path"])
+            if("isNavarre" in track.attrib):
+                ET.SubElement(
+                    region_grid_node,
+                    "VASSAL.build.module.map.boardPicker.board.Region",
+                    attrib={
+                        "name": "Start",
+                        "originx": track.attrib["xStart"],
+                        "originy": track.attrib["yStart"]
+                    }
+                )
+                ET.SubElement(
+                    region_grid_node,
+                    "VASSAL.build.module.map.boardPicker.board.Region",
+                    attrib={
+                        "name": "3 (Political)",
+                        "originx": str(int(track.attrib["xStart"]) + int(track.attrib["xInc"])),
+                        "originy": track.attrib["yStart"]
+                    }
+                )
+                ET.SubElement(
+                    region_grid_node,
+                    "VASSAL.build.module.map.boardPicker.board.Region",
+                    attrib={
+                        "name": "3 (Political)",
+                        "originx": str(int(track.attrib["xStart"]) + int(track.attrib["xInc"])),
+                        "originy": track.attrib["yStart"]
+                    }
+                )
+                ET.SubElement(
+                    region_grid_node,
+                    "VASSAL.build.module.map.boardPicker.board.Region",
+                    attrib={
+                        "name": "5 (Military)",
+                        "originx": str(int(track.attrib["xStart"]) + 2 * int(track.attrib["xInc"])),
+                        "originy": track.attrib["yStart"]
+                    }
+                )
+
+    def _get_region_grid(self, name: str, path: str) -> tuple[ET.Element, ET.Element]:
+        zone_node = ET.Element(
+            "VASSAL.build.module.map.boardPicker.board.mapgrid.Zone",
+                    attrib={
+                        "highlightProperty": "",
+                        "locationFormat": "$gridLocation$",
+                        "name" : name,
+                        "path": path,
+                        "useHighlight": "false",
+                        "useParentGrid": "false"
+                    }
+        )
+        region_grid_node = ET.SubElement(
+            zone_node,
+            "VASSAL.build.module.map.boardPicker.board.RegionGrid",
+            attrib={
+                "fontsize": "9",
+                "snapto": "true",
+                "visible": "false"
+            }
+        )
+        return zone_node, region_grid_node
