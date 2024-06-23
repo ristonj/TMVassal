@@ -14,6 +14,12 @@
         <spaceType name="onmapVP">
             <prototypeTokenText>+/null/prototype;Bonus VP	mark;VP\	piece;;;{image};{name}/	{vp}\	null;0;0;{gpid};0</prototypeTokenText>
         </spaceType>
+        <spaceType name="franceInfluenceMarker">
+            <prototypeTokenText>+/null/prototype;France Influence	piece;;;{image};{name}/	null;0;0;{gpid};0</prototypeTokenText>
+        </spaceType>
+        <spaceType name="franceHouseVP">
+            <prototypeTokenText>+/null/sendto;;57346,0,AwardHouseVP;Power Cards;;0;0;;;0;0;1;1;;Z;France Bonus VP;;;	prototype;Bonus VP\	mark;VP\\	piece;;;{image};{name} VP/;;	\	1\\	null;0;0;{gpid};0</prototypeTokenText>
+        </spaceType>
     </spaceTypes>
     <spaces>
         <zone name="Europe" path="1075,644;865,886;715,884;716,1009;798,1104;681,1211;614,1184;548,1218;519,1279;574,1362;629,1335;703,1339;675,1425;776,1431;859,1504;970,1551;1086,1681;1075,1742;1075,1862;1186,1859;1190,1811;1261,1815;1328,1780;1382,1780;1387,1896;1497,1894;1507,1864;1747,1864;1749,1980;1867,1980;1875,1904;1975,1792;2233,1806;2393,1618;2597,1510;2720,1506;2665,1389;2690,1246;2802,1260;2809,1173;2947,1179;3056,1029;3224,1086;3362,1083;3495,1040;3551,1189;3487,1401;3447,1683;3724,1691;3751,872;3829,1127;3899,1266;3984,1292;4016,1429;4023,1561;4179,1573;4187,1662;4311,1672;4310,1821;4423,1835;4393,1988;4091,2002;4039,1894;3985,1989;3918,2046;4271,2276;4387,2309;4413,2220;4359,2167;4398,2066;4597,2068;4716,1932;4673,1849;4716,1805;4785,1811;4888,1875;4970,1840;4958,1737;4886,1719;4853,1554;4642,1412;4486,1276;4348,1190;4298,1142;4235,1076;4167,981;4197,800;4346,845;4391,915;4538,903;4526,958;4563,1074;4736,1099;4733,1200;4864,1208;4866,1071;4812,1072;4798,1021;4718,951;4669,930;4660,377;4064,367;4063,261;3670,263;3670,3;2525,6;2549,65;2517,250;2512,374;2453,399;2403,464;2307,462;2231,530;1884,417;1730,348;1643,263;1532,291;1502,222;1456,201;1403,218;1384,277;1357,384;1288,354;1220,413;1254,473;1198,518;1085,519">
@@ -322,13 +328,13 @@
         </zone>
     </spaces>
     <vpTrack name="VP Track" path="78,83;185,86;184,201;388,200;390,1887;85,1886" zeroVPx="130" zeroVPy="130" xStart="130" yStart="250" xInc="100" yInc="105" />
-    <franceInflunceTracks>
-        <track name="Bourbon" path="3686,46;4355,46;4386,146;3686,146" xStart="3736" yStart="96" xInc="100" numSpaces="7" />
-        <track name="Alencon" path="4396,46;5096,46;5096,146;4396,146" xStart="4446" yStart="96" xInc="100" numSpaces="7" />
-        <track name="Orleans" path="3686,160;4354,160;4386,260;3686,260" xStart="3736" yStart="210" xInc="100" numSpaces="7" />
-        <track name="Anjou" path="4396,160;5096,160;5096,260;4396,260" xStart="4446" yStart="210" xInc="100" numSpaces="7" />
-        <track name="Foix-Navarre" path="4086,273;4386,273;4386,373;4086,373" xStart="4136" yStart="323" xInc="100" numSpaces="3" isNavarre="true" />
-        <track name="Armagnac" path="4396,273;5096,273;5096,373;4396,373" xStart="4446" yStart="323" xInc="100" numSpaces="7" />
-    </franceInflunceTracks>
+    <franceInfluenceTracks>
+        <track name="Bourbon" path="3686,46;4366,46;4366,136;3686,136" xStart="3731" yStart="91" xInc="97" numSpaces="7" />
+        <track name="Alencon" path="4386,46;5056,46;5056,136;4406,136" xStart="4431" yStart="91" xInc="97" numSpaces="7" />
+        <track name="Orleans" path="3686,146;4366,146;4366,236;3686,236" xStart="3731" yStart="201" xInc="97" numSpaces="7" />
+        <track name="Anjou" path="4386,146;5056,146;5056,236;4406,236" xStart="4431" yStart="201" xInc="97" numSpaces="7" />
+        <track name="Foix-Navarre" path="4116,246;4366,246;4366,336;4116,336" xStart="4116" yStart="311" xInc="97" numSpaces="3" isNavarre="true" />
+        <track name="Armagnac" path="4386,246;5056,246;5056,336;4386,336" xStart="4431" yStart="311" xInc="97" numSpaces="7" />
+    </franceInfluenceTracks>
 
 </map>

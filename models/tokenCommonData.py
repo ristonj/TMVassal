@@ -4,11 +4,13 @@ class TokenCommonData:
         self.child = child
 
     @staticmethod
-    def get_image_name(name: str) -> str:
-        return name \
+    def get_image_name(name: str, replace_minus: bool = True) -> str:
+        retval = name \
             .replace(" ", "") \
             .replace("(", "") \
             .replace(")", "") \
             .replace("+", "plus") \
-            .replace("-", "minus") \
             .lower()
+        if replace_minus:
+            retval = retval.replace("-", "minus")
+        return retval
