@@ -18,6 +18,7 @@
                 <homeKey name="Algiers" />
             </homeKeys>
             <otherKeys x="483" y="688" xInc="100" numTokens="7" backPower="Nasrid" />
+            <corsairTrack image="corsairvp.png" />
         </power>
         <power name="Portugal">
             <settlementStack x="1030" y="1400" numTokens="12" />
@@ -33,6 +34,7 @@
         <power name="Spain">
             <settlementStack x="2550" y="650" numTokens="10" />
             <piracyStack x="2700" y="650" numTokens="3" />
+            <nasridResistanceTrack />
             <otherKeys x="1847" y="863" xInc="100" numTokens="15" />
         </power>
         <power name="France">

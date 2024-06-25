@@ -217,11 +217,11 @@ class MapBuilder:
                     )
                 self._add_at_start_stack(
                     folder_node,
-                    track.attrib["name"],
+                    track.attrib["name"] + " VP",
                     str(int(track.attrib["xStart"]) + (int(track.attrib["numSpaces"]) - 1) * int(track.attrib["xInc"])),
                     track.attrib["yStart"],
                     vp_text.format(
-                        name=track.attrib["name"],
+                        name=track.attrib["name"] + " VP",
                         image=TokenCommonData.get_image_name(track.attrib["name"]) + "housevp.png",
                         gpid=str(self.gpid)
                     )
