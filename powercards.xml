@@ -18,7 +18,7 @@
                 <homeKey name="Algiers" />
             </homeKeys>
             <otherKeys x="483" y="688" xInc="100" numTokens="7" backPower="Nasrid" />
-            <corsairTrack image="corsairvp.png" />
+            <corsairTrack image="corsairvp.png" path="260,790;1560,790;1560,890;260,890" xStart="310" yStart="840" xInc="100">+/null/sendto;;57407,0,DecMuslimVP;;;{{CurrentX}};{{CurrentY}};;;-100;0;1;1;;L;;;;	sendto;;57406,0,IncMuslimVP;;;{{CurrentX}};{{CurrentY}};;;100;0;1;1;;L;;;;\	setprop;MuslimVP;true,0,60,false;:57406\,0\,IncMuslimVP:I\,1,:57407\,0\,DecMuslimVP:I\,-1;;Current Zone\/Current Map\/Module;\\	globalkey;;57385,0,MoveVPMarker;57345,0,ToCurrentVP;;false;1;true;true;;;-1;COUNTER|false|MAP|||||0|0||false|||EQUALS||;false;\\\	macro;;Subtract VP;37,0;LocationName != 0;;57407\,0\,DecMuslimVP,57385\,0\,MoveVPMarker;false;;;counted;;;;false;;1;1\\\\	macro;;Add VP;39,0;{{LocationName != 12}};;57406\,0\,IncMuslimVP,57385\,0\,MoveVPMarker;false;;;counted;;;;false;;1;1\\\\\	immob;;V;R;\\\\\\	piece;;;{image};{name}/;;	;;\	\\	\\\	\\\\	\\\\\	\\\\\\	null;0;0;{gpid};0</corsairTrack>
         </power>
         <power name="Portugal">
             <settlementStack x="1030" y="1400" numTokens="12" />
@@ -32,9 +32,9 @@
             <otherKeys x="483" y="2030" xInc="100" numTokens="7" backPower="Beltranejos" />
         </power>
         <power name="Spain">
-            <settlementStack x="2550" y="650" numTokens="10" />
-            <piracyStack x="2700" y="650" numTokens="3" />
-            <nasridResistanceTrack />
+            <settlementStack x="2750" y="650" numTokens="10" />
+            <piracyStack x="2900" y="650" numTokens="3" />
+            <nasridResistanceTrack image="nasridresistance.png" path="2180,620;2580,620;2580,720;2180,720" xStart="2227" yStart="670" xInc="100" zeroPrefix="Nasrid Resistance">+/null/globalkey;;57409,0,MoveSpainVPMarker;57345,0,ToCurrentVP;;false;1;true;true;;;-1;COUNTER|false|MAP|||||0|0||false|||EQUALS||;false;	sendto;;57408,0,IncSpainVP;;;{{CurrentX}};{{CurrentY}};;;-100;0;1;1;;L;;;;\	sendto;;57411,0,AddToTrack;Power Cards;;0;0;;;0;0;1;1;;R;;-1;;\\	sendto;;57410,0,DecSpainVP;;;{{CurrentX}};{{CurrentY}};;;100;;1;1;;L;;;;\\\	sendto;;57413,0,RemoveFromTrack;Power Cards;;0;0;;;0;0;1;1;;R;;Nasrid Resistance 0;;\\\\	setprop;SpainVP;false,0,100,false;:57411\,0\,AddToTrack:I\,-1,:57412\,0\,AddLocationVP:I\,{{-1 * LocationName}},:57408\,0\,IncSpainVP:I\,1,:57410\,0\,DecSpainVP:I\,-1;;Current Zone\/Current Map\/Module;\\\\\	macro;;Remove from Track;82,130;{{LocationName != "Nasrid Resistance 0"}};;57412\,0\,AddLocationVP,57413\,0\,RemoveFromTrack,57409\,0\,MoveSpainVPMarker;false;;;counted;;;;false;;1;1\\\\\\	macro;;Add to Track;65,130;{{LocationName == "Nasrid Resistance 0"}};;57411\,0\,AddToTrack,57409\,0\,MoveSpainVPMarker;false;;;counted;;;;false;;1;1\\\\\\\	macro;;Subtract VP;39,0;{{LocationName != "Nasrid Resistance 0" &amp;&amp; LocationName != -3}};;57410\,0\,DecSpainVP,57409\,0\,MoveSpainVPMarker;false;;;counted;;;;false;;1;1\\\\\\\\	macro;;Add VP;37,0;{{LocationName != "Nasrid Resistance 0" &amp;&amp; LocationName != -1}};;57408\,0\,IncSpainVP,57409\,0\,MoveSpainVPMarker;false;;;counted;;;;false;;1;1\\\\\\\\\	immob;;V;R;\\\\\\\\\\	piece;;;{image};{name}/	;;\	;;\\	;;\\\	;;\\\\	\\\\\	\\\\\\	\\\\\\\	\\\\\\\\	\\\\\\\\\	\\\\\\\\\\	null;0;0;{gpid};0</nasridResistanceTrack>
             <otherKeys x="1847" y="863" xInc="100" numTokens="15" />
         </power>
         <power name="France">

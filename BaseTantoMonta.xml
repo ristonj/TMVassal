@@ -219,9 +219,6 @@
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Muslim Other Square Markers" path="434,638;1135,638;1135,737;434,737" useHighlight="false" useParentGrid="false">
                         <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="100.0" edgesLegal="false" range="Metric" snapTo="true" visible="true" x0="383" y0="586"/>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
-                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Corsair VP" path="258,792;1560,792;1560,893;258,893" useHighlight="false" useParentGrid="false">
-                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="102.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="207" y0="740"/>
-                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$gridLocation$" name="Muslim Bonus VP" path="1289,983;1698,983;1698,1304;1289,1304" useHighlight="false" useParentGrid="false">
                         <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="false" visible="false">
                             <VASSAL.build.module.map.boardPicker.board.Region name="Muslim" originx="1494" originy="1152"/>
@@ -254,9 +251,6 @@
                         <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
                             <VASSAL.build.module.map.boardPicker.board.Region name="Spain Warehouse" originx="2650" originy="495"/>
                         </VASSAL.build.module.map.boardPicker.board.RegionGrid>
-                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
-                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Nasrid Resistance" path="2174,620;2467,620;2467,721;2174,721" useHighlight="false" useParentGrid="false">
-                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="101.0" dy="100.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="2124" y0="569"/>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Spain Square Markers" path="1798,813;3299,813;3299,915;1798,915" useHighlight="false" useParentGrid="false">
                         <VASSAL.build.module.map.boardPicker.board.SquareGrid color="0,0,0" cornersLegal="false" dotsVisible="false" dx="100.0" dy="99.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="1748" y0="763"/>

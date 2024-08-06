@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 
 from models.tokenCommonData import TokenCommonData
+from . import utils
 
 class MapBuilder:
     def __init__(self, gpid: int, tokenCommonData: TokenCommonData):
@@ -26,7 +27,7 @@ class MapBuilder:
         node_list = []
         token_list = []
         for zone in zones:
-            zone_node, region_grid_node = self._get_region_grid(zone.attrib["name"], zone.attrib["path"])
+            zone_node, region_grid_node = utils.get_region_grid(zone.attrib["name"], zone.attrib["path"])
             for folder in zone.findall("./folder"):
                 if(folder.attrib["name"] == "None"):
                     continue
@@ -48,62 +49,39 @@ class MapBuilder:
                         }
                     )
                     if(space.attrib["type"] in ["fortress", "standard", "strategic"]):
-                        self._add_at_start_stack(
-                            folder_node,
-                            space.attrib["name"],
-                            space.attrib["x"],
-                            space.attrib["y"],
-                            spaceTypes.find(
-                                (f"./spaceType[@name='{space.attrib['type']}']/prototypeTokenText")) \
-                                .text \
-                                .format(power=folder.attrib["name"], space=space.attrib["name"], gpid=str(self.gpid))
+                        _, self.gpid = self.tokenCommonData.add_at_start_stack(
+                            gpid=self.gpid,
+                            tokenName=space.attrib["name"],
+                            owningBoard="Map",
+                            x=space.attrib["x"],
+                            y=space.attrib["y"],
+                            text=spaceTypes.find(
+                                (f"./spaceType[@name='{space.attrib['type']}']/prototypeTokenText")).text,
+                            parent_element=folder_node,
+                            power=folder.attrib["name"],
+                            space=space.attrib["name"]
                         )
                     elif(space.attrib["type"] == "onmapVP"):
-                        self._add_at_start_stack(
-                            folder_node,
-                            space.attrib["name"],
-                            space.attrib["x"],
-                            space.attrib["y"],
-                            spaceTypes.find(
-                                "./spaceType[@name='onmapVP']/prototypeTokenText")\
-                                .text.format(
-                                    name=space.attrib["name"],
-                                    image=TokenCommonData.get_image_name(space.attrib["name"]) + ".png",
-                                    vp=space.attrib["vp"],
-                                    gpid=str(self.gpid)),
-                            int(space.attrib["num"]))
+                        _, self.gpid = self.tokenCommonData.add_at_start_stack(
+                            gpid=self.gpid,
+                            tokenName=space.attrib["name"],
+                            owningBoard="Map",
+                            x=space.attrib["x"],
+                            y=space.attrib["y"],
+                            text=spaceTypes.find(
+                                "./spaceType[@name='onmapVP']/prototypeTokenText").text,
+                            parent_element=folder_node,
+                            num_tokens=int(space.attrib["num"]),
+                            name=space.attrib["name"],
+                            image=TokenCommonData.get_image_name(space.attrib["name"]) + ".png",
+                            vp=space.attrib["vp"],
+                        )
                 token_list.append(folder_node)
             node_list.append(zone_node)
         return node_list, token_list
-    
-    def _add_at_start_stack(self, folder_node: ET.Element, name: str, x: str, y: str, text: str, num_copies: int = 1) -> None:
-        tokenStack = ET.SubElement(
-            folder_node,
-            self.tokenCommonData.parent,
-            attrib={
-                "name": name,
-                "owningBoard": "Map",
-                "useGridLocation": "false",
-                "x": x,
-                "y": y
-            }
-        )
-        for _ in range(num_copies):
-            space_node = ET.SubElement(
-                tokenStack,
-                self.tokenCommonData.child,
-                attrib={
-                    "entryName": name,
-                    "gpid": str(self.gpid),
-                    "height": "64",
-                    "width": "75"
-                }
-            )
-            space_node.text = text
-            self.gpid += 1
 
     def _get_vp_track(self, vp_area: ET.Element) -> ET.Element:
-        vp_node, vp_region = self._get_region_grid(vp_area.attrib["name"], vp_area.attrib["path"])
+        vp_node, vp_region = utils.get_region_grid(vp_area.attrib["name"], vp_area.attrib["path"])
         ET.SubElement(
             vp_region,
             "VASSAL.build.module.map.boardPicker.board.Region",
@@ -149,7 +127,7 @@ class MapBuilder:
                     }
                 )
         for track in france_influence_tracks.findall("./track"):
-            zone_node, region_grid_node = self._get_region_grid(track.attrib["name"], track.attrib["path"])
+            zone_node, region_grid_node = utils.get_region_grid(track.attrib["name"], track.attrib["path"])
             if("isNavarre" in track.attrib):
                 ET.SubElement(
                     region_grid_node,
@@ -178,31 +156,31 @@ class MapBuilder:
                         "originy": track.attrib["yStart"]
                     }
                 )
-                self._add_at_start_stack(
-                    folder_node,
-                    track.attrib["name"],
-                    track.attrib["xStart"],
-                    track.attrib["yStart"],
-                    marker_text.format(
-                        name=track.attrib["name"],
-                        image=TokenCommonData.get_image_name(track.attrib["name"], False) + "influence.png",
-                        gpid=str(self.gpid)
-                    )
+                _, self.gpid = self.tokenCommonData.add_at_start_stack(
+                    gpid=self.gpid,
+                    tokenName=track.attrib["name"],
+                    owningBoard="Map",
+                    text=marker_text,
+                    x=track.attrib["xStart"],
+                    y=track.attrib["yStart"],
+                    parent_element=folder_node,
+                    name=track.attrib["name"],
+                    image=TokenCommonData.get_image_name(track.attrib["name"], False) + "influence.png",
                 )
             else:
                 for i in range(-1, int(track.attrib["numSpaces"]) - 1):
                     if i == -1:
                         name = "Start"
-                        self._add_at_start_stack(
-                            folder_node,
-                            track.attrib["name"],
-                            track.attrib["xStart"],
-                            track.attrib["yStart"],
-                            marker_text.format(
-                                name=track.attrib["name"],
-                                image=TokenCommonData.get_image_name(track.attrib["name"]) + "influence.png",
-                                gpid=str(self.gpid)
-                            )
+                        _, self.gpid = self.tokenCommonData.add_at_start_stack(
+                            gpid=self.gpid,
+                            tokenName=track.attrib["name"],
+                            owningBoard="Map",
+                            text=marker_text,
+                            x=track.attrib["xStart"],
+                            y=track.attrib["yStart"],
+                            parent_element=folder_node,
+                            name=track.attrib["name"],
+                            image=TokenCommonData.get_image_name(track.attrib["name"]) + "influence.png",
                         )
                     else:
                         name = str(i)
@@ -215,40 +193,17 @@ class MapBuilder:
                             "originy": track.attrib["yStart"]
                         }
                     )
-                self._add_at_start_stack(
-                    folder_node,
-                    track.attrib["name"] + " VP",
-                    str(int(track.attrib["xStart"]) + (int(track.attrib["numSpaces"]) - 1) * int(track.attrib["xInc"])),
-                    track.attrib["yStart"],
-                    vp_text.format(
-                        name=track.attrib["name"] + " VP",
-                        image=TokenCommonData.get_image_name(track.attrib["name"]) + "housevp.png",
-                        gpid=str(self.gpid)
-                    )
+                _, self.gpid = self.tokenCommonData.add_at_start_stack(
+                    gpid=self.gpid,
+                    tokenName=track.attrib["name"] + " VP",
+                    owningBoard="Map",
+                    text=vp_text,
+                    x=str(int(track.attrib["xStart"]) + (int(track.attrib["numSpaces"]) - 1) * int(track.attrib["xInc"])),
+                    y=track.attrib["yStart"],
+                    parent_element=folder_node,
+                    name=track.attrib["name"] + " VP",
+                    image=TokenCommonData.get_image_name(track.attrib["name"]) + "housevp.png",
                 )
             node_list.append(zone_node)
         token_list.append(folder_node)
         return node_list, token_list
-
-    def _get_region_grid(self, name: str, path: str) -> tuple[ET.Element, ET.Element]:
-        zone_node = ET.Element(
-            "VASSAL.build.module.map.boardPicker.board.mapgrid.Zone",
-                    attrib={
-                        "highlightProperty": "",
-                        "locationFormat": "$gridLocation$",
-                        "name" : name,
-                        "path": path,
-                        "useHighlight": "false",
-                        "useParentGrid": "false"
-                    }
-        )
-        region_grid_node = ET.SubElement(
-            zone_node,
-            "VASSAL.build.module.map.boardPicker.board.RegionGrid",
-            attrib={
-                "fontsize": "9",
-                "snapto": "true",
-                "visible": "false"
-            }
-        )
-        return zone_node, region_grid_node

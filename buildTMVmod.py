@@ -9,18 +9,18 @@ from builders.unit_builder import UnitBuilder
 from models.tokenCommonData import TokenCommonData
 
 def build_map(root: ET.Element, gpid: int) -> int:
-    builder = MapBuilder(gpid, getTokenCommonData())
-    spaceNodes, tokenNodes = builder.build_map("map.xml")
+    builder = MapBuilder(gpid, get_token_common_data())
+    space_nodes, token_nodes = builder.build_map("map.xml")
     root \
         .find("./VASSAL.build.module.Map[@mapName='Map']") \
-        .extend(tokenNodes)
+        .extend(token_nodes)
     root \
         .find(
             "./VASSAL.build.module.Map[@mapName='Map']" +
             "/VASSAL.build.module.map.BoardPicker" +
             "/VASSAL.build.module.map.boardPicker.Board[@name='Map']" +
             "/VASSAL.build.module.map.boardPicker.board.ZonedGrid") \
-        .extend(spaceNodes)
+        .extend(space_nodes)
     return builder.gpid
 
 def build_pieces(root: ET.Element, gpid: int) -> int:
@@ -32,20 +32,28 @@ def build_pieces(root: ET.Element, gpid: int) -> int:
     return builder.gpid
 
 def build_powercards(root: ET.Element, gpid: int) -> int:
-    builder = PowerCardBuilder(gpid, getTokenCommonData())
+    builder = PowerCardBuilder(gpid, get_token_common_data())
+    space_nodes, token_nodes = builder.buildPowerCards("powercards.xml")
     root \
         .find("./VASSAL.build.module.Map[@mapName='Power Cards']") \
-        .extend(builder.buildPowerCards("powercards.xml"))
+        .extend(token_nodes)
+    root \
+        .find(
+            "./VASSAL.build.module.Map[@mapName='Power Cards']" +
+            "/VASSAL.build.module.map.BoardPicker" +
+            "/VASSAL.build.module.map.boardPicker.Board[@name='Power Cards']" +
+            "/VASSAL.build.module.map.boardPicker.board.ZonedGrid") \
+        .extend(space_nodes)
     return builder.gpid
 
 def build_units(root: ET.Element, gpid: int) -> int:
-    builder = UnitBuilder(gpid, getTokenCommonData())
+    builder = UnitBuilder(gpid, get_token_common_data())
     root \
         .find("./VASSAL.build.module.Map[@mapName='Land/Naval Units']") \
         .extend(builder.buildTokens("units.xml"))
     return builder.gpid
 
-def createVmod(dir: str):
+def create_vmod(dir: str):
     imagePath = "./images"
     with zipfile.ZipFile(os.path.join(dir, "tmwip.vmod"), "w") as vmodZip:
         vmodZip.write("buildFile.xml")
@@ -53,10 +61,11 @@ def createVmod(dir: str):
         for root, _, files in os.walk(imagePath):
             for file in files:
                 vmodZip.write(os.path.join(root, file), 
-                        os.path.relpath(os.path.join(root, file), 
-                                        os.path.join(imagePath, '..')))
+                        os.path.relpath(
+                            os.path.join(root, file), 
+                            os.path.join(imagePath, '..')))
 
-def getTokenCommonData() -> TokenCommonData:
+def get_token_common_data() -> TokenCommonData:
     return TokenCommonData("VASSAL.build.module.map.SetupStack", "VASSAL.build.widget.PieceSlot")
 
 def main():
@@ -69,7 +78,7 @@ def main():
     root.attrib["nextPieceSlotId"] = str(gpid)
     ET.indent(tree, space="\t")
     tree.write("buildFile.xml", encoding="utf-8", xml_declaration=True)
-    createVmod("/mnt/c/Users/risto/OneDrive/Documents/Vassal")
+    create_vmod("/mnt/c/Users/risto/OneDrive/Documents/Vassal")
 
 if __name__ == "__main__":
     main()
