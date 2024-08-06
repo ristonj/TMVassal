@@ -6,7 +6,7 @@ from builders.map_builder import MapBuilder
 from builders.piece_builder import PieceBuilder
 from builders.power_card_builder import PowerCardBuilder
 from builders.unit_builder import UnitBuilder
-from models.tokenCommonData import TokenCommonData
+from models.token_common_data import TokenCommonData
 
 def build_map(root: ET.Element, gpid: int) -> int:
     builder = MapBuilder(gpid, get_token_common_data())

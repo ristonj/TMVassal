@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-from models.tokenCommonData import TokenCommonData
+from models.token_common_data import TokenCommonData
 from . import utils
 
 class PowerCardBuilder:

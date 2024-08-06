@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-from models.tokenCommonData import TokenCommonData
+from models.token_common_data import TokenCommonData
 
 class PieceBuilder:
     def __init__(self, gpid: int):

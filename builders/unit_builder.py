@@ -1,14 +1,14 @@
 import xml.etree.ElementTree as ET
 
-from models.tokenCommonData import TokenCommonData
-from models.unitTokenStack import UnitTokenStack
+from models.token_common_data import TokenCommonData
+from models.unit_token_stack import UnitTokenStack
 
 class UnitBuilder:
     def __init__(self, gpid: int, tokenCommonData: TokenCommonData):
         self.gpid = gpid
         self.tokenCommonData = tokenCommonData
 
-    def addAtStartStack(self, root: ET.Element, tokenType: ET.Element, unitTokenStack: UnitTokenStack):
+    def add_at_start_stack(self, root: ET.Element, tokenType: ET.Element, unitTokenStack: UnitTokenStack):
         tokenName = tokenType.attrib["nameTemplate"].format(strength=unitTokenStack.strength, power=unitTokenStack.powerName, name=unitTokenStack.name)
         group, self.gpid = self.tokenCommonData.add_at_start_stack(
             gpid=self.gpid,
@@ -52,7 +52,7 @@ class UnitBuilder:
                     xCurrent = str(int(xCurrent) + int(tokenType.attrib["xInc"]))
                     continue
                 groups.append(
-                    self.addAtStartStack(
+                    self.add_at_start_stack(
                         root=root,
                         tokenType=tokenType,
                         unitTokenStack=UnitTokenStack(
