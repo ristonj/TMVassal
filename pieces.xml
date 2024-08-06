@@ -1,0 +1,111 @@
+<pieces>
+    <tokenTexts>
+        <tokenText name="singleSidedPiece">+/null/delete;Delete;68,130;	piece;;;{image};{name}/	null;0;0;{gpid};0</tokenText>
+        <tokenText name="singleVP">+/null/prototype;Bonus VP	mark;VP\	piece;;;{image};{name}/	{vp}\	null;0;0;{gpid};0</tokenText>
+        <tokenText name="multiVP">+/null/setprop;$LocationName$VP;true,0,60,false;:57393\,0\,IncVP:I\,{step},:57395\,0\,DecVP:I\,-{step};;Current Zone\/Current Map\/Module;	macro;;Decrement;68,130;VP != {minVP};;57390\,0\,PieceDecVP,57394\,0\,IsPieceInSpotDec;false;;;counted;;;;false;;1;1\	macro;;;57394,0,IsPieceInSpotDec;{{(CurrentMap == "Power Cards") &amp;&amp; ((CurrentZone == "Muslim Bonus VP") || (CurrentZone == "Portugal Bonus VP") || (CurrentZone == "Spain Bonus VP") || (CurrentZone == "France Bonus VP"))}};;57395\,0\,DecVP,57387\,0\,UpdateVP;false;;;counted;;;;false;;1;1\\	macro;;;57392,0,IsPieceInSpotInc;{{(CurrentMap == "Power Cards") &amp;&amp; ((CurrentZone == "Muslim Bonus VP") || (CurrentZone == "Portugal Bonus VP") || (CurrentZone == "Spain Bonus VP") || (CurrentZone == "France Bonus VP"))}};;57393\,0\,IncVP,57387\,0\,UpdateVP;false;;;counted;;;;false;;1;1\\\	macro;;Increment;73,130;VP != {maxVP};;57391\,0\,IncrementSelected,57389\,0\,PieceIncVP,57392\,0\,IsPieceInSpotInc;false;;;counted;;;;false;;1;1\\\\	report;57389\,0\,PieceIncVP;Increment Fired;;;;false\\\\\	report;57391\,0\,IncrementSelected;Increment was selected;;;;false\\\\\\	PROP;VP;true,{minVP},{maxVP},false;:57389\,0\,PieceIncVP:I\,{step},:57390\,0\,PieceDecVP:I\,-{step};\\\\\\\	emb2;Activate;128;A;;128;;;128;;;;1;false;0;0;{images};{vpLevels};true;;;;true;VP;{minVP};1;true;65,130;;;;1.0;;true\\\\\\\\	prototype;Bonus VP\\\\\\\\\	piece;;;;{name}/	\	\\	\\\	\\\\	-1\\\\\	-1\\\\\\	{minVP}\\\\\\\	1\\\\\\\\	\\\\\\\\\	null;0;0;{gpid};0</tokenText>
+        <tokenText name="anfa">+/null/mark;MuslimVP	mark;PortugalVP\	prototype;Multi Power Bonus VP\\	piece;;;anfavp.png;Anfa/1	2\	\\	null;0;0;;0</tokenText>
+    </tokenTexts>
+    <nonVP>
+        <panel name="Markers" divider="-1" height="-104" width="-5">
+            <singleSidedPiece name="+1 Card" />
+            <singleSidedPiece name="-1 Card" />
+            <singleSidedPiece name="Admin Rating -1" />
+            <singleSidedPiece name="Admin Rating -2" />
+            <singleSidedPiece name="Beltranejos Active" />
+            <singleSidedPiece name="Fortress" />
+        </panel>
+        <panel name="Diplomacy &amp; Treaties" divider="0" height="0" width="0">
+            <singleSidedPiece name="Alcacovas in force T1" />
+            <singleSidedPiece name="Alcacovas in force T2" />
+            <singleSidedPiece name="Alcacovas Canary Islands X" />
+            <singleSidedPiece name="Alcacovas Settlement X" />
+            <singleSidedPiece name="Tordesillas X" />
+            <singleSidedPiece name="War at Sea" />
+        </panel>
+        <panel name="Events Played" divider="0" height="0" width="0">
+            <singleSidedPiece name="Alhama" />
+            <singleSidedPiece name="Boabdil Liberated" />
+            <singleSidedPiece name="Columbus +1" />
+            <singleSidedPiece name="Experienced Pilot" />
+            <singleSidedPiece name="Maritime Technology Portugal" />
+            <singleSidedPiece name="Maritime Technology Spain" />
+            <singleSidedPiece name="Maximilian Played" />
+            <singleSidedPiece name="Morisco Uprising" />
+            <singleSidedPiece name="Overseas Voyages Played" />
+            <singleSidedPiece name="Plague" />
+            <singleSidedPiece name="Rise of Universities (France)" />
+            <singleSidedPiece name="Rise of Universities (Muslim)" />
+            <singleSidedPiece name="Rise of Universities (Portugal)" />
+            <singleSidedPiece name="Rise of Universities (Spain)" />
+            <singleSidedPiece name="Ruler Ill" />
+            <singleSidedPiece name="Sagres Played" />
+            <singleSidedPiece name="Vasco da Gama +1" />
+        </panel>
+        <panel name="Exploration Control" divider="0" height="0" width="0">
+            <singleSidedPiece name="France Exploration Control" />
+            <singleSidedPiece name="Muslim Exploration Control" />
+            <singleSidedPiece name="Portugal Exploration Control" />
+            <singleSidedPiece name="Spain Exploration Control" />
+        </panel>
+    </nonVP>
+    <VP divider="0" height="0" width="0">
+        <multiVP name="Alhambra" maxVP="7" />
+        <singleVP name="Allah is Great" VP="5" />
+        <anfa />
+        <singleVP name="Atlantic Supremacy" VP="3" />
+        <singleVP name="Bejaia" VP="1" />
+        <singleVP name="Beltranejos Resistance" VP="1" />
+        <singleVP name="Beltranejo Support (Portugal)" VP="2" />
+        <singleVP name="Beltranejo Support (France)" VP="2" />
+        <singleVP name="Boabdil Liberated" VP="1" />
+        <multiVP name="Borgia" maxVP="6" />
+        <multiVP name="Brittany War" maxVP="2" />
+        <multiVP name="Burgundy War" maxVP="2" />
+        <multiVP name="Consolidation of Power" maxVP="8" step="2" />
+        <singleVP name="Cremenses" VP="1" />
+        <singleVP name="Gibraltar" VP="2" />
+        <singleVP name="Granada" VP="1" />
+        <multiVP name="Headline Event" maxVP="4" />
+        <singleVP name="Jews Expelled" VP="1" />
+        <multiVP name="Joanna" maxVP="7" />
+        <singleVP name="Leader Captive (Muslim)" VP="1" />
+        <singleVP name="Leader Captive (France)" VP="1" />
+        <singleVP name="Leader Captive (Spain)" VP="1" />
+        <singleVP name="Leader Captive (Portugal)" VP="1" />
+        <multiVP name="Lord of Italy" maxVP="3" />
+        <multiVP name="Lorenzo the Magnificent" maxVP="2" />
+        <multiVP name="Master of the Atlantic" maxVP="3" />
+        <singleVP name="Metz" VP="1" />
+        <singleVP name="Milan" VP="1" />
+        <singleVP name="Naples" VP="1" />
+        <multiVP name="Natural Disaster" maxVP="2" />
+        <singleVP name="Oran" VP="1" />
+        <singleVP name="Otranto" VP="2" />
+        <singleVP name="Overseas Voyages" VP="1" />
+        <singleVP name="Overseas Voyages (Spain)" VP="2" />
+        <singleVP name="Overseas Voyages (Portugal)" VP="2" />
+        <singleVP name="Peace of Alcacovas (Portugal)" VP="3" />
+        <multiVP name="Piracy (France)" maxVP="6" />
+        <multiVP name="Piracy (Muslim)" maxVP="6" />
+        <multiVP name="Piracy (Portugal)" maxVP="6" />
+        <multiVP name="Piracy (Spain)" maxVP="6" />
+        <multiVP name="Portuguese Settlements" maxVP="6" />
+        <singleVP name="Ragusa" VP="1" />
+        <multiVP name="Renaissance" maxVP="7" />
+        <singleVP name="Rosellon" VP="1" />
+        <singleVP name="Spanish Forts" VP="1" />
+        <multiVP name="Spice Trade" maxVP="2" />
+        <singleVP name="Tordesillas" VP="2" />
+        <multiVP name="Tribal Insurrection" maxVP="6" />
+        <singleVP name="Tunis" VP="1" />
+        <singleVP name="Turkish Venetian War (Common)" VP="1" />
+        <singleVP name="Turkish Venetian War (Spain)" VP="1" />
+        <singleVP name="Turkish Venetian War (Muslim)" VP="2" />
+        <multiVP name="Rise of Universities (France)" maxVP="3" step="2" />
+        <multiVP name="Rise of Universities (Muslim)" maxVP="3" step="2" />
+        <multiVP name="Rise of Universities (Portugal)" maxVP="3" step="2" />
+        <multiVP name="Rise of Universities (Spain)" maxVP="3" step="2" />
+        <multiVP name="Wako Pirates" maxVP="4" />
+        <singleVP name="Zahara" VP="1" />
+    </VP>
+</pieces>
