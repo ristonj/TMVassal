@@ -151,6 +151,9 @@
     </VASSAL.build.module.PrototypesContainer>
     <VASSAL.build.module.PieceWindow defaultWidth="0" hidden="false" hotkey="" icon="" scale="1.0" text="Pieces" tooltip="Show/Hide the Pieces window">
         <VASSAL.build.widget.TabWidget entryName="Pieces">
+            <VASSAL.build.widget.TabWidget entryName="Minor Powers">
+                <VASSAL.build.widget.ListWidget divider="0" entryName="Papacy" height="0" scale="1.0" width="0" />
+            </VASSAL.build.widget.TabWidget>
         </VASSAL.build.widget.TabWidget>
     </VASSAL.build.module.PieceWindow>
     <VASSAL.build.module.Chatter/>
@@ -374,6 +377,27 @@
         <VASSAL.build.module.map.CounterDetailViewer bgColor="" borderColor="0,0,0" borderInnerThickness="2" borderThickness="2" borderWidth="0" centerAll="false" centerPiecesVertically="false" centerText="false" combineCounterSummary="false" counterReportFormat="" delay="700" description="" display="from top-most layer only" emptyHexReportForma="$LocationName$" enableHTML="false" extraTextPadding="0" fgColor="0,0,0" fontSize="9" graphicsZoom="1.0" hotkey="32,130" layerList="" minDisplayPieces="2" onlyShowFirstSummary="false" propertyFilter="" showDeck="false" showDeckDepth="1" showDeckMasked="false" showMoveSelectde="false" showNoStack="false" showNonMovable="false" showOnlyTopOfStack="false" showOverlap="false" showTerrainBeneath="never" showTerrainHeight="150" showTerrainSnappy="true" showTerrainText="$LocationName$" showTerrainWidth="150" showTerrainZoom="1.0" showgraph="true" showgraphsingle="false" showtext="false" showtextsingle="false" stopAfterShowing="false" stretchWidthPieces="false" stretchWidthSummary="false" summaryReportFormat="$LocationName$" unrotatePieces="false" version="4" verticalBottomText="10" verticalOffset="0" verticalTopText="5" zoomlevel="1.0"/>
         <VASSAL.build.module.map.Flare circleColor="255,0,0" circleScale="true" circleSize="100" flareKey="keyAlt" flareName="Map Flare" flarePulses="6" flarePulsesPerSec="3" reportFormat=""/>
         <VASSAL.build.module.map.Zoomer inButtonText="" inIconName="/images/zoomIn.gif" inTooltip="Zoom in" outButtonText="" outIconName="/images/zoomOut.gif" outTooltip="Zoom out" pickButtonText="" pickIconName="/images/zoom.png" pickTooltip="Select Zoom" zoomInKey="" zoomLevels="0.2,0.25,0.333,0.4,0.5,0.555,0.625,0.75,1.0,1.25,1.6" zoomOutKey="" zoomPickKey="" zoomStart="3"/>
+        <VASSAL.build.module.properties.GlobalProperties/>
+        <VASSAL.build.module.map.SelectionHighlighters/>
+        <VASSAL.build.module.map.HighlightLastMoved color="255,0,0" enabled="true" thickness="2"/>
+    </VASSAL.build.module.Map>
+    <VASSAL.build.module.Map allowMultiple="false" backgroundcolor="255,255,255" buttonName="" changeFormat="$message$" color="0,0,0" createFormat="$pieceName$ created in $location$ *" description="" edgeHeight="0" edgeWidth="0" hideKey="" hotkey="" icon="minorpowericon.png" launch="true" mapName="Minor Power Influence" markMoved="Always" markUnmovedHotkey="" markUnmovedIcon="/images/unmoved.gif" markUnmovedReport="" markUnmovedText="" markUnmovedTooltip="Mark all pieces on this map as not moved" moveKey="" moveToFormat="$pieceName$ moves $previousLocation$ &amp;rarr; $location$ *" moveWithinFormat="$pieceName$ moves $previousLocation$ &amp;rarr; $location$ *" onlyReportChangedLocation="false" showKey="" thickness="3" tooltip="Minor Power Influence">
+        <VASSAL.build.module.map.BoardPicker addColumnText="Add column" addRowText="Add row" boardPrompt="Select board" slotHeight="125" slotScale="0.2" slotWidth="350" title="Choose Boards">
+            <VASSAL.build.module.map.boardPicker.Board image="minorpowerinfluence.jpg" name="Minor Power Influence" reversible="false"/>
+        </VASSAL.build.module.map.BoardPicker>
+        <VASSAL.build.module.map.StackMetrics bottom="40,0" disabled="false" down="37,0" exSepX="6" exSepY="18" top="38,0" unexSepX="2" unexSepY="4" up="39,0"/>
+        <VASSAL.build.module.map.ForwardToKeyBuffer/>
+        <VASSAL.build.module.map.Scroller/>
+        <VASSAL.build.module.map.ForwardToChatter/>
+        <VASSAL.build.module.map.MenuDisplayer/>
+        <VASSAL.build.module.map.MapCenterer/>
+        <VASSAL.build.module.map.StackExpander/>
+        <VASSAL.build.module.map.PieceMover/>
+        <VASSAL.build.module.map.KeyBufferer/>
+        <VASSAL.build.module.map.ImageSaver buttonText="" canDisable="false" hideWhenDisabled="false" hotkey="" icon="/images/camera.gif" propertyGate="" tooltip="Save map as PNG image"/>
+        <VASSAL.build.module.map.CounterDetailViewer bgColor="" borderColor="0,0,0" borderInnerThickness="2" borderThickness="2" borderWidth="0" centerAll="false" centerPiecesVertically="false" centerText="false" combineCounterSummary="false" counterReportFormat="" delay="700" description="" display="from top-most layer only" emptyHexReportForma="$LocationName$" enableHTML="false" extraTextPadding="0" fgColor="0,0,0" fontSize="9" graphicsZoom="1.0" hotkey="32,130" layerList="" minDisplayPieces="2" onlyShowFirstSummary="false" propertyFilter="" showDeck="false" showDeckDepth="1" showDeckMasked="false" showMoveSelectde="false" showNoStack="false" showNonMovable="false" showOnlyTopOfStack="false" showOverlap="false" showTerrainBeneath="never" showTerrainHeight="150" showTerrainSnappy="true" showTerrainText="$LocationName$" showTerrainWidth="150" showTerrainZoom="1.0" showgraph="true" showgraphsingle="false" showtext="false" showtextsingle="false" stopAfterShowing="false" stretchWidthPieces="false" stretchWidthSummary="false" summaryReportFormat="$LocationName$" unrotatePieces="false" version="4" verticalBottomText="10" verticalOffset="0" verticalTopText="5" zoomlevel="1.0"/>
+        <VASSAL.build.module.map.Flare circleColor="255,0,0" circleScale="true" circleSize="100" flareKey="keyAlt" flareName="Map Flare" flarePulses="6" flarePulsesPerSec="3" reportFormat=""/>
+        <VASSAL.build.module.map.Zoomer inButtonText="" inIconName="/images/zoomIn.gif" inTooltip="Zoom in" outButtonText="" outIconName="/images/zoomOut.gif" outTooltip="Zoom out" pickButtonText="" pickIconName="/images/zoom.png" pickTooltip="Select Zoom" zoomInKey="" zoomLevels="0.2,0.25,0.333,0.4,0.5,0.555,0.625,0.75,1.0,1.25,1.6" zoomOutKey="" zoomPickKey="" zoomStart="8"/>
         <VASSAL.build.module.properties.GlobalProperties/>
         <VASSAL.build.module.map.SelectionHighlighters/>
         <VASSAL.build.module.map.HighlightLastMoved color="255,0,0" enabled="true" thickness="2"/>
