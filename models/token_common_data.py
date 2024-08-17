@@ -12,6 +12,7 @@ class TokenCommonData:
             .replace("(", "") \
             .replace(")", "") \
             .replace("+", "plus") \
+            .replace(".", "") \
             .lower()
         if replace_minus:
             retval = retval.replace("-", "minus")
@@ -25,8 +26,8 @@ class TokenCommonData:
 
         Keyword Arguments:
             gpid {int} -- The piece gpid.
-            tokenName {str} -- The token name.
-            owningBoard {str} -- The owning board.
+            token_name {str} -- The token name.
+            owning_board {str} -- The owning board.
             x {str} -- The x position of the stack.
             y {str} -- The y position of the stack.
             text {str} -- The inner text of the token as an f string.
@@ -42,8 +43,8 @@ class TokenCommonData:
                 kwargs["parent_element"],
                 self.parent,
                 attrib={
-                    "name": kwargs["tokenName"],
-                    "owningBoard": kwargs["owningBoard"],
+                    "name": kwargs["token_name"],
+                    "owningBoard": kwargs["owning_board"],
                     "useGridLocation": "false",
                     "x": kwargs["x"],
                     "y": kwargs["y"]
@@ -53,8 +54,8 @@ class TokenCommonData:
             group = ET.Element(
                 self.parent,
                 attrib={
-                    "name": kwargs["tokenName"],
-                    "owningBoard": kwargs["owningBoard"],
+                    "name": kwargs["token_name"],
+                    "owningBoard": kwargs["owning_board"],
                     "useGridLocation": "false",
                     "x": kwargs["x"],
                     "y": kwargs["y"]
@@ -67,7 +68,7 @@ class TokenCommonData:
                 group,
                 self.child,
                 attrib={
-                    "entryName": kwargs["tokenName"],
+                    "entryName": kwargs["token_name"],
                     "gpid": str(gpid),
                     "height": "64",
                     "width": "75"

@@ -8,33 +8,36 @@ class UnitBuilder:
         self.gpid = gpid
         self.tokenCommonData = tokenCommonData
 
-    def add_at_start_stack(self, root: ET.Element, tokenType: ET.Element, unitTokenStack: UnitTokenStack):
-        tokenName = tokenType.attrib["nameTemplate"].format(strength=unitTokenStack.strength, power=unitTokenStack.powerName, name=unitTokenStack.name)
+    def add_at_start_stack(self, root: ET.Element, token_type: ET.Element, unit_token_stack: UnitTokenStack):
+        token_name = token_type.attrib["nameTemplate"].format(
+            strength=unit_token_stack.strength,
+            power=unit_token_stack.powerName,
+            name=unit_token_stack.name)
         group, self.gpid = self.tokenCommonData.add_at_start_stack(
             gpid=self.gpid,
-            tokenName=tokenName,
-            owningBoard=root.find("owningBoard").attrib["name"],
-            text=root.find(f"./tokenTextEntries/tokenText[@name='{tokenType.attrib['tokenText']}']").text,
-            num_tokens=unitTokenStack.numTokens,
-            x=unitTokenStack.xCurrent,
-            y=unitTokenStack.yCurrent,
+            token_name=token_name,
+            owning_board=root.find("owningBoard").attrib["name"],
+            text=root.find(f"./tokenTextEntries/tokenText[@name='{token_type.attrib['tokenText']}']").text,
+            num_tokens=unit_token_stack.numTokens,
+            x=unit_token_stack.xCurrent,
+            y=unit_token_stack.yCurrent,
             prototype="Land\\/Naval Units",
-            backCommand=self._getOptionalAttribute(tokenType, "backCommand"),
-            frontCommand=self._getOptionalAttribute(tokenType, "frontCommand"),
-            frontImage=tokenType.attrib["frontImage"].format(
-                power=unitTokenStack.powerName.replace(" ", "").lower(),
-                strength=unitTokenStack.strength.lower(),
-                name=unitTokenStack.name.lower()
+            backCommand=self._getOptionalAttribute(token_type, "backCommand"),
+            frontCommand=self._getOptionalAttribute(token_type, "frontCommand"),
+            frontImage=token_type.attrib["frontImage"].format(
+                power=unit_token_stack.powerName.replace(" ", "").lower(),
+                strength=unit_token_stack.strength.lower(),
+                name=unit_token_stack.name.lower()
             ),
-            backImage=self._getOptionalAttribute(tokenType, "backImage").format(
-                power=unitTokenStack.powerName.replace(" ", "").lower(),
-                strength=unitTokenStack.strength.lower()
+            backImage=self._getOptionalAttribute(token_type, "backImage").format(
+                power=unit_token_stack.powerName.replace(" ", "").lower(),
+                strength=unit_token_stack.strength.lower()
             ),
-            layerNames=self._getOptionalAttribute(tokenType, "layers").format(
-                power=unitTokenStack.powerName,
-                strength=unitTokenStack.strength
+            layerNames=self._getOptionalAttribute(token_type, "layers").format(
+                power=unit_token_stack.powerName,
+                strength=unit_token_stack.strength
             ),
-            name=tokenName
+            name=token_name
         )
         return group
 
@@ -54,8 +57,8 @@ class UnitBuilder:
                 groups.append(
                     self.add_at_start_stack(
                         root=root,
-                        tokenType=tokenType,
-                        unitTokenStack=UnitTokenStack(
+                        token_type=tokenType,
+                        unit_token_stack=UnitTokenStack(
                             xCurrent=xCurrent,
                             yCurrent=yCurrent,
                             numTokens=int(token.attrib["numTokens"]),

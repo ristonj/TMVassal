@@ -8,7 +8,7 @@ class MapBuilder:
         self.gpid = gpid
         self.tokenCommonData = tokenCommonData
 
-    def build_map(self, map_file: str) -> tuple[list[ET.Element], list[ET.Element]]:
+    def build(self, map_file: str) -> tuple[list[ET.Element], list[ET.Element]]:
         mapTree = ET.parse(map_file)
         node_list, token_list = self._get_spaces(
             mapTree.findall("./spaces/zone"),
@@ -51,8 +51,8 @@ class MapBuilder:
                     if(space.attrib["type"] in ["fortress", "standard", "strategic"]):
                         _, self.gpid = self.tokenCommonData.add_at_start_stack(
                             gpid=self.gpid,
-                            tokenName=space.attrib["name"],
-                            owningBoard="Map",
+                            token_name=space.attrib["name"],
+                            owning_board="Map",
                             x=space.attrib["x"],
                             y=space.attrib["y"],
                             text=spaceTypes.find(
@@ -64,8 +64,8 @@ class MapBuilder:
                     elif(space.attrib["type"] == "onmapVP"):
                         _, self.gpid = self.tokenCommonData.add_at_start_stack(
                             gpid=self.gpid,
-                            tokenName=space.attrib["name"],
-                            owningBoard="Map",
+                            token_name=space.attrib["name"],
+                            owning_board="Map",
                             x=space.attrib["x"],
                             y=space.attrib["y"],
                             text=spaceTypes.find(
@@ -158,8 +158,8 @@ class MapBuilder:
                 )
                 _, self.gpid = self.tokenCommonData.add_at_start_stack(
                     gpid=self.gpid,
-                    tokenName=track.attrib["name"],
-                    owningBoard="Map",
+                    token_name=track.attrib["name"],
+                    owning_board="Map",
                     text=marker_text,
                     x=track.attrib["xStart"],
                     y=track.attrib["yStart"],
@@ -173,8 +173,8 @@ class MapBuilder:
                         name = "Start"
                         _, self.gpid = self.tokenCommonData.add_at_start_stack(
                             gpid=self.gpid,
-                            tokenName=track.attrib["name"],
-                            owningBoard="Map",
+                            token_name=track.attrib["name"],
+                            owning_board="Map",
                             text=marker_text,
                             x=track.attrib["xStart"],
                             y=track.attrib["yStart"],
@@ -195,8 +195,8 @@ class MapBuilder:
                     )
                 _, self.gpid = self.tokenCommonData.add_at_start_stack(
                     gpid=self.gpid,
-                    tokenName=track.attrib["name"] + " VP",
-                    owningBoard="Map",
+                    token_name=track.attrib["name"] + " VP",
+                    owning_board="Map",
                     text=vp_text,
                     x=str(int(track.attrib["xStart"]) + (int(track.attrib["numSpaces"]) - 1) * int(track.attrib["xInc"])),
                     y=track.attrib["yStart"],
