@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 from builders.map_builder import MapBuilder
+from builders.minor_power_builder import MinorPowerBuilder
 from builders.piece_builder import PieceBuilder
 from builders.power_card_builder import PowerCardBuilder
 from builders.unit_builder import UnitBuilder
@@ -10,7 +11,7 @@ from models.token_common_data import TokenCommonData
 
 def build_map(root: ET.Element, gpid: int) -> int:
     builder = MapBuilder(gpid, get_token_common_data())
-    space_nodes, token_nodes = builder.build_map("map.xml")
+    space_nodes, token_nodes = builder.build("map.xml")
     root \
         .find("./VASSAL.build.module.Map[@mapName='Map']") \
         .extend(token_nodes)
@@ -23,9 +24,17 @@ def build_map(root: ET.Element, gpid: int) -> int:
         .extend(space_nodes)
     return builder.gpid
 
+def build_minor_power_diplomacy(root: ET.Element, gpid: int) -> int:
+    builder = MinorPowerBuilder(gpid, get_token_common_data())
+    minor_power_nodes = builder.build("minorpowers.xml")
+    root \
+        .find("./VASSAL.build.module.Map[@mapName='Minor Power Influence']") \
+        .extend(minor_power_nodes)
+    return builder.gpid
+
 def build_pieces(root: ET.Element, gpid: int) -> int:
     builder = PieceBuilder(gpid)
-    pieceNodes = builder.build_pieces("pieces.xml")
+    pieceNodes = builder.build("pieces.xml")
     root \
         .find("./VASSAL.build.module.PieceWindow/VASSAL.build.widget.TabWidget") \
         .extend(pieceNodes)
@@ -33,7 +42,7 @@ def build_pieces(root: ET.Element, gpid: int) -> int:
 
 def build_powercards(root: ET.Element, gpid: int) -> int:
     builder = PowerCardBuilder(gpid, get_token_common_data())
-    space_nodes, token_nodes = builder.buildPowerCards("powercards.xml")
+    space_nodes, token_nodes = builder.build("powercards.xml")
     root \
         .find("./VASSAL.build.module.Map[@mapName='Power Cards']") \
         .extend(token_nodes)
@@ -75,6 +84,7 @@ def main():
     gpid = build_map(root, gpid)
     gpid = build_powercards(root, gpid)
     gpid = build_pieces(root, gpid)
+    gpid = build_minor_power_diplomacy(root, gpid)
     root.attrib["nextPieceSlotId"] = str(gpid)
     ET.indent(tree, space="\t")
     tree.write("buildFile.xml", encoding="utf-8", xml_declaration=True)

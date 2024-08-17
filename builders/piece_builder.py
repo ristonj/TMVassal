@@ -6,7 +6,7 @@ class PieceBuilder:
     def __init__(self, gpid: int):
         self.gpid = gpid
 
-    def build_pieces(self, piece_file: str) -> list[ET.Element]:
+    def build(self, piece_file: str) -> list[ET.Element]:
         pieceTree = ET.parse(piece_file)
         piece_list = self._get_nonvp_pieces(
             pieceTree.findall("./nonVP/panel"),

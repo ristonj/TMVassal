@@ -1,41 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <minorPowerTracks>
-    <majorPowers>
-        <power name="Muslim" />
-        <power name="Portugal" />
-        <power name="Spain" />
-        <power name="France" />
-    </majorPowers>
-    <minorPowers>
-        <power name="Papacy" controlX="100" controly="100" tokenX="100" tokenY="200">
-            <majorAlly name="Spain" />
-            <majorAlly name="France" />
-            <majorAlly name="Portugal" />
-        </power>
-        <power name="Navarre" controlX="200" controly="100" tokenX="200" tokenY="200">
-            <majorAlly name="Spain" />
-            <majorAlly name="France" />
-            <majorAlly name="Portugal" />
-        </power>
-        <power name="Venice" controlX="300" controly="100" tokenX="300" tokenY="200">
-            <majorAlly name="France" />
-            <majorAlly name="Spain" />
-            <majorAlly name="N. Africa" />
-        </power>
-        <power name="Genoa" controlX="400" controly="100" tokenX="400" tokenY="200">
-            <majorAlly name="France" />
-            <majorAlly name="Spain" />
-            <majorAlly name="Nasrid" />
-        </power>
-        <power name="Florence" controlX="500" controly="100" tokenX="500" tokenY="200">
-            <majorAlly name="France" />
-            <majorAlly name="Portugal" />
-            <majorAlly name="Spain" />
-        </power>
-        <power name="Naples" controlX="600" controly="100" tokenX="600" tokenY="200">
-            <majorAlly name="Spain" />
-            <majorAlly name="Portugal" />
-            <majorAlly name="N. Africa" />
-        </power>
-    </minorPowers>
+    <power name="Papacy" x="510" y="650">
+        <majorAlly name="Spain" />
+        <majorAlly name="France" />
+        <majorAlly name="Portugal" />
+        <text>+/null/emb2;Activate;128;A;;128;;;128;;;;1;false;0;0;{image1},{image2},{image3},;,,,;true;;;;true;Power;1;1;true;65,130;;;;1.0;;true	PROP;Power;true,1,4,false;{power1}:57349\,0\,{power1_control}Control:P\,1,{power2}:57350\,0\,{power2_control}Control:P\,2,{power3}:57348\,0\,{power3_control}Control:P\,3,None:57380\,0\,Uncontrolled:P\,4;\	prototype;Diplomatic Control\\	piece;;;;/1	4\	\\	null;0;0;{gpid};0</text>
+    </power>
+    <power name="Navarre" x="835" y="650">
+        <majorAlly name="Spain" />
+        <majorAlly name="France" />
+        <majorAlly name="Portugal" />
+        <text>+/null/emb2;Activate;128;A;;128;;;128;;;;1;false;0;0;{image1},{image2},{image3},;,,,;true;;;;true;Power;1;1;true;65,130;;;;1.0;;true	PROP;Power;true,1,4,false;{power1}:57349\,0\,{power1_control}Control:P\,1,{power2}:57350\,0\,{power2_control}Control:P\,2,{power3}:57348\,0\,{power3_control}Control:P\,3,None:57380\,0\,Uncontrolled:P\,4;\	prototype;Diplomatic Control\\	piece;;;;/1	4\	\\	null;0;0;{gpid};0</text>
+    </power>
+    <power name="Venice" x="1160" y="650">
+        <majorAlly name="France" />
+        <majorAlly name="Spain" />
+        <majorAlly name="N. Africa" />
+        <text>+/null/emb2;Activate;128;A;;128;;;128;;;;1;false;0;0;{image1},{image2},{image3},;,,,;true;;;;true;Power;1;1;true;65,130;;;;1.0;;true	PROP;Power;true,1,4,false;{power1}:57349\,0\,{power1_control}Control:P\,1,{power2}:57350\,0\,{power2_control}Control:P\,2,{power3}:57348\,0\,{power3_control}Control:P\,3,None:57380\,0\,Uncontrolled:P\,4;\	prototype;Diplomatic Control\\	piece;;;;/1	4\	\\	null;0;0;{gpid};0</text>
+    </power>
+    <power name="Genoa" x="1495" y="650">
+        <majorAlly name="France" />
+        <majorAlly name="Spain" />
+        <majorAlly name="Nasrid" />
+        <text>+/null/emb2;Activate;128;A;;128;;;128;;;;1;false;0;0;{image1},{image2},{image3},;,,,;true;;;;true;Power;1;1;true;65,130;;;;1.0;;true	PROP;Power;true,1,4,false;{power1}:57349\,0\,{power1_control}Control:P\,1,{power2}:57350\,0\,{power2_control}Control:P\,2,{power3}:57348\,0\,{power3_control}Control:P\,3,None:57380\,0\,Uncontrolled:P\,4;\	prototype;Diplomatic Control\\	piece;;;;/1	4\	\\	null;0;0;{gpid};0</text>
+    </power>
+    <power name="Florence" x="1815" y="650">
+        <majorAlly name="France" />
+        <majorAlly name="Portugal" />
+        <majorAlly name="Spain" />
+        <text>+/null/emb2;Activate;128;A;;128;;;128;;;;1;false;0;0;{image1},{image2},{image3},;,,,;true;;;;true;Power;1;1;true;65,130;;;;1.0;;true	PROP;Power;true,1,4,false;{power1}:57349\,0\,{power1_control}Control:P\,1,{power2}:57350\,0\,{power2_control}Control:P\,2,{power3}:57348\,0\,{power3_control}Control:P\,3,None:57380\,0\,Uncontrolled:P\,4;\	prototype;Diplomatic Control\\	piece;;;;/1	4\	\\	null;0;0;{gpid};0</text>
+    </power>
+    <power name="Naples" x="2140" y="650">
+        <majorAlly name="Spain" />
+        <majorAlly name="Portugal" />
+        <majorAlly name="N. Africa" />
+        <text>+/null/emb2;Activate;128;A;;128;;;128;;;;1;false;0;0;{image1},{image2},{image3},;,,,;true;;;;true;Power;1;1;true;65,130;;;;1.0;;true	PROP;Power;true,1,4,false;{power1}:57349\,0\,{power1_control}Control:P\,1,{power2}:57350\,0\,{power2_control}Control:P\,2,{power3}:57348\,0\,{power3_control}Control:P\,3,None:57380\,0\,Uncontrolled:P\,4;\	prototype;Diplomatic Control\\	piece;;;;/1	4\	\\	null;0;0;{gpid};0</text>
+    </power>
 </minorPowerTracks>

@@ -8,24 +8,24 @@ class PowerCardBuilder:
         self.gpid = gpid
         self.tokenCommonData = tokenCommonData
 
-    def buildPowerCards(self, power_card_file: str) -> tuple[list[ET.Element], list[ET.Element]]:
+    def build(self, power_card_file: str) -> tuple[list[ET.Element], list[ET.Element]]:
         stack_nodes = []
         space_nodes = []
         power_card_tree = ET.parse(power_card_file)
-        owningBoard = power_card_tree.find("./owningBoard").attrib["name"]
+        owning_board = power_card_tree.find("./owningBoard").attrib["name"]
         for power in power_card_tree.findall("./powers/power"):
             powerName = power.attrib["name"]
             stack_nodes.append(self._get_settlement(
                 power.find("./settlementStack"),
                 powerName,
-                owningBoard,
+                owning_board,
                 power_card_tree.find("./settlementTokenText").text
             ))
             
             stack_nodes.append(self._get_piracy_stack(
                 power.find("./piracyStack"),
                 powerName,
-                owningBoard,
+                owning_board,
                 power_card_tree.find("./piracyTokenText").text
             ))
 
@@ -34,7 +34,7 @@ class PowerCardBuilder:
                 stack_nodes.extend(self._add_home_keys(
                     homeKeys,
                     powerName,
-                    owningBoard,
+                    owning_board,
                     power_card_tree.find("./homeKeyTokenText").text
                 ))
 
@@ -42,20 +42,20 @@ class PowerCardBuilder:
             stack_nodes.extend(self._add_other_keys(
                 otherKeys,
                 powerName,
-                owningBoard,
+                owning_board,
                 power_card_tree.find("./spainKeyTokenText").text,
                 power_card_tree.find("./otherKeyTokenText").text
             ))
             
             corsair_node = power.find("./corsairTrack")
             if(corsair_node is not None):
-                track, corsair_token = self._get_track(corsair_node, "Corsair VP", 12, owningBoard)
+                track, corsair_token = self._get_track(corsair_node, "Corsair VP", 12, owning_board)
                 space_nodes.append(track)
                 stack_nodes.append(corsair_token)
             
             nasrid_resistance_node = power.find("./nasridResistanceTrack")
             if(nasrid_resistance_node is not None):
-                track, nasrid_resistance_token = self._get_track(nasrid_resistance_node, "Nasrid Resistance VP", -3, owningBoard, True)
+                track, nasrid_resistance_token = self._get_track(nasrid_resistance_node, "Nasrid Resistance VP", -3, owning_board, True)
                 space_nodes.append(track)
                 stack_nodes.append(nasrid_resistance_token)
         return space_nodes, stack_nodes
@@ -138,8 +138,8 @@ class PowerCardBuilder:
         else:
             x = node.attrib["xStart"]
         token_node, self.gpid = self.tokenCommonData.add_at_start_stack(
-            tokenName=name,
-            owningBoard=owning_board,
+            token_name=name,
+            owning_board=owning_board,
             x=x,
             y=node.attrib["yStart"],
             text=node.text,
@@ -149,53 +149,53 @@ class PowerCardBuilder:
         )
         return track_node, token_node
     
-    def _get_home_key(self, home_key_name: str, powerName: str, owningBoard: str, home_key_token_text: str, x: str, y: str):
+    def _get_home_key(self, home_key_name: str, power_name: str, owning_board: str, home_key_token_text: str, x: str, y: str):
         home_key_stack_node, self.gpid = self.tokenCommonData.add_at_start_stack(
             gpid=self.gpid,
-            tokenName=home_key_name,
-            owningBoard=owningBoard,
+            token_name=home_key_name,
+            owning_board=owning_board,
             x=x,
             y=y,
             text=home_key_token_text,
-            frontImage=f"{powerName.replace('. ', '').lower()}{home_key_name.lower()}.png",
+            frontImage=f"{power_name.replace('. ', '').lower()}{home_key_name.lower()}.png",
             keyName=home_key_name,
-            power=powerName
+            power=power_name
         )
         return home_key_stack_node
     
-    def _get_other_key(self, powerName: str, backPower: str, owningBoard: str, other_key_token_text: str, x: str, y: str) -> ET.Element:
+    def _get_other_key(self, power_name: str, back_power: str, owning_board: str, other_key_token_text: str, x: str, y: str) -> ET.Element:
         other_key_stack_node, self.gpid = self.tokenCommonData.add_at_start_stack(
             gpid=self.gpid,
-            tokenName=f"{powerName} SCM",
-            owningBoard=owningBoard,
+            token_name=f"{power_name} SCM",
+            owning_board=owning_board,
             x=x,
             y=y,
             text=other_key_token_text,
-            frontImage=f"{powerName.replace('. ', '').lower()}square.png",
-            backImage=f"{backPower.lower()}square.png" if backPower is not None else "",
-            power=powerName,
-            backPower=backPower
+            frontImage=f"{power_name.replace('. ', '').lower()}square.png",
+            backImage=f"{back_power.lower()}square.png" if back_power is not None else "",
+            power=power_name,
+            backPower=back_power
         )
         return other_key_stack_node
     
-    def _get_piracy_stack(self, piracy_stack: ET.Element, powerName: str, owningBoard: str, piracy_token_text: str) -> ET.Element:
+    def _get_piracy_stack(self, piracy_stack: ET.Element, power_name: str, owning_board: str, piracy_token_text: str) -> ET.Element:
         piracy_stack_node, self.gpid = self.tokenCommonData.add_at_start_stack(
             gpid=self.gpid,
-            tokenName=f"{powerName} Piracy",
-            owningBoard=owningBoard,
+            token_name=f"{power_name} Piracy",
+            owning_board=owning_board,
             x=piracy_stack.attrib["x"],
             y=piracy_stack.attrib["y"],
             text=piracy_token_text,
             num_tokens=int(piracy_stack.attrib["numTokens"]),
-            power=powerName.lower(),
+            power=power_name.lower(),
         )
         return piracy_stack_node
     
     def _get_settlement(self, settlement_stack: ET.Element, powerName: str, owningBoard: str, settlement_token_text: str) -> ET.Element:
         settlement_stack_node, self.gpid = self.tokenCommonData.add_at_start_stack(
             gpid=self.gpid,
-            tokenName=f"{powerName} Settlement",
-            owningBoard=owningBoard,
+            token_name=f"{powerName} Settlement",
+            owning_board=owningBoard,
             x=settlement_stack.attrib["x"],
             y=settlement_stack.attrib["y"],
             text=settlement_token_text,
